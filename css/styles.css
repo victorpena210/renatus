@@ -147,8 +147,23 @@ main p a:not(.btn):focus-visible {
 
 /* Hero */
 
+/* Hero */
+
 .hero {
   padding: 4.5rem 0 4rem;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 5, 25, 0.88) 0%,
+      rgba(9, 6, 37, 0.67) 52%,
+      rgba(8, 5, 32, 0.38) 100%
+    ),
+    url("../images/heroes/San_Antonio_Synthwave_Skyline.png");
+
+  background-size: cover;
+  background-position: center 62%;
+  background-repeat: no-repeat;
 }
 
 .hero-inner {
@@ -160,12 +175,15 @@ main p a:not(.btn):focus-visible {
 .hero-text h1 {
   font-size: clamp(2.1rem, 4vw, 2.6rem);
   margin: 0 0 0.75rem;
+  color: #ffffff;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.65);
 }
 
 .hero-text p {
   margin: 0 0 1.5rem;
-  color: #4b5563;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 540px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
 }
 
 .hero-actions {
@@ -175,19 +193,30 @@ main p a:not(.btn):focus-visible {
   margin-bottom: 1rem;
 }
 
+.hero .btn-outline {
+  background-color: rgba(255, 255, 255, 0.94);
+  color: #111827;
+  border-color: rgba(255, 255, 255, 0.95);
+}
+
+.hero .btn-outline:hover {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   font-size: 0.85rem;
-  color: #4b5563;
 }
 
 .hero-badges span {
-  background-color: #e5f0ff;
+  background-color: rgba(255, 255, 255, 0.92);
   color: #1d4ed8;
   padding: 0.25rem 0.6rem;
   border-radius: 999px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
 }
 
 /* Hero Card */
@@ -595,9 +624,10 @@ textarea {
     padding-inline: 1rem;
   }
 
-  .hero {
-    padding-top: 3.5rem;
-  }
+.hero {
+  padding-top: 3.5rem;
+  background-position: 58% center;
+}
 
   .contact-grid {
     grid-template-columns: 1fr;
