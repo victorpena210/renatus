@@ -2001,3 +2001,29 @@ textarea {
     height: 50px;
   }
 }
+
+
+.products-featured + .products-featured {
+  margin-top: 2rem;
+}
+
+.products-image-preview {
+  overflow: hidden;
+  border: 1px solid #dbe4f0;
+  border-radius: 1.1rem;
+  background-color: #ffffff;
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+.products-image-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.products-cta .products-actions {
+  justify-content: flex-end;
+  margin-top: 0;
+}
