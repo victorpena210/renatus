@@ -97,26 +97,18 @@ main p a:not(.btn):focus-visible {
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: block;
+  flex-shrink: 0;
+  width: 250px;
+  height: 65px;
 }
 
-.logo-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  border: 1px solid #3b82f6;
-  font-size: 0.85rem;
-  color: #1d4ed8;
-}
-
-.logo-text {
-  font-weight: 600;
-  font-size: 1.05rem;
+.logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .nav {
@@ -1553,7 +1545,7 @@ textarea {
   text-align: center;
 }
 
-/* RoutePulse card on BrightSite homepage */
+/* RoutePulse card on Renatus homepage */
 
 .coming-projects {
   display: grid;
@@ -1963,5 +1955,12 @@ textarea {
   .products-cta {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    width: 190px;
+    height: 50px;
   }
 }
