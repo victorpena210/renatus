@@ -2027,3 +2027,474 @@ textarea {
   justify-content: flex-end;
   margin-top: 0;
 }
+
+
+/* =========================================================
+   RENATUS — 80s CORPORATE NAVBAR
+   Keep this at the bottom of styles.css
+   ========================================================= */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24, 24, 38, 0.98) 0%,
+      rgba(8, 9, 24, 0.98) 100%
+    );
+  border-bottom: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 10px 30px rgba(4, 5, 25, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Thin retro corporate accent line */
+.site-header::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #ff6a00 20%,
+    #d81b60 55%,
+    #38bdf8 82%,
+    transparent 100%
+  );
+  opacity: 0.85;
+}
+
+.header-inner {
+  max-width: 1440px;
+  min-height: 86px;
+  padding: 0.7rem 1.5rem;
+  gap: 2rem;
+}
+
+/* Logo fix */
+.logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 310px;
+  height: auto;
+  overflow: visible;
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Desktop links */
+.nav-links {
+  gap: 0.15rem;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.55rem 0.62rem;
+  color: #d9d9dd;
+  background: transparent;
+  border-radius: 4px;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #ffffff;
+  background-color: rgba(230, 188, 122, 0.1);
+}
+
+.nav-links a[aria-current="page"] {
+  color: #e6bc7a;
+  background-color: rgba(255, 106, 0, 0.08);
+  box-shadow: inset 0 -2px 0 #ff6a00;
+}
+
+/* Final link becomes the primary action */
+.nav-links li:last-child a {
+  margin-left: 0.35rem;
+  padding-inline: 0.9rem;
+  color: #ffffff;
+  border: 1px solid rgba(230, 188, 122, 0.75);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+}
+
+.nav-links li:last-child a:hover,
+.nav-links li:last-child a:focus-visible {
+  color: #ffffff;
+  border-color: transparent;
+  background: linear-gradient(135deg, #ff6a00, #d81b60);
+}
+
+/* Hamburger */
+.nav-toggle {
+  color: #f5f1e8;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(230, 188, 122, 0.45);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Tablet and mobile menu */
+@media (max-width: 1280px) {
+  .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 0.8rem);
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.15rem;
+    width: min(310px, calc(100vw - 2rem));
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding: 0.8rem;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(24, 24, 38, 0.99),
+        rgba(8, 9, 24, 0.99)
+      );
+    border: 1px solid rgba(230, 188, 122, 0.28);
+    border-radius: 8px;
+    box-shadow: 0 18px 40px rgba(4, 5, 25, 0.45);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li,
+  .nav-links a {
+    width: 100%;
+  }
+
+  .nav-links a {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .nav-links li:last-child a {
+    margin: 0.4rem 0 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-inner {
+    min-height: 74px;
+    padding: 0.6rem 1rem;
+  }
+
+  .logo {
+    width: min(230px, calc(100vw - 90px));
+  }
+}
+
+/* =========================================================
+   RENATUS HERO PANEL
+   ========================================================= */
+
+.hero-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  max-width: 360px;
+  margin-left: auto;
+  padding: 1.75rem;
+
+  color: #f5f1e8;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(28, 27, 48, 0.94),
+      rgba(8, 9, 27, 0.88)
+    );
+
+  border: 1px solid rgba(230, 188, 122, 0.48);
+  border-radius: 10px;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 22px 50px rgba(3, 4, 20, 0.48);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Gradient accent along the top */
+.hero-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #ff6a00,
+    #d81b60 58%,
+    #38bdf8
+  );
+}
+
+.hero-card-header h2 {
+  margin: 0 0 0.45rem;
+  color: #ffffff;
+  font-size: 1.15rem;
+  font-weight: 750;
+  letter-spacing: 0.055em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.hero-card-header p {
+  margin: 0;
+  color: #d9d9dd;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.hero-card-list {
+  margin: 1.2rem 0 1.4rem;
+  padding: 0;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+}
+
+.hero-card-list li {
+  position: relative;
+  margin-bottom: 0.55rem;
+  padding-left: 1.25rem;
+}
+
+/* Small gold corporate diamonds */
+.hero-card-list li::before {
+  content: "";
+  position: absolute;
+  top: 0.52rem;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: linear-gradient(135deg, #e6bc7a, #ff6a00);
+  box-shadow: 0 0 8px rgba(255, 106, 0, 0.4);
+  transform: rotate(45deg);
+}
+
+/* Card button */
+.hero-card .btn-primary {
+  min-height: 48px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff6a00, #d81b60);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  box-shadow: 0 12px 26px rgba(216, 27, 96, 0.28);
+
+  font-size: 0.84rem;
+  font-weight: 750;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+.hero-card .btn-primary:hover,
+.hero-card .btn-primary:focus-visible {
+  background: linear-gradient(135deg, #ff812e, #ed2c79);
+  box-shadow: 0 15px 32px rgba(216, 27, 96, 0.38);
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   RENATUS HERO TYPOGRAPHY
+   ========================================================= */
+
+.hero-text {
+  max-width: 720px;
+}
+
+/* Small corporate identification line */
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  margin: 0 0 1.25rem !important;
+
+  color: #e6bc7a !important;
+  font-size: 0.72rem !important;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-shadow: none !important;
+}
+
+.hero-kicker::before {
+  content: "";
+  flex: 0 0 38px;
+  width: 38px;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    #ff6a00,
+    #d81b60
+  );
+}
+
+/* Main corporate statement */
+.hero-text h1 {
+  max-width: 720px;
+  margin: 0 0 1.4rem;
+
+  color: #ffffff;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: clamp(2.8rem, 4.3vw, 4.35rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  text-transform: uppercase;
+
+  text-shadow: 0 8px 28px rgba(2, 3, 20, 0.55);
+}
+
+/* Warm accent without competing with the chrome logo */
+.hero-title-accent {
+  display: block;
+  margin-top: 0.15em;
+  color: #e6bc7a;
+}
+
+/* Shorter supporting copy */
+.hero-text .hero-lead {
+  max-width: 650px;
+  margin: 0 0 1.6rem;
+
+  color: #d9d9dd;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  text-shadow: 0 3px 16px rgba(2, 3, 20, 0.72);
+}
+
+/* More corporate, less app-style */
+.hero .hero-actions {
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.hero .hero-actions .btn {
+  min-height: 48px;
+  padding-inline: 1.4rem;
+
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero .hero-actions .btn-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #ff6a00, #d81b60);
+  border-color: transparent;
+  box-shadow: 0 12px 28px rgba(216, 27, 96, 0.28);
+}
+
+.hero .hero-actions .btn-primary:hover {
+  background: linear-gradient(135deg, #ff812e, #ed2c79);
+  transform: translateY(-1px);
+}
+
+.hero .hero-actions .btn-outline {
+  color: #f5f1e8;
+  background: rgba(10, 12, 32, 0.78);
+  border-color: rgba(230, 188, 122, 0.55);
+}
+
+.hero .hero-actions .btn-outline:hover {
+  color: #ffffff;
+  background: rgba(35, 30, 58, 0.96);
+  border-color: #e6bc7a;
+}
+
+/* Replace the white checkmark pills */
+.hero-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.4rem;
+  margin-top: 0.25rem;
+}
+
+.hero-capabilities span {
+  position: relative;
+  padding-left: 0.9rem;
+
+  color: #d9d9dd;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.085em;
+  text-transform: uppercase;
+}
+
+.hero-capabilities span::before {
+  content: "";
+  position: absolute;
+  top: 0.38rem;
+  left: 0;
+
+  width: 6px;
+  height: 6px;
+
+  background: linear-gradient(135deg, #e6bc7a, #ff6a00);
+  transform: rotate(45deg);
+  box-shadow: 0 0 7px rgba(255, 106, 0, 0.35);
+}
+
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: clamp(2.35rem, 12vw, 3.2rem);
+  }
+
+  .hero-kicker {
+    font-size: 0.65rem !important;
+  }
+
+  .hero-capabilities {
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+}
