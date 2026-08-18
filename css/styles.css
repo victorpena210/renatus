@@ -159,7 +159,7 @@ main p a:not(.btn):focus-visible {
       rgba(9, 6, 37, 0.67) 52%,
       rgba(8, 5, 32, 0.38) 100%
     ),
-    url("../images/heroes/San_Antonio_Synthwave_Skyline.png");
+    url("../images/heroes/San_Antonio_Synthwave_Skyline.webp");
 
   background-size: cover;
   background-position: center 62%;
