@@ -1,0 +1,223 @@
+/* Renatus Products hub */
+
+.products-hero {
+  padding: 5rem 0 4.25rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.products-hero-inner {
+  max-width: 760px;
+  text-align: center;
+}
+
+.products-hero h1 {
+  margin: 0.35rem 0 1rem;
+  font-size: clamp(2.35rem, 5vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.products-hero p:not(.about-label) {
+  margin: 0 auto;
+  max-width: 690px;
+  color: #4b5563;
+  font-size: 1.05rem;
+}
+
+.products-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+  padding: 1.4rem;
+  background-color: #ffffff;
+  border: 1px solid #dbe4f0;
+  border-radius: 1.4rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+.products-preview {
+  padding: 1.2rem;
+  border-radius: 1.1rem;
+  background: #0f172a;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.products-preview-top,
+.products-preview-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.products-preview-top {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.products-preview-top > div,
+.products-preview-row > div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.products-preview-label,
+.products-preview-row span,
+.products-preview-stats span {
+  color: #94a3b8;
+  font-size: 0.76rem;
+}
+
+.products-preview-label {
+  color: #60a5fa;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.products-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.12);
+  color: #bbf7d0;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.products-live span {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: #22c55e;
+}
+
+.products-preview-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+  margin: 1rem 0;
+}
+
+.products-preview-stats > div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.8rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.products-preview-stats strong {
+  font-size: 0.95rem;
+}
+
+.products-preview-row {
+  margin-top: 0.55rem;
+  padding: 0.75rem 0.8rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.products-preview-row > span {
+  color: #bfdbfe;
+  font-weight: 600;
+}
+
+.products-featured-copy h3 {
+  margin: 0.9rem 0 0.75rem;
+  font-size: clamp(1.7rem, 3vw, 2.35rem);
+  line-height: 1.15;
+}
+
+.products-featured-copy > p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.products-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+}
+
+.products-values {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.products-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 0;
+}
+
+.products-cta h2 {
+  margin: 0.35rem 0 0.4rem;
+}
+
+.products-cta p:not(.about-label) {
+  margin: 0;
+  color: #4b5563;
+}
+
+.products-featured + .products-featured {
+  margin-top: 2rem;
+}
+
+.products-image-preview {
+  overflow: hidden;
+  border: 1px solid #dbe4f0;
+  border-radius: 1.1rem;
+  background-color: #ffffff;
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+.products-image-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.products-cta .products-actions {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+.products-page .products-hero {
+  color: var(--renatus-white);
+  background:
+    radial-gradient(circle at 80% 10%, rgba(216, 27, 96, 0.13), transparent 32%),
+    linear-gradient(145deg, #111229, #070819);
+  border-bottom: 1px solid var(--renatus-border);
+}
+
+.products-page .products-hero h1 {
+  color: var(--renatus-white);
+  text-transform: uppercase;
+}
+
+.products-page .products-hero p:not(.about-label),
+.products-page .products-featured-copy > p,
+.products-page .products-cta p:not(.about-label) {
+  color: var(--renatus-muted);
+}
+
+.products-page .products-featured,
+.products-page .products-image-preview {
+  color: var(--renatus-white);
+  background: linear-gradient(145deg, var(--renatus-panel), var(--renatus-panel-deep));
+  border-color: var(--renatus-border);
+  border-radius: 10px;
+}
+
+.products-page .products-featured-copy h3,
+.products-page .products-cta h2 {
+  color: var(--renatus-white);
+}

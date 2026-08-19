@@ -1,0 +1,431 @@
+/* Renatus shared foundation: reset, layout, cards, pricing, forms, buttons, and shared theme */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #111827;
+  background-color: #f9fafb;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main p a:not(.btn) {
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+main p a:not(.btn):hover,
+main p a:not(.btn):focus-visible {
+  color: #1d4ed8;
+}
+
+.card h3 a:hover,
+.card h3 a:focus-visible {
+  color: #2563eb;
+}
+
+.container {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-muted {
+  background-color: #f3f4f6;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #6b7280;
+  margin: 0 0 2.5rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.price {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.price-term {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin: 0;
+  color: #4b5563;
+}
+
+.card-highlight {
+  border-color: #1d4ed8;
+}
+
+.services-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+.pricing-tagline {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+}
+
+.pricing-amount {
+  margin-bottom: 0.75rem;
+}
+
+.pricing-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.pricing-list li {
+  margin-bottom: 0.35rem;
+}
+
+.section-kicker {
+  margin: 0 0 0.45rem;
+  text-align: center;
+  color: #1d4ed8;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 0.9rem;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+  color: #111827;
+}
+
+input,
+textarea {
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #bfdbfe;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-status {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #10b981;
+}
+
+.form-status.error {
+  color: #dc2626;
+}
+
+.small {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #1f2937;
+  border-color: #d1d5db;
+}
+
+.btn-outline:hover {
+  background-color: #e5e7eb;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+:root {
+  --renatus-bg: #070819;
+  --renatus-section: #0c0d21;
+  --renatus-section-alt: #121329;
+  --renatus-panel: #17172d;
+  --renatus-panel-deep: #0d0e22;
+  --renatus-white: #f7f5f0;
+  --renatus-muted: #b9b8c6;
+  --renatus-gold: #e6bc7a;
+  --renatus-orange: #ff6a00;
+  --renatus-pink: #d81b60;
+  --renatus-cyan: #38bdf8;
+  --renatus-border: rgba(230, 188, 122, 0.28);
+}
+
+body {
+  color: var(--renatus-white);
+  background-color: var(--renatus-bg);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+}
+
+body:not(.routepulse-page) main {
+  background-color: var(--renatus-bg);
+}
+
+body:not(.routepulse-page) .section {
+  position: relative;
+  padding: 5.5rem 0;
+  color: var(--renatus-white);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(216, 27, 96, 0.07), transparent 30%),
+    var(--renatus-section);
+  border-top: 1px solid rgba(230, 188, 122, 0.1);
+}
+
+body:not(.routepulse-page) .section-muted {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.06), transparent 30%),
+    var(--renatus-section-alt);
+}
+
+body:not(.routepulse-page) .section-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 0 0.65rem;
+  color: var(--renatus-gold);
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+body:not(.routepulse-page) .section-kicker::before {
+  content: "";
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--renatus-orange), var(--renatus-pink));
+}
+
+body:not(.routepulse-page) .section-title {
+  color: var(--renatus-white);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+body:not(.routepulse-page) .section-subtitle {
+  color: var(--renatus-muted);
+  line-height: 1.7;
+}
+
+body:not(.routepulse-page) .card {
+  position: relative;
+  overflow: hidden;
+  color: var(--renatus-white);
+  background: linear-gradient(145deg, rgba(28, 27, 48, 0.97), rgba(9, 10, 29, 0.97));
+  border: 1px solid var(--renatus-border);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 18px 40px rgba(2, 3, 18, 0.32);
+}
+
+body:not(.routepulse-page) .card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--renatus-orange),
+    var(--renatus-pink),
+    var(--renatus-cyan)
+  );
+  opacity: 0.8;
+}
+
+body:not(.routepulse-page) .card h3 {
+  color: var(--renatus-white);
+  font-weight: 750;
+}
+
+body:not(.routepulse-page) .card h3 a:hover,
+body:not(.routepulse-page) .card h3 a:focus-visible {
+  color: var(--renatus-gold);
+}
+
+body:not(.routepulse-page) .card p,
+body:not(.routepulse-page) .pricing-tagline,
+body:not(.routepulse-page) .pricing-list,
+body:not(.routepulse-page) .price-term,
+body:not(.routepulse-page) .small {
+  color: var(--renatus-muted);
+}
+
+body:not(.routepulse-page) .card-highlight {
+  border-color: rgba(230, 188, 122, 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 20px 45px rgba(216, 27, 96, 0.15);
+}
+
+body:not(.routepulse-page) .price {
+  color: var(--renatus-gold);
+}
+
+body:not(.routepulse-page) .btn {
+  min-height: 48px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: 750;
+  letter-spacing: 0.065em;
+  text-transform: uppercase;
+}
+
+body:not(.routepulse-page) .btn-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--renatus-orange), var(--renatus-pink));
+  border-color: transparent;
+  box-shadow: 0 12px 28px rgba(216, 27, 96, 0.25);
+}
+
+body:not(.routepulse-page) .btn-primary:hover,
+body:not(.routepulse-page) .btn-primary:focus-visible {
+  background: linear-gradient(135deg, #ff812e, #ed2c79);
+  transform: translateY(-1px);
+}
+
+body:not(.routepulse-page) .btn-outline {
+  color: var(--renatus-white);
+  background: rgba(10, 12, 32, 0.72);
+  border-color: rgba(230, 188, 122, 0.55);
+}
+
+body:not(.routepulse-page) .btn-outline:hover,
+body:not(.routepulse-page) .btn-outline:focus-visible {
+  color: #ffffff;
+  background: rgba(35, 30, 58, 0.96);
+  border-color: var(--renatus-gold);
+}
+
+body:not(.routepulse-page) main p a:not(.btn),
+body:not(.routepulse-page) .text-link {
+  color: var(--renatus-gold);
+  text-decoration-color: rgba(230, 188, 122, 0.55);
+}
+
+body:not(.routepulse-page) input,
+body:not(.routepulse-page) textarea,
+body:not(.routepulse-page) select {
+  width: 100%;
+  color: var(--renatus-white);
+  background: rgba(6, 7, 24, 0.8);
+  border: 1px solid rgba(230, 188, 122, 0.32);
+  border-radius: 5px;
+  padding: 0.7rem 0.75rem;
+  font: inherit;
+}
+
+body:not(.routepulse-page) input:focus,
+body:not(.routepulse-page) textarea:focus,
+body:not(.routepulse-page) select:focus {
+  border-color: var(--renatus-gold);
+  box-shadow: 0 0 0 3px rgba(230, 188, 122, 0.1);
+  outline: none;
+}

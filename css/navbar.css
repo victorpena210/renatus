@@ -1,0 +1,212 @@
+/* Renatus site header and navigation */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: #ffffffcc;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+}
+
+.logo {
+  display: block;
+  flex-shrink: 0;
+  width: 250px;
+  height: 65px;
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.nav {
+  position: relative;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  color: #4b5563;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-links a:hover {
+  background-color: #e5e7eb;
+  color: #111827;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.header-inner {
+  max-width: 1280px;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.nav-links {
+  gap: 0.35rem;
+}
+
+.nav-links a {
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+.nav-links a[aria-current="page"] {
+  background-color: #e5f0ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(24, 24, 38, 0.98) 0%,
+      rgba(8, 9, 24, 0.98) 100%
+    );
+  border-bottom: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 10px 30px rgba(4, 5, 25, 0.3);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.site-header::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #ff6a00 20%,
+    #d81b60 55%,
+    #38bdf8 82%,
+    transparent 100%
+  );
+  opacity: 0.85;
+}
+
+.header-inner {
+  max-width: 1440px;
+  min-height: 86px;
+  padding: 0.7rem 1.5rem;
+  gap: 2rem;
+}
+
+.logo {
+  display: block;
+  flex: 0 0 auto;
+  width: 310px;
+  height: auto;
+  overflow: visible;
+}
+
+.logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.nav-links {
+  gap: 0.15rem;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.55rem 0.62rem;
+  color: #d9d9dd;
+  background: transparent;
+  border-radius: 4px;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #ffffff;
+  background-color: rgba(230, 188, 122, 0.1);
+}
+
+.nav-links a[aria-current="page"] {
+  color: #e6bc7a;
+  background-color: rgba(255, 106, 0, 0.08);
+  box-shadow: inset 0 -2px 0 #ff6a00;
+}
+
+.nav-links li:last-child a {
+  margin-left: 0.35rem;
+  padding-inline: 0.9rem;
+  color: #ffffff;
+  border: 1px solid rgba(230, 188, 122, 0.75);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+}
+
+.nav-links li:last-child a:hover,
+.nav-links li:last-child a:focus-visible {
+  color: #ffffff;
+  border-color: transparent;
+  background: linear-gradient(135deg, #ff6a00, #d81b60);
+}
+
+.nav-toggle {
+  color: #f5f1e8;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(230, 188, 122, 0.45);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.05);
+}

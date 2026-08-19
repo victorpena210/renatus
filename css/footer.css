@@ -1,0 +1,55 @@
+/* Renatus site footer */
+
+.site-footer {
+  padding: 1.75rem 0;
+  background-color: #111827;
+  color: #9ca3af;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-inner p {
+  margin: 0.15rem 0;
+}
+
+.site-footer {
+  position: relative;
+  color: var(--renatus-muted);
+  background: linear-gradient(180deg, #111225, #070819);
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--renatus-orange),
+    var(--renatus-pink),
+    var(--renatus-cyan),
+    transparent
+  );
+}
+
+.footer-links {
+  margin-top: 0.75rem !important;
+}
+
+.footer-links a {
+  color: var(--renatus-gold);
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  color: #ffffff;
+}
