@@ -521,13 +521,16 @@
         </p>
       </div>
 
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        class="contact-form"
-      >
+    <form
+      id="contact-form"
+      name="contact"
+      action="/thank-you.html"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      data-ga-lead-form="contact"
+      class="contact-form"
+    >
         <input type="hidden" name="form-name" value="contact">
 
         <p hidden>
@@ -615,7 +618,8 @@
 ></footer>
 
 <script src="/js/components.js"></script>
-<script src="/js/script.js"></script>
+<script src="/js/site.js"></script>
+<script src="/js/analytics.js"></script>
 
 </body>
 </html>

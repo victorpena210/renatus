@@ -1,4 +1,4 @@
-// Smooth scrolling for links to sections
+// Smooth scrolling for same-page section links
 document.addEventListener("click", (event) => {
   const anchor = event.target.closest('a[href^="#"]');
 
