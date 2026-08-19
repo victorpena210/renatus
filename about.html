@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,19 +13,41 @@
   >
 
   <link rel="canonical" href="https://renatus.technology/about">
-  <link rel="icon" href="/images/logos/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="48x48" href="/images/logos/favicon-48x48.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon-32x32.png">
-<link rel="apple-touch-icon" href="/images/logos/apple-touch-icon.png">
 
+  <!-- Favicons -->
+  <link rel="icon" href="/images/logos/favicon.ico" sizes="any">
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="48x48"
+    href="/images/logos/favicon-48x48.png"
+  >
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/images/logos/favicon-32x32.png"
+  >
+  <link
+    rel="apple-touch-icon"
+    href="/images/logos/apple-touch-icon.png"
+  >
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Renatus">
-  <meta property="og:title" content="About Victor Peña | Renatus">
+  <meta
+    property="og:title"
+    content="About Victor Peña | Renatus"
+  >
   <meta
     property="og:description"
     content="Meet the San Antonio web developer behind Renatus and learn how Victor builds and supports custom websites for small businesses."
   >
-  <meta property="og:url" content="https://renatus.technology/about">
+  <meta
+    property="og:url"
+    content="https://renatus.technology/about"
+  >
   <meta
     property="og:image"
     content="https://renatus.technology/images/renatus-technology-og.jpg"
@@ -36,8 +59,12 @@
     content="Renatus — small business website design in San Antonio"
   >
 
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About Victor Peña | Renatus">
+  <meta
+    name="twitter:title"
+    content="About Victor Peña | Renatus"
+  >
   <meta
     name="twitter:description"
     content="Meet Victor Peña, the San Antonio web developer behind Renatus."
@@ -51,6 +78,7 @@
     content="Renatus — small business website design in San Antonio"
   >
 
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -78,7 +106,8 @@
         "name": "Victor Peña",
         "jobTitle": "Owner and Web Developer",
         "url": "https://renatus.technology/about",
-        "image": "https://renatus.technology/images/victor-pena-headshot.webp",        "worksFor": {
+        "image": "https://renatus.technology/images/victor-pena-headshot.webp",
+        "worksFor": {
           "@id": "https://renatus.technology/#organization"
         },
         "homeLocation": {
@@ -103,226 +132,246 @@
   }
   </script>
 
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="/css/site.css">
 </head>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEEZLWF1YV"></script>
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-SEEZLWF1YV"
+></script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-SEEZLWF1YV');
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  gtag("js", new Date());
+  gtag("config", "G-SEEZLWF1YV");
 </script>
 
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="/" aria-label="Renatus Technology homepage">
-      <img class="logo-image" src="images/logos/renatus-horizontal-transparent.png" alt="Renatus Technology">
-      
-    </a>
 
-    <nav class="nav" aria-label="Main navigation">
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
-      >
-        ☰
-      </button>
+  <!-- Shared navigation -->
+  <div id="site-header"></div>
 
-    <ul class="nav-links" id="primary-navigation">
-      <li><a href="/">Home</a></li>
-      <li><a href="/web-design-san-antonio">Web Design</a></li>
-      <li><a href="/seo-aeo-keyword-research">SEO &amp; AEO</a></li>
-      <li><a href="/#portfolio">Portfolio</a></li>
-        <li><a href="/products">Products</a></li>
-      <li><a href="/pricing">Pricing</a></li>
-      <li><a href="/wordpress-vs-static-websites">Why Static</a></li>
-      <li><a href="/website-technology-transparency">Transparency</a></li>
-      <li><a href="/about" aria-current="page">About</a></li>
-      <li><a href="/#contact">Contact</a></li>
-    </ul>
-    </nav>
-  </div>
-</header>
+  <main>
 
-<main>
-  <section class="section about-section">
-    <div class="container about-inner">
-      <div class="about-photo-wrapper">
-        <img
-          src="images/victor-pena-headshot.webp"
-          alt="Victor Peña, owner and software developer at Renatus"
-          class="about-photo"
-          width="800"
-          height="1200"
-          fetchpriority="high"
-          decoding="async"
-        >
+    <!-- About Hero -->
+    <section class="section about-section">
+      <div class="container about-inner">
+
+        <div class="about-photo-wrapper">
+          <img
+            src="/images/victor-pena-headshot.webp"
+            alt="Victor Peña, owner and software developer at Renatus"
+            class="about-photo"
+            width="800"
+            height="1200"
+            fetchpriority="high"
+            decoding="async"
+          >
+        </div>
+
+        <div class="about-content">
+          <p class="about-label">
+            About Renatus
+          </p>
+
+          <h1>
+            Hi, I’m Victor Peña. I build technology around real problems.
+          </h1>
+
+          <p>
+            Renatus is a San Antonio technology studio that I own and operate.
+            I build
+            <a href="/web-design-san-antonio">
+              custom websites
+            </a>,
+            business software, portals, dashboards, workflow systems, and
+            subscription-based digital products.
+          </p>
+
+          <p>
+            Web design is one part of Renatus, but it is not the limit of the
+            company. You can bring me an operational problem, a process that
+            depends too heavily on spreadsheets and manual work, or an idea for
+            a new digital product. I will help define it, design it, build it,
+            and turn it into technology people can actually use.
+          </p>
+
+          <p>
+            I am also developing Renatus subscription products.
+            <a href="/routepulse">
+              RoutePulse
+            </a>
+            is designed around employee transportation operations, workforce
+            schedules, pickup demand, and driver coverage.
+
+            <a href="/products#suiteflow">
+              SuiteFlow
+            </a>
+            is being developed as a branded tenant portal for property owners,
+            managers, and the people they serve.
+          </p>
+
+          <p>
+            Before starting Renatus, I helped maintain WordPress and Joomla
+            websites at an advertising agency. Today, clients work directly
+            with me—from understanding the problem and planning the solution
+            through development, launch, support, and continued improvement.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              href="/#contact"
+              class="btn btn-primary"
+            >
+              Discuss Your Idea
+            </a>
+
+            <a
+              href="/products"
+              class="btn btn-outline"
+            >
+              Explore Renatus Products
+            </a>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <div class="about-content">
-        <p class="about-label">About Renatus</p>
+    <!-- Services -->
+    <section class="section">
+      <div class="container">
 
-        <h1>Hi, I’m Victor Peña. I build technology around real problems.</h1>
+        <h2 class="section-title">
+          What Renatus Builds
+        </h2>
 
-        <p>
-          Renatus is a San Antonio technology studio that I own and operate.
-          I build
-          <a href="/web-design-san-antonio">custom websites</a>,
-          business software, portals, dashboards, workflow systems, and
-          subscription-based digital products.
+        <p class="section-subtitle">
+          The starting point is the outcome you need—not a predetermined
+          platform, template, or package.
         </p>
 
-        <p>
-          Web design is one part of Renatus, but it is not the limit of the
-          company. You can bring me an operational problem, a process that
-          depends too heavily on spreadsheets and manual work, or an idea for
-          a new digital product. I will help define it, design it, build it,
-          and turn it into technology people can actually use.
-        </p>
+        <div class="grid services-grid">
 
-        <p>
-          I am also developing Renatus subscription products.
-          <a href="/routepulse">RoutePulse</a> is designed around employee
-          transportation operations, workforce schedules, pickup demand, and
-          driver coverage.
-          <a href="/products#suiteflow">SuiteFlow</a> is being developed as a
-          branded tenant portal for property owners, managers, and the people
-          they serve.
-        </p>
+          <article class="card">
+            <h3>
+              <a href="/web-design-san-antonio">
+                Custom Websites
+              </a>
+            </h3>
 
-        <p>
-          Before starting Renatus, I helped maintain WordPress and Joomla
-          websites at an advertising agency. Today, clients work directly
-          with me—from understanding the problem and planning the solution
-          through development, launch, support, and continued improvement.
-        </p>
+            <p>
+              Fast, mobile-friendly business websites designed around your
+              services, customers, goals, and brand.
+            </p>
+          </article>
 
-        <div class="hero-actions">
-          <a href="/#contact" class="btn btn-primary">
-            Discuss Your Idea
-          </a>
+          <article class="card">
+            <h3>
+              Custom Business Software
+            </h3>
 
-          <a href="/products" class="btn btn-outline">
-            Explore Renatus Products
-          </a>
+            <p>
+              Internal tools and complete software platforms built around how
+              your organization actually operates.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Portals and Dashboards
+            </h3>
+
+            <p>
+              Employee, customer, manager, or tenant portals that organize
+              information, communication, documents, and important tasks.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Workflow Systems
+            </h3>
+
+            <p>
+              Scheduling, assignments, approvals, reporting, and operational
+              workflows designed to replace repetitive manual processes.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              <a href="/products">
+                Subscription Products
+              </a>
+            </h3>
+
+            <p>
+              Focused Renatus products such as RoutePulse and SuiteFlow that
+              begin with a specific operational problem and grow around a
+              useful core workflow.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Ongoing Technical Support
+            </h3>
+
+            <p>
+              Hosting, maintenance, improvements, integrations, and direct
+              support after a website or software system launches.
+            </p>
+          </article>
+
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">What Renatus Builds</h2>
+    <!-- CTA -->
+    <section class="section section-muted">
+      <div class="container">
 
-      <p class="section-subtitle">
-        The starting point is the outcome you need—not a predetermined
-        platform, template, or package.
-      </p>
+        <h2 class="section-title">
+          Bring Renatus an operational problem or an idea.
+        </h2>
 
-      <div class="grid services-grid">
-        <article class="card">
-          <h3>
-            <a href="/web-design-san-antonio">Custom Websites</a>
-          </h3>
+        <p class="section-subtitle">
+          You do not need to arrive with a finished technical plan. Tell me
+          what needs to be improved, automated, connected, or created. I can
+          help shape the solution and build it from there. Renatus is based in
+          San Antonio and can work with organizations locally or remotely.
+        </p>
 
-          <p>
-            Fast, mobile-friendly business websites designed around your
-            services, customers, goals, and brand.
-          </p>
-        </article>
+        <div style="text-align: center;">
+          <a
+            href="/#contact"
+            class="btn btn-primary"
+          >
+            Start the Conversation
+          </a>
+        </div>
 
-        <article class="card">
-          <h3>Custom Business Software</h3>
-
-          <p>
-            Internal tools and complete software platforms built around how
-            your organization actually operates.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Portals and Dashboards</h3>
-
-          <p>
-            Employee, customer, manager, or tenant portals that organize
-            information, communication, documents, and important tasks.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Workflow Systems</h3>
-
-          <p>
-            Scheduling, assignments, approvals, reporting, and operational
-            workflows designed to replace repetitive manual processes.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>
-            <a href="/products">Subscription Products</a>
-          </h3>
-
-          <p>
-            Focused Renatus products such as RoutePulse and SuiteFlow that
-            begin with a specific operational problem and grow around a
-            useful core workflow.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Ongoing Technical Support</h3>
-
-          <p>
-            Hosting, maintenance, improvements, integrations, and direct
-            support after a website or software system launches.
-          </p>
-        </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section section-muted">
-    <div class="container">
-      <h2 class="section-title">
-        Bring Renatus an operational problem or an idea.
-      </h2>
+  </main>
 
-      <p class="section-subtitle">
-        You do not need to arrive with a finished technical plan. Tell me
-        what needs to be improved, automated, connected, or created. I can
-        help shape the solution and build it from there. Renatus is based in
-        San Antonio and can work with organizations locally or remotely.
-      </p>
+  <!-- Shared footer -->
+  <footer
+    id="site-footer"
+    class="site-footer"
+  ></footer>
 
-      <div style="text-align: center;">
-        <a href="/#contact" class="btn btn-primary">
-          Start the Conversation
-        </a>
-      </div>
-    </div>
-  </section>
-</main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="year">2026</span> Renatus. All rights reserved.</p>
-      <p class="small">
-        Custom websites, business software, and digital products built by Renatus.
-      </p>
-      <p class="footer-links">
-        <a href="https://github.com/victorpena210" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </p>
-    </div>
-  </footer>
-
+  <!-- JavaScript -->
+  <script src="/js/components.js"></script>
   <script src="/js/script.js"></script>
+
 </body>
 </html>

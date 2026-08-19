@@ -118,41 +118,8 @@
 </script>
 
 <body>
-  <!-- Header / Nav -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="logo" href="/" aria-label="Renatus Technology homepage">
-      <img class="logo-image" src="images/logos/renatus-horizontal-transparent.png" alt="Renatus Technology">
-      
-    </a>
-
-    <nav class="nav" aria-label="Main navigation">
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-        aria-controls="primary-navigation"
-      >
-        ☰
-      </button>
-
-      <ul class="nav-links" id="primary-navigation">
-        <li><a href="/" aria-current="page">Home</a></li>
-        <li><a href="/web-design-san-antonio">Web Design</a></li>
-        <li><a href="/seo-aeo-keyword-research">SEO &amp; AEO</a></li>
-        <li><a href="/#portfolio">Portfolio</a></li>
-        <li><a href="/products">Products</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/wordpress-vs-static-websites">Why Static</a></li>
-        <li><a href="/website-technology-transparency">Transparency</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+<!-- Shared navigation -->
+<div id="site-header"></div>
 <main>
 
   <!-- Hero Section -->
@@ -641,29 +608,13 @@
 
 </main>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
+<!-- Shared footer -->
+<footer
+  id="site-footer"
+  class="site-footer"
+></footer>
 
-    <p>
-      © <span id="year">2026</span> Renatus.
-      All rights reserved.
-    </p>
-
-    <p class="small">
-      Custom websites, business software, and digital products built by Renatus.
-    </p>
-
-    <p class="footer-links">
-      <a
-        href="https://github.com/victorpena210"
-        target="_blank"
-        rel="noopener noreferrer"
-      >GitHub</a>
-    </p>
-
-  </div>
-</footer>
-
+<script src="/js/components.js"></script>
 <script src="/js/script.js"></script>
 
 </body>
