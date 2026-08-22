@@ -429,3 +429,7 @@ body:not(.routepulse-page) select:focus {
   box-shadow: 0 0 0 3px rgba(230, 188, 122, 0.1);
   outline: none;
 }
+
+.centered-action {
+  text-align: center;
+}
