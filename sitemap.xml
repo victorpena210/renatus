@@ -27,8 +27,13 @@
   </url>
 
   <url>
-    <loc>https://renatus.technology/about</loc>
-    <lastmod>2026-08-21</lastmod>
+    <loc>https://renatus.technology/pricing</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://renatus.technology/small-business-website-cost-san-antonio</loc>
+    <lastmod>2026-08-23</lastmod>
   </url>
 
   <url>
@@ -38,11 +43,6 @@
 
   <url>
     <loc>https://renatus.technology/website-technology-transparency</loc>
-    <lastmod>2026-08-21</lastmod>
-  </url>
-
-  <url>
-    <loc>https://renatus.technology/pricing</loc>
     <lastmod>2026-08-23</lastmod>
   </url>
 
@@ -53,7 +53,17 @@
 
   <url>
     <loc>https://renatus.technology/routepulse</loc>
+    <lastmod>2026-08-23</lastmod>
+  </url>
+
+  <url>
+    <loc>https://renatus.technology/about</loc>
     <lastmod>2026-08-21</lastmod>
   </url>
+
+    <url>
+      <loc>https://renatus.technology/privacy-policy</loc>
+      <lastmod>2026-08-23</lastmod>
+    </url>
 
 </urlset>
