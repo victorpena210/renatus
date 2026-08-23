@@ -131,7 +131,7 @@ main p a:not(.btn):focus-visible {
 .pricing-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.25rem;
+  margin: 0 1.25rem;
   font-size: 0.9rem;
   color: #4b5563;
 }
@@ -380,14 +380,14 @@ body:not(.routepulse-page) .btn {
 
 body:not(.routepulse-page) .btn-primary {
   color: #ffffff;
-  background: linear-gradient(135deg, var(--renatus-orange), var(--renatus-pink));
+  background: linear-gradient(135deg, #b54708, #d81b60);
   border-color: transparent;
   box-shadow: 0 12px 28px rgba(216, 27, 96, 0.25);
 }
 
 body:not(.routepulse-page) .btn-primary:hover,
 body:not(.routepulse-page) .btn-primary:focus-visible {
-  background: linear-gradient(135deg, #ff812e, #ed2c79);
+  background: linear-gradient(135deg, #9f3f00, #b31550);
   transform: translateY(-1px);
 }
 
