@@ -1,10 +1,6 @@
 <header class="site-header">
   <div class="container header-inner">
-    <a
-      class="logo"
-      href="/"
-      aria-label="Renatus Technology homepage"
-    >
+    <a class="logo" href="/" aria-label="Renatus Technology homepage">
       <img
         class="logo-image"
         src="/images/logos/renatus-horizontal-transparent.png"
@@ -20,70 +16,80 @@
         aria-expanded="false"
         aria-controls="primary-navigation"
       >
-        ☰
+        <span aria-hidden="true">☰</span>
       </button>
 
       <ul class="nav-links" id="primary-navigation">
-        <li><a href="/">Home</a></li>
+        <li class="nav-item-dropdown">
+          <details class="nav-menu">
+            <summary>Services</summary>
 
-        <li>
-          <a href="/web-design-san-antonio">
-            Web Design
-          </a>
+            <ul class="nav-submenu">
+              <li>
+                <a href="/web-design-san-antonio">
+                  Web Design
+                </a>
+              </li>
+
+              <li>
+                <a href="/custom-software-san-antonio">
+                  Custom Software
+                </a>
+              </li>
+
+              <li>
+                <a href="/business-technology-services">
+                  Business Technology
+                </a>
+              </li>
+
+              <li>
+                <a href="/seo-aeo-keyword-research">
+                  SEO &amp; AEO
+                </a>
+              </li>
+            </ul>
+          </details>
         </li>
 
         <li>
-          <a href="/custom-software-san-antonio">
-            Software
-          </a>
+          <a href="/products">Products</a>
         </li>
 
         <li>
-          <a href="/seo-aeo-keyword-research">
-            SEO &amp; AEO
-          </a>
+          <a href="/#portfolio">Portfolio</a>
         </li>
 
         <li>
-          <a href="/#portfolio">
-            Portfolio
-          </a>
+          <a href="/pricing">Pricing</a>
+        </li>
+
+        <li class="nav-item-dropdown">
+          <details class="nav-menu">
+            <summary>Resources</summary>
+
+            <ul class="nav-submenu">
+              <li>
+                <a href="/wordpress-vs-static-websites">
+                  Why Static Websites
+                </a>
+              </li>
+
+              <li>
+                <a href="/website-technology-transparency">
+                  Technology Transparency
+                </a>
+              </li>
+            </ul>
+          </details>
         </li>
 
         <li>
-          <a href="/products">
-            Products
-          </a>
+          <a href="/about">About</a>
         </li>
 
-        <li>
-          <a href="/pricing">
-            Pricing
-          </a>
-        </li>
-
-        <li>
-          <a href="/wordpress-vs-static-websites">
-            Why Static
-          </a>
-        </li>
-
-        <li>
-          <a href="/website-technology-transparency">
-            Transparency
-          </a>
-        </li>
-
-        <li>
-          <a href="/about">
-            About
-          </a>
-        </li>
-
-        <li>
-          <a href="/#contact">
-            Contact
-          </a>
+        <li class="nav-contact">
+          <a href="/#contact">Contact</a>
         </li>
       </ul>
     </nav>

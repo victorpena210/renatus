@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   ]);
 
   initializeMobileNavigation();
+  initializeDropdownNavigation();
   highlightCurrentPage();
   updateCopyrightYear();
 });
@@ -57,6 +58,8 @@ function initializeMobileNavigation() {
       "aria-label",
       "Open navigation"
     );
+
+    closeAllDropdowns();
   }
 
   function openNavigation() {
@@ -101,14 +104,17 @@ function initializeMobileNavigation() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
+    const isOpen =
+      navToggle.getAttribute("aria-expanded") === "true";
+
+    if (event.key === "Escape" && isOpen) {
       closeNavigation();
       navToggle.focus();
     }
   });
 
   const desktopBreakpoint =
-    window.matchMedia("(min-width: 1281px)");
+    window.matchMedia("(min-width: 1101px)");
 
   desktopBreakpoint.addEventListener(
     "change",
@@ -120,25 +126,79 @@ function initializeMobileNavigation() {
   );
 }
 
+function initializeDropdownNavigation() {
+  const navigation = document.querySelector(".nav");
+  const dropdowns = document.querySelectorAll(".nav-menu");
+
+  if (!navigation || !dropdowns.length) {
+    return;
+  }
+
+  dropdowns.forEach((dropdown) => {
+    dropdown.addEventListener("toggle", () => {
+      if (!dropdown.open) {
+        return;
+      }
+
+      dropdowns.forEach((otherDropdown) => {
+        if (otherDropdown !== dropdown) {
+          otherDropdown.removeAttribute("open");
+        }
+      });
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!navigation.contains(event.target)) {
+      closeAllDropdowns();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") {
+      return;
+    }
+
+    const openDropdown =
+      document.querySelector(".nav-menu[open]");
+
+    if (openDropdown) {
+      openDropdown.removeAttribute("open");
+
+      openDropdown
+        .querySelector("summary")
+        ?.focus();
+    }
+  });
+}
+
+function closeAllDropdowns() {
+  document
+    .querySelectorAll(".nav-menu[open]")
+    .forEach((dropdown) => {
+      dropdown.removeAttribute("open");
+    });
+}
+
 function highlightCurrentPage() {
   let currentPath =
     normalizePath(window.location.pathname);
 
-  /*
-   * RoutePulse is part of the Products section,
-   * so highlight Products in the navigation.
-   */
   if (currentPath === "/routepulse") {
     currentPath = "/products";
   }
 
   document
+    .querySelectorAll(".nav-menu")
+    .forEach((dropdown) => {
+      dropdown.classList.remove(
+        "has-current-page"
+      );
+    });
+
+  document
     .querySelectorAll(".nav-links a")
     .forEach((link) => {
-      /*
-       * Portfolio and Contact point to sections
-       * on the homepage, not separate pages.
-       */
       if (link.hash) {
         return;
       }
@@ -155,6 +215,12 @@ function highlightCurrentPage() {
           "aria-current",
           "page"
         );
+
+        link
+          .closest(".nav-menu")
+          ?.classList.add(
+            "has-current-page"
+          );
       } else {
         link.removeAttribute(
           "aria-current"
