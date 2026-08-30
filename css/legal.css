@@ -1,0 +1,74 @@
+/* Renatus legal and policy pages */
+
+.legal-container {
+  max-width: 900px;
+}
+
+.legal-updated {
+  margin: 0 auto 2rem;
+  color: var(--renatus-muted);
+  text-align: center;
+}
+
+.legal-content {
+  padding: clamp(1.5rem, 4vw, 3rem);
+}
+
+.legal-content h2 {
+  margin: 2.25rem 0 0.75rem;
+  color: var(--renatus-gold);
+  font-size: 1.4rem;
+  line-height: 1.25;
+}
+
+.legal-content h2:first-of-type {
+  margin-top: 0;
+}
+
+.legal-content p,
+.legal-content li {
+  color: var(--renatus-muted);
+  line-height: 1.75;
+}
+
+.legal-content p {
+  margin: 0.75rem 0;
+}
+
+.legal-content ul {
+  margin: 0.75rem 0 1.25rem;
+  padding-left: 1.35rem;
+}
+
+.legal-content li {
+  margin-bottom: 0.55rem;
+}
+
+.legal-content a {
+  color: var(--renatus-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-content a:hover,
+.legal-content a:focus-visible {
+  color: #ffffff;
+}
+
+.privacy-note {
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--renatus-cyan);
+  border-radius: 5px;
+  background: rgba(56, 189, 248, 0.06);
+}
+
+.privacy-note p {
+  margin: 0;
+}
+
+.legal-contact {
+  color: var(--renatus-muted);
+  font-style: normal;
+  line-height: 1.8;
+}

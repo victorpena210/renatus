@@ -197,6 +197,23 @@ textarea {
   color: #6b7280;
 }
 
+/* Small spacing utilities used across individual page components */
+.u-mt-sm {
+  margin-top: 0.75rem;
+}
+
+.u-mt-md {
+  margin-top: 1rem;
+}
+
+.u-mt-lg {
+  margin-top: 2rem;
+}
+
+.u-mb-0 {
+  margin-bottom: 0;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

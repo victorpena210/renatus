@@ -127,6 +127,10 @@
   padding: 1.5rem 1.5rem 1.75rem;
 }
 
+.form-privacy-note {
+  margin-top: 0.85rem;
+}
+
 .coming-projects {
   display: grid;
   gap: 1.75rem;
@@ -235,6 +239,10 @@
 
 .routepulse-preview-row strong {
   color: #fcd34d;
+}
+
+.routepulse-preview-row .status-running {
+  color: #86efac;
 }
 
 body:not(.routepulse-page) .portfolio-item {
