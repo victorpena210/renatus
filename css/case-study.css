@@ -109,6 +109,7 @@
 
 .case-study-hero h1 span {
   display: block;
+  width: max-content;
   margin-top: 0.4rem;
   background:
     linear-gradient(
