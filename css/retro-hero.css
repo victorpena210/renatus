@@ -1,9 +1,8 @@
 /*
  * Renatus homepage retro-computer hero
  *
- * This file intentionally scopes everything to .hero-retro
- * so the shared hero system used by other Renatus pages
- * remains unchanged.
+ * Scoped to .hero-retro so the rest of the
+ * Renatus website remains unchanged.
  */
 
 
@@ -47,6 +46,7 @@
   content: "";
 
   position: absolute;
+
   right: 0;
   bottom: 0;
   left: 0;
@@ -76,7 +76,7 @@
 
   grid-template-columns:
     minmax(0, 0.92fr)
-    minmax(600px, 1.18fr);
+    minmax(560px, 1.18fr);
 
   align-items: center;
 
@@ -223,6 +223,7 @@
     7px
     24px
     rgba(2, 3, 20, 0.62),
+
     0
     0
     18px
@@ -333,8 +334,7 @@
       #ec246d
     );
 
-  transform:
-    translateY(-1px);
+  transform: translateY(-1px);
 }
 
 
@@ -443,8 +443,7 @@
       #ff6a00
     );
 
-  transform:
-    rotate(45deg);
+  transform: rotate(45deg);
 
   box-shadow:
     0
@@ -464,30 +463,30 @@
 
   width:
     min(
-      940px,
-      68vw
+      860px,
+      62vw
     );
 
   max-width: none;
 
   margin-right:
     clamp(
-      -9.5rem,
-      -8vw,
-      -4rem
+      -7rem,
+      -6vw,
+      -3rem
     );
 
   margin-left:
     clamp(
-      -5rem,
-      -3vw,
-      -1rem
+      -3.5rem,
+      -2vw,
+      -0.5rem
     );
 
   justify-self: end;
 
   transform:
-    translateY(1.5rem);
+    translateY(1rem);
 
   filter:
     drop-shadow(
@@ -517,11 +516,6 @@
 /* =========================================================
    CRT SCREEN
    ========================================================= */
-
-/*
- * These percentages line the HTML screen up with
- * the monitor in retro-computer.png.
- */
 
 .hero-retro .retro-screen {
   position: absolute;
@@ -665,8 +659,7 @@
 
   align-items: center;
 
-  justify-content:
-    space-between;
+  justify-content: space-between;
 
   gap: 1rem;
 
@@ -806,14 +799,12 @@
 
   list-style: none;
 
-  counter-reset:
-    retro-menu;
+  counter-reset: retro-menu;
 }
 
 
 .hero-retro .retro-screen-menu li {
-  counter-increment:
-    retro-menu;
+  counter-increment: retro-menu;
 
   min-width: 0;
 }
@@ -883,11 +874,6 @@
   text-align: right;
 }
 
-
-/*
- * First row starts highlighted just like
- * the reference image.
- */
 
 .hero-retro .retro-screen-menu li.is-active a,
 .hero-retro .retro-screen-menu a:hover,
@@ -1057,18 +1043,18 @@
   .hero-retro .hero-inner {
     grid-template-columns:
       minmax(0, 0.92fr)
-      minmax(520px, 1.08fr);
+      minmax(500px, 1.08fr);
   }
 
 
   .hero-retro .hero-computer {
     width:
       min(
-        820px,
-        66vw
+        760px,
+        60vw
       );
 
-    margin-right: -6rem;
+    margin-right: -4rem;
   }
 
 }
@@ -1116,14 +1102,14 @@
   .hero-retro .hero-computer {
     width:
       min(
-        820px,
-        108vw
+        720px,
+        94vw
       );
 
     margin:
-      -0.5rem
+      0
       auto
-      -1.2rem;
+      -0.8rem;
 
     justify-self: center;
 
@@ -1195,25 +1181,47 @@
   }
 
 
-  /*
-   * Let the computer bleed outside the mobile
-   * viewport slightly so the screen remains
-   * large enough to read.
-   */
-
   .hero-retro .hero-computer {
-    width: 122vw;
+    width: 108vw;
 
     margin-top: 0.4rem;
 
-    margin-left: -11vw;
-    margin-right: -11vw;
+    margin-left: -4vw;
+    margin-right: -4vw;
   }
 
 
   .hero-retro .retro-screen-menu a {
     grid-template-columns:
       1.25rem
+      minmax(0, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+  .hero-retro .hero-computer {
+    width: 106vw;
+
+    margin-left: -3vw;
+    margin-right: -3vw;
+  }
+
+
+  .hero-retro .retro-screen-topbar {
+    gap: 0.3rem;
+  }
+
+
+  .hero-retro .retro-screen-menu a {
+    grid-template-columns:
+      1.1rem
       minmax(0, 1fr);
   }
 
