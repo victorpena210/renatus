@@ -8,4 +8,13 @@
 @import url("./routepulse.css");
 @import url("./case-study.css");
 @import url("./footer.css");
+
+/*
+ * Homepage-only retro computer hero.
+ *
+ * Kept separate from hero.css because hero.css is shared
+ * by other pages across the Renatus website.
+ */
+@import url("./retro-hero.css");
+
 @import url("./responsive.css");
