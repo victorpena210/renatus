@@ -1,3 +1,12 @@
 {
-  "testimonials": []
+  "testimonials": [
+    {
+      "name": "Hugh Howerton",
+      "company": "Tex Mediator PLLC",
+      "project": "Website design, calendaring, and Stripe payments",
+      "rating": 5,
+      "testimonial": "Victor did an excellent job designing my company’s website, integrating a complex calendar system that takes away from me having to do it manually and setting up an integrated credit card payment system. I could not be more pleased. I would highly recommend him",
+      "approved": true
+    }
+  ]
 }

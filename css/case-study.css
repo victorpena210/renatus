@@ -546,6 +546,83 @@
   transform: rotate(45deg);
 }
 
+.case-study-testimonial {
+  position: relative;
+  max-width: 920px;
+  margin: 2rem auto 0;
+  padding: 2rem 2.2rem;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(230, 188, 122, 0.09),
+      rgba(8, 9, 27, 0.94)
+    );
+  border: 1px solid rgba(230, 188, 122, 0.32);
+  border-radius: 10px;
+  box-shadow: 0 20px 48px rgba(2, 3, 18, 0.24);
+}
+
+.case-study-testimonial::before {
+  content: "“";
+  position: absolute;
+  top: -0.45rem;
+  right: 1.2rem;
+  color: rgba(230, 188, 122, 0.12);
+  font-family: Georgia, serif;
+  font-size: 8rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.case-study-testimonial-label {
+  margin: 0 0 0.65rem;
+  color: var(--renatus-gold);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.case-study-testimonial-stars {
+  margin-bottom: 1rem;
+  color: var(--renatus-gold);
+  font-size: 1rem;
+  letter-spacing: 0.18em;
+}
+
+.case-study-testimonial blockquote {
+  margin: 0;
+}
+
+.case-study-testimonial blockquote > p {
+  max-width: 780px;
+  margin: 0;
+  color: var(--renatus-white);
+  font-size: clamp(1.15rem, 2.1vw, 1.45rem);
+  line-height: 1.65;
+}
+
+.case-study-testimonial footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.75rem;
+  align-items: center;
+  margin-top: 1.35rem;
+  color: var(--renatus-muted);
+  font-size: 0.88rem;
+}
+
+.case-study-testimonial footer strong {
+  color: var(--renatus-white);
+}
+
+.case-study-testimonial footer span:not(:last-child)::after {
+  content: "·";
+  margin-left: 0.75rem;
+  color: rgba(230, 188, 122, 0.65);
+}
+
 .case-study-tags {
   display: flex;
   flex-wrap: wrap;
@@ -626,5 +703,18 @@
   .case-study-outcome {
     gap: 2rem;
     padding: 1.5rem;
+  }
+
+  .case-study-testimonial {
+    padding: 1.5rem;
+  }
+
+  .case-study-testimonial footer {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .case-study-testimonial footer span:not(:last-child)::after {
+    content: none;
   }
 }
