@@ -7,6 +7,30 @@
     return;
   }
 
+
+  function setupReferralField() {
+    const select = document.querySelector("#testimonial-referral");
+    const otherWrap = document.querySelector("#testimonial-referral-other-wrap");
+    const otherInput = document.querySelector("#testimonial-referral-other");
+
+    if (!select || !otherWrap || !otherInput) {
+      return;
+    }
+
+    function syncOtherField() {
+      const showOther = select.value === "Other";
+      otherWrap.hidden = !showOther;
+      otherInput.disabled = !showOther;
+
+      if (!showOther) {
+        otherInput.value = "";
+      }
+    }
+
+    select.addEventListener("change", syncOtherField);
+    syncOtherField();
+  }
+
   function createStars(rating) {
     const stars = document.createElement("div");
     stars.className = "testimonial-stars";
@@ -97,5 +121,6 @@
     }
   }
 
+  setupReferralField();
   loadTestimonials();
 })();

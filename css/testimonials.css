@@ -104,6 +104,21 @@
   margin-top: 0;
 }
 
+
+.field-optional {
+  color: var(--renatus-muted);
+  font-size: 0.78em;
+  font-weight: 400;
+}
+
+.testimonial-referral-other[hidden] {
+  display: none;
+}
+
+.testimonial-referral-other label {
+  margin-top: 1rem;
+}
+
 .testimonial-consent {
   display: grid;
   grid-template-columns: auto 1fr;

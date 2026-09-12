@@ -90,6 +90,23 @@
             <option value="1">1 — Poor</option>
           </select>
 
+          <label for="testimonial-referral">How did you first hear about Renatus? <span class="field-optional">Optional</span></label>
+          <select id="testimonial-referral" name="how_did_you_hear_about_renatus">
+            <option value="">Select an option</option>
+            <option value="Google">Google</option>
+            <option value="Referral / word of mouth">Referral / word of mouth</option>
+            <option value="LinkedIn">LinkedIn</option>
+            <option value="Upwork">Upwork</option>
+            <option value="Contra">Contra</option>
+            <option value="Saw a Renatus project">Saw a Renatus project</option>
+            <option value="Other">Other</option>
+          </select>
+
+          <div id="testimonial-referral-other-wrap" class="testimonial-referral-other" hidden>
+            <label for="testimonial-referral-other">Please tell us where</label>
+            <input id="testimonial-referral-other" name="how_did_you_hear_about_renatus_other" type="text" maxlength="160">
+          </div>
+
           <label for="testimonial-text">Your testimonial</label>
           <textarea id="testimonial-text" name="testimonial" rows="7" maxlength="1800" required></textarea>
 
