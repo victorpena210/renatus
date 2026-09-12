@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Testimonials | Renatus</title>
+  <meta name="description" content="Read client feedback about Renatus website, software, automation, and business technology projects, or submit a testimonial for review.">
+  <link rel="canonical" href="https://renatus.technology/testimonials">
+  <meta property="og:title" content="Client Testimonials | Renatus">
+  <meta property="og:description" content="Client feedback about Renatus websites, software, automation, and business technology projects.">
+  <meta property="og:url" content="https://renatus.technology/testimonials">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://renatus.technology/images/renatus-technology-og.jpg">
+  <link rel="stylesheet" href="/css/site.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEEZLWF1YV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SEEZLWF1YV');
+  </script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="section" aria-labelledby="testimonials-title">
+      <div class="container">
+        <p class="section-kicker">Client Feedback</p>
+        <h1 id="testimonials-title" class="section-title">Testimonials</h1>
+        <p class="testimonial-page-intro">
+          Feedback from businesses and professionals who have worked with Renatus on websites,
+          software, automation, and business technology projects.
+        </p>
+
+        <div class="testimonial-grid" data-testimonial-list></div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="submit-testimonial" aria-labelledby="submit-testimonial-title">
+      <div class="container testimonial-submit-layout">
+        <div class="testimonial-submit-copy">
+          <p class="section-kicker">Worked With Renatus?</p>
+          <h2 id="submit-testimonial-title">Share your experience</h2>
+          <p>
+            If Renatus has completed work for you or your organization, you can submit a testimonial here.
+            Every submission is reviewed before anything is published on the website.
+          </p>
+          <ul>
+            <li>Your testimonial will not appear automatically.</li>
+            <li>You choose whether Renatus has permission to publish it.</li>
+            <li>Your email is used only to verify or follow up on the submission and is never displayed.</li>
+          </ul>
+        </div>
+
+        <form
+          class="testimonial-form"
+          name="testimonial"
+          method="POST"
+          action="/testimonial-thank-you.html"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="form-name" value="testimonial">
+
+          <p hidden>
+            <label>Don’t fill this out: <input name="bot-field"></label>
+          </p>
+
+          <label for="testimonial-name">Your name</label>
+          <input id="testimonial-name" name="name" type="text" autocomplete="name" required>
+
+          <label for="testimonial-company">Company or organization</label>
+          <input id="testimonial-company" name="company" type="text" autocomplete="organization">
+
+          <label for="testimonial-email">Email</label>
+          <input id="testimonial-email" name="email" type="email" autocomplete="email" required>
+
+          <label for="testimonial-project">Project or service</label>
+          <input id="testimonial-project" name="project" type="text" placeholder="Example: Website design and scheduling automation">
+
+          <label for="testimonial-rating">Rating</label>
+          <select id="testimonial-rating" name="rating" required>
+            <option value="">Select a rating</option>
+            <option value="5">5 — Excellent</option>
+            <option value="4">4 — Very good</option>
+            <option value="3">3 — Good</option>
+            <option value="2">2 — Fair</option>
+            <option value="1">1 — Poor</option>
+          </select>
+
+          <label for="testimonial-text">Your testimonial</label>
+          <textarea id="testimonial-text" name="testimonial" rows="7" maxlength="1800" required></textarea>
+
+          <div class="testimonial-consent">
+            <input id="testimonial-consent" name="publication_permission" type="checkbox" value="yes" required>
+            <label for="testimonial-consent">
+              I give Renatus permission to publish this testimonial, my name, company or organization,
+              project/service, and rating on renatus.technology. I understand that my email address will not be published.
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">Submit Testimonial</button>
+          <p class="testimonial-form-note">
+            Submissions are reviewed manually before publication. See the
+            <a href="/privacy-policy">Privacy Policy</a> for information about how form data is handled.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+  <script src="/js/components.js"></script>
+  <script src="/js/testimonials.js"></script>
+  <script src="/js/analytics.js"></script>
+</body>
+</html>

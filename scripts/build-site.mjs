@@ -33,6 +33,7 @@ const COMPONENTS_DIR =
 
 const PUBLIC_DIRECTORIES = new Set([
   "css",
+  "data",
   "images",
   "js"
 ]);
