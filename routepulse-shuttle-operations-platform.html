@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How I Built a Custom Employee Shuttle Operations Platform | Renatus</title>
+
+  <meta
+    name="description"
+    content="See how Renatus built RoutePulse to turn workforce schedules into shuttle demand, driver coverage, operating records, and rider-facing service status."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://renatus.technology/routepulse-shuttle-operations-platform"
+  >
+
+  <!-- Favicons -->
+  <link rel="icon" href="/images/logos/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/logos/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/images/logos/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Renatus">
+  <meta
+    property="og:title"
+    content="How I Built a Custom Employee Shuttle Operations Platform | Renatus"
+  >
+  <meta
+    property="og:description"
+    content="A technical build story about RoutePulse: workforce schedule imports, shuttle demand planning, driver coverage, QR-based operating records, and rider status."
+  >
+  <meta
+    property="og:url"
+    content="https://renatus.technology/routepulse-shuttle-operations-platform"
+  >
+  <meta
+    property="og:image"
+    content="https://renatus.technology/images/renatus-technology-og.jpg"
+  >
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta
+    property="og:image:alt"
+    content="Renatus custom software and workflow automation"
+  >
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="How I Built a Custom Employee Shuttle Operations Platform | Renatus"
+  >
+  <meta
+    name="twitter:description"
+    content="How Renatus built RoutePulse around workforce schedules, driver coverage, operational records, and rider-facing shuttle status."
+  >
+  <meta
+    name="twitter:image"
+    content="https://renatus.technology/images/renatus-technology-og.jpg"
+  >
+  <meta
+    name="twitter:image:alt"
+    content="Renatus custom software and workflow automation"
+  >
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://renatus.technology/routepulse-shuttle-operations-platform#webpage",
+        "url": "https://renatus.technology/routepulse-shuttle-operations-platform",
+        "name": "How I Built a Custom Employee Shuttle Operations Platform | Renatus",
+        "description": "A technical build story about how Renatus designed RoutePulse around workforce schedules, shuttle demand, driver coverage, operating records, and rider-facing status.",
+        "isPartOf": {
+          "@id": "https://renatus.technology/#website"
+        },
+        "about": [
+          {
+            "@type": "SoftwareApplication",
+            "name": "RoutePulse",
+            "url": "https://routepulse.technology/"
+          },
+          {
+            "@type": "Thing",
+            "name": "Employee shuttle scheduling"
+          },
+          {
+            "@type": "Thing",
+            "name": "Transportation operations software"
+          },
+          {
+            "@type": "Thing",
+            "name": "Workflow automation"
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Article",
+        "@id": "https://renatus.technology/routepulse-shuttle-operations-platform#article",
+        "url": "https://renatus.technology/routepulse-shuttle-operations-platform",
+        "mainEntityOfPage": {
+          "@id": "https://renatus.technology/routepulse-shuttle-operations-platform#webpage"
+        },
+        "headline": "How I Built a Custom Employee Shuttle Scheduling and Operations Platform",
+        "description": "See how Renatus built RoutePulse to turn workforce schedules into shuttle demand, driver coverage, operating records, and rider-facing service status.",
+        "image": "https://renatus.technology/images/renatus-technology-og.jpg",
+        "datePublished": "2026-09-14",
+        "dateModified": "2026-09-14",
+        "author": {
+          "@type": "Person",
+          "@id": "https://renatus.technology/about#victor-pena",
+          "name": "Victor Peña",
+          "url": "https://renatus.technology/about"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://renatus.technology/#organization",
+          "name": "Renatus",
+          "url": "https://renatus.technology/"
+        },
+        "keywords": [
+          "employee shuttle scheduling software",
+          "employee transportation software",
+          "shuttle operations platform",
+          "driver scheduling software",
+          "transportation workflow automation",
+          "workforce schedule transportation planning",
+          "custom operations software",
+          "RoutePulse"
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://renatus.technology/routepulse-shuttle-operations-platform#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://renatus.technology/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "RoutePulse",
+            "item": "https://renatus.technology/routepulse"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "How RoutePulse Was Built",
+            "item": "https://renatus.technology/routepulse-shuttle-operations-platform"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://renatus.technology/routepulse-shuttle-operations-platform#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How can employee shuttle scheduling be automated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Employee shuttle scheduling can be automated by using workforce schedules as operational input, grouping transportation demand into useful time windows, assigning driver coverage, recording changes, and publishing service status for riders."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can a company track who was scheduled to drive versus who actually drove?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A transportation system can preserve the planned driver assignment as one record while separately recording the driver who actually operated the shuttle. This keeps the original plan visible even when coverage changes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is RoutePulse?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "RoutePulse is employee shuttle operations software developed by Renatus. It is designed to turn workforce schedules into transportation demand, driver coverage, operating records, and rider-facing shuttle status."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What technology is RoutePulse built with?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "RoutePulse uses a Java and Spring Boot application architecture with a MySQL relational database, server-side business logic, authenticated organization accounts, role-based access, and web interfaces for managers, drivers, and riders."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can custom software replace spreadsheet-based transportation scheduling?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. When transportation planning depends on repeatable rules, changing schedules, assignments, status updates, and operating records, custom software can centralize those workflows instead of spreading them across spreadsheets, messages, and manual notes."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/site.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-SEEZLWF1YV"
+  ></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "G-SEEZLWF1YV");
+  </script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="about-label">
+            Technical Build Story
+          </p>
+
+          <h1>
+            How I Built a Custom Employee Shuttle Scheduling and Operations Platform
+          </h1>
+
+          <p>
+            RoutePulse started with a practical operations problem: employee
+            transportation changes when workforce schedules change, but the people
+            coordinating shuttles still need to know when demand is coming, who is
+            supposed to drive, who actually drove, and what riders should be told.
+            I built RoutePulse to bring those decisions into one connected system.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#architecture" class="btn btn-primary">
+              See the Architecture
+            </a>
+
+            <a href="/routepulse" class="btn btn-outline">
+              View RoutePulse
+            </a>
+          </div>
+
+          <div class="article-meta" aria-label="Article information">
+            <p>
+              Written by
+              <a href="/about" rel="author">
+                Victor Peña
+              </a>
+            </p>
+
+            <p>
+              <time datetime="2026-09-14">
+                Published September 14, 2026
+              </time>
+
+              <span aria-hidden="true">•</span>
+
+              <time datetime="2026-09-14">
+                Last reviewed September 14, 2026
+              </time>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direct Answer -->
+    <section class="section section-muted">
+      <div class="container">
+        <div class="verdict-box">
+          <h2>
+            How do you automate employee shuttle operations?
+          </h2>
+
+          <p>
+            A useful shuttle operations system starts with the information that
+            already drives transportation demand: employee schedules. From there,
+            software can group expected demand into practical windows, organize
+            driver coverage, preserve planned assignments when coverage changes,
+            record who actually drove, and publish a simple service status for
+            riders. RoutePulse was built around that schedule-to-operations flow.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">
+          The Operational Problem
+        </p>
+
+        <h2 class="section-title">
+          Transportation demand was changing faster than the manual process.
+        </h2>
+
+        <p class="section-subtitle">
+          Employee shuttle operations are not just a list of trips. Demand moves
+          with clock-in and clock-out times, driver availability changes, coverage
+          can be handed from one person to another, and riders still need a clear
+          answer about whether service is running.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              Workforce schedules create the demand
+            </h3>
+
+            <p>
+              If dozens or hundreds of employees start or finish around similar
+              times, transportation pressure forms around those schedule changes.
+              Planning from a static shuttle timetable can miss the actual shape of
+              the workforce day.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Driver coverage does not always match the original plan
+            </h3>
+
+            <p>
+              Someone can be scheduled to drive and then become unavailable. A
+              replacement may cover the trip. The operation needs to preserve both
+              facts instead of overwriting the original assignment and losing the
+              history of what changed.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Riders experience the operation in real time
+            </h3>
+
+            <p>
+              Employees do not need to understand the scheduling logic. They need
+              a simple answer: is the shuttle running, and what should I expect?
+              That rider-facing status has to stay connected to the operating side
+              of the system.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture -->
+    <section id="architecture" class="section section-muted">
+      <div class="container">
+        <p class="section-kicker">
+          System Architecture
+        </p>
+
+        <h2 class="section-title">
+          I designed RoutePulse around the life cycle of a shuttle shift.
+        </h2>
+
+        <p class="section-subtitle">
+          Instead of treating scheduling, driver changes, rider communication, and
+          operating records as separate tools, the platform connects them around a
+          shared date, organization, workforce schedule, and driver assignment.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              1. Bring in workforce schedules
+            </h3>
+
+            <p>
+              The process begins with employee shift information. Those scheduled
+              start and end times become the raw input for understanding when groups
+              of employees may need transportation.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              2. Turn schedules into transportation demand
+            </h3>
+
+            <p>
+              RoutePulse organizes schedule activity into useful operating windows
+              so a manager can see where morning, midday, or evening transportation
+              pressure is likely to form before the rush begins.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              3. Plan driver coverage
+            </h3>
+
+            <p>
+              Managers can see the driving periods that need coverage and connect
+              those periods to available drivers. The assignment remains part of
+              the operating record instead of living only in a message or verbal
+              handoff.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              4. Record what actually happened
+            </h3>
+
+            <p>
+              The system distinguishes between the planned assignment and the
+              actual driver. QR-based driver actions can start or end driving
+              activity, while replacements and overrides can be recorded without
+              deleting the original plan.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              5. Keep riders informed
+            </h3>
+
+            <p>
+              A rider-facing web view gives employees a simple service-status
+              experience. The goal is to expose the information riders need without
+              exposing the management tools and internal scheduling details behind
+              the operation.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              6. Keep an operational record
+            </h3>
+
+            <p>
+              Scheduled hours, actual driving activity, changes, assignments, and
+              manager actions can become reportable history. That makes the system
+              useful after the shuttle shift is over, not just while it is running.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scheduled vs Actual -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">
+          A Key Design Decision
+        </p>
+
+        <h2 class="section-title">
+          Scheduled driving and actual driving are different records.
+        </h2>
+
+        <p class="section-subtitle">
+          One of the most important architecture decisions was refusing to treat a
+          last-minute driver change as though the original assignment never
+          existed.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              Preserve the plan
+            </h3>
+
+            <p>
+              The scheduled assignment shows what the operation expected to happen.
+              That information matters for planning, accountability, and reviewing
+              whether coverage was distributed as intended.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Record the actual driver separately
+            </h3>
+
+            <p>
+              If another driver covers the shift, RoutePulse can record that person
+              as the actual driver while leaving the scheduled assignment intact.
+              The system can then report the difference instead of hiding it.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Make changes explainable
+            </h3>
+
+            <p>
+              Manager overrides and coverage changes become part of the operating
+              history. That creates a better foundation for workload reporting and
+              future scheduling decisions than simply editing a name in a table.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fairness -->
+    <section class="section section-muted">
+      <div class="container">
+        <p class="section-kicker">
+          Driver Distribution
+        </p>
+
+        <h2 class="section-title">
+          Fair driver rotation needed more than a round-robin list.
+        </h2>
+
+        <p class="section-subtitle">
+          A simple rotation can become inaccurate when the workplace is closed, a
+          driver misses an assignment, another driver covers, or schedules change.
+          RoutePulse was designed so coverage history can inform future assignment
+          decisions without erasing what was originally scheduled.
+        </p>
+
+        <div class="verdict-box">
+          <h3>
+            The important principle is continuity, not a public formula.
+          </h3>
+
+          <p>
+            The platform keeps enough structured history to distinguish planned
+            coverage from completed driving and to carry operational context into
+            the next scheduling decision. The exact distribution rules stay inside
+            the application rather than being published as a cloneable algorithm.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QR / Roles -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">
+          Different Interfaces for Different People
+        </p>
+
+        <h2 class="section-title">
+          Managers, drivers, and riders should not see the same application.
+        </h2>
+
+        <p class="section-subtitle">
+          RoutePulse uses role-aware experiences so each person sees the actions
+          and information relevant to the job they are doing.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              Managers plan and adjust coverage
+            </h3>
+
+            <p>
+              Management views focus on transportation demand, driver coverage,
+              schedule context, assignments, overrides, and operating records.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Drivers record driving activity
+            </h3>
+
+            <p>
+              Driver workflows are intentionally narrower. QR-based actions can be
+              used to record the beginning and end of driving activity without
+              giving drivers access to management-only controls.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Riders get a simple service view
+            </h3>
+
+            <p>
+              The public rider experience is designed around quick mobile access to
+              shuttle status. A link or QR code can open the service view without
+              requiring employees to navigate the internal management system.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi Organization -->
+    <section class="section section-muted">
+      <div class="container">
+        <p class="section-kicker">
+          Product Architecture
+        </p>
+
+        <h2 class="section-title">
+          I built RoutePulse as an organization-based platform, not a one-off page.
+        </h2>
+
+        <p class="section-subtitle">
+          Each organization needs its own users, drivers, workforce data,
+          assignments, records, permissions, and operating context. That required a
+          product architecture that keeps organization data separated while still
+          supporting multiple user roles inside each account.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              Organization isolation
+            </h3>
+
+            <p>
+              Drivers, assignments, uploaded schedules, and operating records are
+              associated with the organization they belong to instead of being
+              treated as one global pool of data.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Role-based access
+            </h3>
+
+            <p>
+              Owners, administrators, dispatch or management users, drivers, and
+              viewers can have different permissions. Authentication is only the
+              first step; authorization determines what each signed-in person can
+              actually do.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Invitation-based onboarding
+            </h3>
+
+            <p>
+              Organizations can bring additional managers or drivers into the
+              system through controlled invitation flows rather than sharing one
+              account across an operations team.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technology -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">
+          Technology
+        </p>
+
+        <h2 class="section-title">
+          The stack is conventional on purpose. The business rules are the hard part.
+        </h2>
+
+        <p class="section-subtitle">
+          RoutePulse uses a server-side application architecture so scheduling,
+          permissions, records, and operational rules are enforced in one place
+          instead of relying on browser-only logic.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              Java + Spring Boot
+            </h3>
+
+            <p>
+              Spring Boot handles the application layer, authenticated workflows,
+              server-side business rules, data access, and the services connecting
+              transportation planning to operating records.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              MySQL relational data
+            </h3>
+
+            <p>
+              Organizations, users, drivers, uploaded shifts, assignments, and
+              driving records have relationships that benefit from a structured
+              relational model and explicit data migrations.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Web interfaces around one system of record
+            </h3>
+
+            <p>
+              Manager, driver, and rider experiences use the same underlying
+              operational data while exposing different actions and levels of
+              detail to the people who need them.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lessons -->
+    <section class="section section-muted">
+      <div class="container">
+        <p class="section-kicker">
+          What I Learned
+        </p>
+
+        <h2 class="section-title">
+          The software became useful when I stopped thinking in screens and started thinking in operational truth.
+        </h2>
+
+        <p class="section-subtitle">
+          The difficult part was not drawing a dashboard. It was deciding what the
+          system should believe when the plan changes in the middle of the day.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              Preserve history instead of overwriting it
+            </h3>
+
+            <p>
+              Planned assignments, actual driving, and overrides answer different
+              questions. Keeping them separate produces better records and makes
+              later reporting possible.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Model the exceptions early
+            </h3>
+
+            <p>
+              Closed operating days, late starts, replacement drivers, missed
+              assignments, and schedule changes are not edge cases when they happen
+              regularly in the real operation. They belong in the design.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Build around decisions people already make
+            </h3>
+
+            <p>
+              Custom operations software works best when it reduces the number of
+              decisions people have to reconstruct from spreadsheets, texts, and
+              memory. RoutePulse turns those repeated decisions into structured
+              workflows and records.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Custom Software -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">
+          Why Custom Software
+        </p>
+
+        <h2 class="section-title">
+          This is the kind of workflow generic software often leaves between systems.
+        </h2>
+
+        <p class="section-subtitle">
+          A workforce scheduler knows employee shifts. A spreadsheet can hold a
+          driver list. A group message can announce a change. A status page can tell
+          riders the shuttle is running. The operational problem is connecting those
+          pieces so one change can be understood across the entire workflow.
+        </p>
+
+        <div class="verdict-box">
+          <h3>
+            That connection is the product.
+          </h3>
+
+          <p>
+            RoutePulse demonstrates the kind of work Renatus focuses on: taking a
+            real business process with repeated decisions, exceptions, handoffs,
+            and records, then designing software around how that process actually
+            operates.
+          </p>
+
+          <p>
+            Learn more about
+            <a class="text-link" href="/custom-software-san-antonio">
+              custom software development and workflow automation from Renatus
+            </a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-muted">
+      <div class="container">
+        <p class="section-kicker">
+          Frequently Asked Questions
+        </p>
+
+        <h2 class="section-title">
+          Employee shuttle operations software FAQ
+        </h2>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              How can employee shuttle scheduling be automated?
+            </h3>
+
+            <p>
+              Start with workforce schedule data, convert that activity into
+              transportation demand windows, organize driver coverage, record
+              changes and actual driving, and publish service information for
+              riders. The useful automation comes from connecting those steps.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              How do you track who was scheduled versus who actually drove?
+            </h3>
+
+            <p>
+              Keep the scheduled assignment as the planning record and store the
+              actual driver separately. That preserves the original plan while
+              still showing who operated the shuttle when coverage changed.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              What is RoutePulse?
+            </h3>
+
+            <p>
+              RoutePulse is employee shuttle operations software developed by
+              Renatus. It is designed around workforce schedule imports,
+              transportation demand, driver coverage, operating records, and
+              rider-facing service status.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Does RoutePulse use QR codes?
+            </h3>
+
+            <p>
+              QR-based workflows can support driver actions and quick access to the
+              rider experience. The management application remains protected behind
+              authenticated, role-based access.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              What technology is RoutePulse built with?
+            </h3>
+
+            <p>
+              The application uses Java, Spring Boot, MySQL, server-side business
+              logic, authenticated organization accounts, and role-aware web
+              interfaces for different types of users.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Can custom software replace spreadsheet-based transportation scheduling?
+            </h3>
+
+            <p>
+              Yes, when the operation has repeatable rules worth modeling. Custom
+              software can centralize schedules, assignments, changes, status, and
+              operating records instead of requiring staff to reconstruct the same
+              workflow across spreadsheets and messages.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">
+          Have an operational process that still lives in spreadsheets, messages, and manual handoffs?
+        </h2>
+
+        <p class="section-subtitle">
+          Renatus builds custom workflow software around real business processes.
+          If your team already knows the work but the current tools do not fit the
+          way it actually happens, that is often where custom software creates the
+          most value.
+        </p>
+
+        <div class="centered-action">
+          <a href="/#contact" class="btn btn-primary">
+            Discuss Your Workflow
+          </a>
+
+          <a href="/routepulse" class="btn btn-outline">
+            Explore RoutePulse
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/site.js"></script>
+  <script src="/js/analytics.js"></script>
+</body>
+</html>
