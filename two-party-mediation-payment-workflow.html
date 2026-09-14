@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>How I Built a Two-Party Mediation Payment Workflow | Renatus</title>
+
+  <meta
+    name="description"
+    content="See how Renatus connected mediation scheduling, intake data, server-side automation, and Stripe to create a separate-party payment workflow."
+  >
+
+  <meta name="robots" content="index, follow">
+
+  <link
+    rel="canonical"
+    href="https://renatus.technology/two-party-mediation-payment-workflow"
+  >
+
+  <!-- Favicons -->
+  <link rel="icon" href="/images/logos/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/images/logos/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logos/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/images/logos/apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Renatus">
+  <meta
+    property="og:title"
+    content="How I Built a Two-Party Mediation Payment Workflow | Renatus"
+  >
+  <meta
+    property="og:description"
+    content="A technical breakdown of the scheduling, intake, webhook, and Stripe workflow Renatus built for separate-party mediation payments."
+  >
+  <meta
+    property="og:url"
+    content="https://renatus.technology/two-party-mediation-payment-workflow"
+  >
+  <meta
+    property="og:image"
+    content="https://renatus.technology/images/renatus-technology-og.jpg"
+  >
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta
+    property="og:image:alt"
+    content="Renatus custom software and workflow automation"
+  >
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta
+    name="twitter:title"
+    content="How I Built a Two-Party Mediation Payment Workflow | Renatus"
+  >
+  <meta
+    name="twitter:description"
+    content="How Renatus connected scheduling, intake data, server-side automation, and Stripe for separate-party mediation payments."
+  >
+  <meta
+    name="twitter:image"
+    content="https://renatus.technology/images/renatus-technology-og.jpg"
+  >
+  <meta
+    name="twitter:image:alt"
+    content="Renatus custom software and workflow automation"
+  >
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://renatus.technology/two-party-mediation-payment-workflow#webpage",
+        "url": "https://renatus.technology/two-party-mediation-payment-workflow",
+        "name": "How I Built a Two-Party Mediation Payment Workflow | Renatus",
+        "description": "A technical breakdown of how Renatus connected mediation scheduling, intake data, server-side automation, and Stripe to support separate-party payments.",
+        "isPartOf": {
+          "@id": "https://renatus.technology/#website"
+        },
+        "about": [
+          {
+            "@type": "Thing",
+            "name": "Payment workflow automation"
+          },
+          {
+            "@type": "Thing",
+            "name": "Mediation scheduling"
+          },
+          {
+            "@type": "Thing",
+            "name": "Stripe invoicing"
+          }
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "Article",
+        "@id": "https://renatus.technology/two-party-mediation-payment-workflow#article",
+        "url": "https://renatus.technology/two-party-mediation-payment-workflow",
+        "mainEntityOfPage": {
+          "@id": "https://renatus.technology/two-party-mediation-payment-workflow#webpage"
+        },
+        "headline": "How I Built a Two-Party Mediation Payment Workflow",
+        "description": "See how Renatus connected mediation scheduling, intake data, server-side automation, and Stripe to create a separate-party payment workflow.",
+        "image": "https://renatus.technology/images/renatus-technology-og.jpg",
+        "datePublished": "2026-09-14",
+        "dateModified": "2026-09-14",
+        "author": {
+          "@type": "Person",
+          "@id": "https://renatus.technology/about#victor-pena",
+          "name": "Victor Peña",
+          "url": "https://renatus.technology/about"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://renatus.technology/#organization",
+          "name": "Renatus",
+          "url": "https://renatus.technology/"
+        },
+        "keywords": [
+          "mediation payment workflow",
+          "two-party payment workflow",
+          "Stripe invoice automation",
+          "Acuity Scheduling automation",
+          "legal workflow automation",
+          "payment integration"
+        ],
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://renatus.technology/two-party-mediation-payment-workflow#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://renatus.technology/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "TexMediator Case Study",
+            "item": "https://renatus.technology/texmediator-case-study"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Two-Party Mediation Payment Workflow",
+            "item": "https://renatus.technology/two-party-mediation-payment-workflow"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://renatus.technology/two-party-mediation-payment-workflow#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can two parties pay separately for the same mediation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A mediation workflow can keep one scheduled matter while collecting the contact information needed to send separate payment requests to the parties responsible for their own shares."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the second-party mediation invoice get created?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In the TexMediator workflow, the booking collects the second party's billing email. When the qualifying appointment is scheduled, server-side automation reads the booking data and creates the appropriate Stripe invoice for that party."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the mediator have to create the second invoice manually?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. For the automated appointment flow, the required contact information is collected during scheduling and the server-side integration can create and send the second-party invoice without the mediator rebuilding the billing details by hand."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What technology is used in the mediation payment workflow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The workflow combines a custom website, Acuity Scheduling intake data, a signed scheduling webhook, a server-side function, and Stripe invoicing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the same architecture work outside mediation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The same pattern can be adapted when one booking, project, or service involves multiple participants who need separate billing or follow-up actions, provided the business rules and payment responsibilities are clearly defined."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/site.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-SEEZLWF1YV"
+  ></script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "G-SEEZLWF1YV");
+  </script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="about-label">
+            Technical Case Study
+          </p>
+
+          <h1>
+            How I Built a Two-Party Mediation Payment Workflow
+          </h1>
+
+          <p>
+            A mediation can involve one appointment but two separate payment
+            responsibilities. For TexMediator, I connected scheduling, structured
+            intake data, server-side automation, and Stripe so the second party's
+            payment request could be generated without the mediator recreating it
+            by hand.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#workflow" class="btn btn-primary">
+              See the Workflow
+            </a>
+
+            <a href="/texmediator-case-study" class="btn btn-outline">
+              View TexMediator Case Study
+            </a>
+          </div>
+
+          <div class="article-meta" aria-label="Article information">
+            <p>
+              Written by
+              <a href="/about" rel="author">
+                Victor Peña
+              </a>
+            </p>
+
+            <p>
+              <time datetime="2026-09-14">
+                Published September 14, 2026
+              </time>
+
+              <span aria-hidden="true">•</span>
+
+              <time datetime="2026-09-14">
+                Last reviewed September 14, 2026
+              </time>
+            </p>
+          </div>
+
+          <div class="hero-badges">
+            <span>✓ Acuity Scheduling</span>
+            <span>✓ Server-side webhook</span>
+            <span>✓ Stripe invoicing</span>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Two-party payment workflow summary">
+          <div class="hero-card-header">
+            <h2>
+              The Workflow
+            </h2>
+
+            <p>
+              One mediation request. Separate billing steps.
+            </p>
+          </div>
+
+          <ul class="hero-card-list">
+            <li>Attorney schedules the mediation</li>
+            <li>Intake captures Party B billing information</li>
+            <li>A signed webhook triggers server-side logic</li>
+            <li>Stripe creates the second-party invoice</li>
+          </ul>
+
+          <a href="/custom-software-san-antonio" class="btn btn-primary btn-full">
+            Explore Workflow Automation
+          </a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Direct Answer -->
+    <section class="section section-muted">
+      <div class="container">
+        <div class="verdict-box">
+          <h2>
+            What is a two-party mediation payment workflow?
+          </h2>
+
+          <p>
+            A two-party mediation payment workflow keeps the mediation organized
+            as one scheduled matter while allowing each responsible party to handle
+            its own payment. In the TexMediator implementation, the booking form
+            collects the second party's billing email, a scheduling webhook sends
+            the appointment data to server-side automation, and the integration
+            creates and sends the appropriate Stripe invoice for Party B.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">
+          The Business Problem
+        </p>
+
+        <h2 class="section-title">
+          One appointment did not mean one payer.
+        </h2>
+
+        <p class="section-subtitle">
+          A conventional checkout flow assumes one customer is paying for one
+          transaction. Mediation can be different: two law firms or parties may
+          be responsible for separate shares of the same scheduled service.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              The appointment had to stay unified
+            </h3>
+
+            <p>
+              The mediation itself still needed one date, one time, one matter,
+              one intake process, and one set of scheduling details. Creating a
+              second appointment just to collect another payment would fragment
+              the operational record.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              The second party needed its own billing step
+            </h3>
+
+            <p>
+              The workflow needed a reliable way to identify the second party's
+              billing contact and issue the correct payment request without asking
+              the first party to cover the entire mediation fee.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Manual invoice creation added avoidable work
+            </h3>
+
+            <p>
+              Re-entering names, email addresses, appointment details, and payment
+              amounts after every qualifying booking would create repetitive work
+              and another opportunity for information to be copied incorrectly.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow -->
+    <section id="workflow" class="section section-muted">
+      <div class="container">
+        <p class="section-kicker">
+          System Architecture
+        </p>
+
+        <h2 class="section-title">
+          How the mediation payment automation works
+        </h2>
+
+        <p class="section-subtitle">
+          The workflow uses the information already collected during scheduling
+          to decide when a second-party invoice should be created and where it
+          should be sent.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              1. Schedule the mediation
+            </h3>
+
+            <p>
+              An attorney selects the mediation service, date, and time through
+              the scheduling experience. The appointment becomes the central
+              record for the workflow.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              2. Collect structured intake data
+            </h3>
+
+            <p>
+              The scheduling form collects the case information needed for the
+              appointment, including the second party's email address used by the
+              payment automation.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              3. Receive the scheduling event
+            </h3>
+
+            <p>
+              When a qualifying appointment is scheduled, Acuity sends a signed
+              webhook to the server-side integration. The endpoint verifies the
+              request before processing the booking data.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              4. Read the Party B information
+            </h3>
+
+            <p>
+              The function reads the appointment and intake data, finds the Party B
+              billing email, and applies the workflow rules for the selected
+              mediation type.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              5. Create the Stripe invoice
+            </h3>
+
+            <p>
+              The server-side integration uses Stripe to create the second-party
+              invoice for the appropriate mediation share instead of requiring the
+              mediator to build that invoice manually.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              6. Send the separate payment request
+            </h3>
+
+            <p>
+              Stripe sends the invoice to the second party's billing email. The
+              appointment remains the operational center of the mediation while
+              the payment responsibility is handled separately.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flow summary -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">
+          Data Flow
+        </p>
+
+        <h2 class="section-title">
+          The workflow in one line
+        </h2>
+
+        <div class="verdict-box">
+          <p>
+            <strong>Mediation booking</strong> → Acuity Scheduling → structured
+            intake data → signed webhook → server-side function → Stripe →
+            separate Party B invoice.
+          </p>
+        </div>
+
+        <div class="comparison-wrap">
+          <table class="comparison-table" aria-label="Mediation workflow components">
+            <thead>
+              <tr>
+                <th scope="col">Component</th>
+                <th scope="col">Role in the workflow</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Custom website</th>
+                <td>
+                  Gives the client a branded path into the mediation information,
+                  pricing, policies, and booking experience.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Acuity Scheduling</th>
+                <td>
+                  Holds the appointment and structured intake information used by
+                  the automation.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Webhook</th>
+                <td>
+                  Notifies the server-side integration when the relevant scheduling
+                  event occurs.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Server-side function</th>
+                <td>
+                  Verifies the event, reads the appointment data, applies the
+                  business rules, and calls the payment system without exposing
+                  private API credentials in browser code.
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Stripe</th>
+                <td>
+                  Creates and sends the separate invoice used for the second party's
+                  payment responsibility.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Business rules -->
+    <section class="section section-muted">
+      <div class="container">
+        <p class="section-kicker">
+          The Important Part
+        </p>
+
+        <h2 class="section-title">
+          The integration is more than connecting two APIs.
+        </h2>
+
+        <p class="section-subtitle">
+          The useful part of workflow automation is translating a real business
+          process into explicit rules: when something should happen, which data it
+          should use, and what should happen when required information is missing.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              Trigger only on the right event
+            </h3>
+
+            <p>
+              The automation should respond to the intended scheduling event rather
+              than creating invoices from unrelated page views, form visits, or
+              browser-side actions.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Use the booking as the source of truth
+            </h3>
+
+            <p>
+              The second party's billing information is collected as part of the
+              appointment flow, so the automation can work from structured booking
+              data instead of relying on a later manual handoff.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Keep sensitive credentials server-side
+            </h3>
+
+            <p>
+              Payment credentials and webhook validation belong in server-side
+              code. The public website can start the customer journey without
+              exposing private integration secrets to the browser.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">
+          Why Automate It
+        </p>
+
+        <h2 class="section-title">
+          What the workflow removes from the mediator's day
+        </h2>
+
+        <p class="section-subtitle">
+          The purpose was not automation for its own sake. It was to remove a
+          repetitive handoff from a real professional-service workflow.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              Less duplicate data entry
+            </h3>
+            <p>
+              Information already supplied during scheduling can be reused by the
+              billing workflow instead of being typed into another system again.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Clearer payment responsibility
+            </h3>
+            <p>
+              Each party can receive the payment request intended for that party
+              without turning one law firm into the default payer for the entire
+              mediation.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              A more connected client experience
+            </h3>
+            <p>
+              Scheduling, case intake, confirmation, video-meeting information, and
+              payment steps operate as parts of one designed process rather than as
+              unrelated tools the mediator has to coordinate manually.
+            </p>
+          </article>
+        </div>
+
+        <p class="centered-copy">
+          See the broader website, intake, scheduling, Zoom, and payment work in the
+          <a class="text-link" href="/texmediator-case-study">
+            TexMediator case study
+          </a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Reuse -->
+    <section class="section section-muted">
+      <div class="container">
+        <p class="section-kicker">
+          Reusable Architecture
+        </p>
+
+        <h2 class="section-title">
+          This pattern is useful beyond mediation.
+        </h2>
+
+        <p class="section-subtitle">
+          The same architecture can be adapted when one booking or service creates
+          follow-up work for multiple people, departments, customers, or payers.
+          The exact implementation depends on the business rules and the systems
+          being connected.
+        </p>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>Professional services</h3>
+            <p>
+              One engagement can involve multiple responsible parties who need
+              separate invoices, confirmations, or document requests.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Booking-based businesses</h3>
+            <p>
+              A scheduled service can trigger internal tasks, customer follow-up,
+              deposits, balance requests, or participant-specific communication.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Operational workflows</h3>
+            <p>
+              Webhooks and APIs can connect forms, calendars, payments, email,
+              databases, and internal systems around a defined business process.
+            </p>
+          </article>
+        </div>
+
+        <p class="centered-copy">
+          Learn more about
+          <a class="text-link" href="/custom-software-san-antonio">
+            custom software development and workflow automation from Renatus
+          </a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <p class="section-kicker">
+          Frequently Asked Questions
+        </p>
+
+        <h2 class="section-title">
+          Two-party mediation payment workflow FAQ
+        </h2>
+
+        <div class="grid services-grid">
+          <article class="card">
+            <h3>
+              Can two parties pay separately for the same mediation?
+            </h3>
+            <p>
+              Yes. One mediation can remain a single scheduled matter while the
+              workflow sends separate payment requests to the parties responsible
+              for their own shares.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              How does the second-party invoice get created?
+            </h3>
+            <p>
+              The booking captures Party B's billing email. A scheduling webhook
+              triggers server-side logic, which reads the appointment data and uses
+              Stripe to create and send the appropriate invoice.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Does the mediator create the second invoice manually?
+            </h3>
+            <p>
+              Not for the automated flow. Once the required booking information is
+              present, the integration can create and send the second-party invoice
+              without rebuilding it by hand.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              What technology is used?
+            </h3>
+            <p>
+              The implementation combines a custom website, Acuity Scheduling
+              intake data, a signed scheduling webhook, a server-side function,
+              and Stripe invoicing.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Why use a server-side function?
+            </h3>
+            <p>
+              The server-side function can validate the incoming event, apply the
+              business rules, and communicate with Stripe without placing private
+              payment credentials in public browser code.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>
+              Can this workflow be adapted for another business?
+            </h3>
+            <p>
+              Yes. The same event-driven pattern can support other businesses where
+              a booking or form submission needs to trigger participant-specific
+              billing, notifications, records, or internal actions.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section-muted">
+      <div class="container">
+        <h2 class="section-title">
+          Have a workflow your current software does not handle cleanly?
+        </h2>
+
+        <p class="section-subtitle">
+          Renatus builds focused integrations and custom software around real
+          business processes, including scheduling, forms, payments, databases,
+          portals, and operational automation.
+        </p>
+
+        <div class="centered-action">
+          <a href="/#contact" class="btn btn-primary">
+            Discuss Your Workflow
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/site.js"></script>
+  <script src="/js/analytics.js"></script>
+</body>
+</html>
