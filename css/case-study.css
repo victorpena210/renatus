@@ -718,3 +718,32 @@
     content: none;
   }
 }
+
+/* Peña Plaza uses the shared vintage computer with its original brand assets. */
+.pena-plaza-computer-display {
+  position: absolute;
+  top: 10.3%;
+  left: 19.8%;
+  width: 63.3%;
+  height: 42.7%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 5% / 6%;
+  background: #f6f1e7;
+  box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.35);
+}
+.pena-plaza-computer-display .pena-plaza-display-logo {
+  display: block;
+  width: 100%;
+  height: 42%;
+  object-fit: contain;
+  padding: 3%;
+}
+.pena-plaza-computer-display .pena-plaza-display-property {
+  display: block;
+  width: 100%;
+  height: 58%;
+  object-fit: cover;
+  object-position: center 48%;
+}
