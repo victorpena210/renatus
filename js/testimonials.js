@@ -43,6 +43,41 @@
     const article = document.createElement("article");
     article.className = "testimonial-card";
 
+    // Add the company title above the stars.
+    if (testimonial.company) {
+      const title = document.createElement(
+        document.querySelector("#home-testimonials-title") ? "h3" : "h2"
+      );
+      title.className = "testimonial-company-title";
+
+      let website = null;
+
+      try {
+        const url = new URL(testimonial.website);
+        if (["https:", "http:"].includes(url.protocol)) {
+          website = url.href;
+        }
+      } catch {
+        // Missing or invalid URLs leave the title as plain text.
+      }
+
+      const company = document.createElement(website ? "a" : "span");
+      company.textContent = testimonial.company;
+
+      if (website) {
+        company.href = website;
+        company.target = "_blank";
+        company.rel = "noopener noreferrer";
+        company.setAttribute(
+          "aria-label",
+          `${testimonial.company} (opens in a new tab)`
+        );
+      }
+
+      title.appendChild(company);
+      article.appendChild(title);
+    }
+
     const rating = Math.min(5, Math.max(1, Number(testimonial.rating) || 5));
     article.appendChild(createStars(rating));
 
@@ -56,49 +91,12 @@
     const name = document.createElement("strong");
     name.textContent = testimonial.name || "Renatus client";
     footer.appendChild(name);
-    const meta = document.createElement("span");
 
-    if (testimonial.company) {
-      let website = null;
-
-      try {
-        const url = new URL(testimonial.website);
-
-        if (["https:", "http:"].includes(url.protocol)) {
-          website = url.href;
-        }
-      } catch {
-        // Keep the company as plain text if its URL is missing or invalid.
-      }
-
-      const company = document.createElement(website ? "a" : "span");
-      company.textContent = testimonial.company;
-
-      if (website) {
-        company.href = website;
-        company.target = "_blank";
-        company.rel = "noopener noreferrer";
-        company.className = "testimonial-company-link";
-
-        company.setAttribute(
-          "aria-label",
-          `${testimonial.company} (opens in a new tab)`
-        );
-      }
-
-      meta.appendChild(company);
-    }
-
+    // Keep the service description below the reviewer's name.
     if (testimonial.project) {
-      const separator = testimonial.company ? " · " : "";
-
-      meta.appendChild(
-        document.createTextNode(separator + testimonial.project)
-      );
-    }
-
-    if (meta.textContent) {
-      footer.appendChild(meta);
+      const project = document.createElement("span");
+      project.textContent = testimonial.project;
+      footer.appendChild(project);
     }
 
     article.appendChild(footer);

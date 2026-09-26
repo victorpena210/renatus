@@ -155,19 +155,28 @@
     grid-template-columns: 1fr;
   }
 }
-/* Clickable client company names */
-.testimonial-card-footer .testimonial-company-link {
+
+/* Clickable company titles above the reviews */
+.testimonial-company-title {
+  margin: 0 0 1rem;
   color: var(--renatus-gold);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  font-size: 1.4rem;
+  line-height: 1.3;
 }
 
-.testimonial-card-footer .testimonial-company-link:hover,
-.testimonial-card-footer .testimonial-company-link:focus-visible {
+.testimonial-company-title a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.testimonial-company-title a:hover,
+.testimonial-company-title a:focus-visible {
   color: var(--renatus-white);
 }
 
-.testimonial-card-footer .testimonial-company-link:focus-visible {
+.testimonial-company-title a:focus-visible {
   outline: 2px solid currentColor;
-  outline-offset: 3px;
+  outline-offset: 4px;
 }
