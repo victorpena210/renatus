@@ -155,3 +155,19 @@
     grid-template-columns: 1fr;
   }
 }
+/* Clickable client company names */
+.testimonial-card-footer .testimonial-company-link {
+  color: var(--renatus-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.testimonial-card-footer .testimonial-company-link:hover,
+.testimonial-card-footer .testimonial-company-link:focus-visible {
+  color: var(--renatus-white);
+}
+
+.testimonial-card-footer .testimonial-company-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}

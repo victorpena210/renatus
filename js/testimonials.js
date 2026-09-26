@@ -56,14 +56,48 @@
     const name = document.createElement("strong");
     name.textContent = testimonial.name || "Renatus client";
     footer.appendChild(name);
+    const meta = document.createElement("span");
 
-    const details = [testimonial.company, testimonial.project]
-      .filter(Boolean)
-      .join(" · ");
+    if (testimonial.company) {
+      let website = null;
 
-    if (details) {
-      const meta = document.createElement("span");
-      meta.textContent = details;
+      try {
+        const url = new URL(testimonial.website);
+
+        if (["https:", "http:"].includes(url.protocol)) {
+          website = url.href;
+        }
+      } catch {
+        // Keep the company as plain text if its URL is missing or invalid.
+      }
+
+      const company = document.createElement(website ? "a" : "span");
+      company.textContent = testimonial.company;
+
+      if (website) {
+        company.href = website;
+        company.target = "_blank";
+        company.rel = "noopener noreferrer";
+        company.className = "testimonial-company-link";
+
+        company.setAttribute(
+          "aria-label",
+          `${testimonial.company} (opens in a new tab)`
+        );
+      }
+
+      meta.appendChild(company);
+    }
+
+    if (testimonial.project) {
+      const separator = testimonial.company ? " · " : "";
+
+      meta.appendChild(
+        document.createTextNode(separator + testimonial.project)
+      );
+    }
+
+    if (meta.textContent) {
       footer.appendChild(meta);
     }
 
