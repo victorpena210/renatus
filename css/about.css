@@ -58,3 +58,20 @@ body:not(.routepulse-page) .about-photo {
   border-radius: 10px;
   box-shadow: 0 20px 45px rgba(2, 3, 18, 0.45);
 }
+
+/* Firsthand agency experience */
+.experience-story {
+  max-width: 850px;
+}
+
+.experience-story p {
+  max-width: 78ch;
+}
+
+.experience-story-principle {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--renatus-gold);
+  background: rgba(230, 188, 122, 0.08);
+}
+
