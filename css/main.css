@@ -478,3 +478,45 @@ body:not(.routepulse-page) select:focus {
 .project-evidence-link:focus-visible {
   color: var(--renatus-white, #ffffff);
 }
+
+/* Experience-backed SEO/AEO proof on service and process cards */
+body:not(.routepulse-page) .service-proof {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(230, 188, 122, 0.22);
+  font-size: 0.9rem;
+}
+
+body:not(.routepulse-page) .service-proof strong,
+body:not(.routepulse-page) .card-note strong {
+  color: var(--renatus-white);
+}
+
+body:not(.routepulse-page) .service-proof a {
+  display: inline;
+  font-weight: 650;
+}
+
+.process-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+
+.process-card {
+  position: relative;
+}
+
+.process-step {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: var(--renatus-gold, #e6bc7a);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+body:not(.routepulse-page) .process-card .card-note {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(230, 188, 122, 0.22);
+  font-size: 0.9rem;
+}
