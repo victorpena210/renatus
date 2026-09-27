@@ -1,3 +1,19 @@
+# September 27, 2026 — Full SEO course follow-through
+
+This revision follows a complete transcript review of the linked Ahrefs course. The outer package includes START-HERE.md and COURSE-IMPLEMENTATION.md with a keyword map, course checklist, and live/account-dependent tasks.
+
+- Added a website-maintenance service page using existing published scope/pricing.
+- Improved the WordPress comparison title, introduction, and direct answer to whether WordPress is static.
+- Added five contextual links to the maintenance page and its sitemap entry.
+- Removed the broken /products#suiteflow link from About, preserving the descriptive text. This resolves the missing-anchor issue recorded in the earlier notes below.
+- Retained all earlier image, metadata, testimonial, and project-evidence improvements.
+- Built 23 HTML pages; five testimonial tests pass. File checks cover 20 indexable sitemap/canonical URLs, 538 internal targets/anchors, 19 JSON-LD blocks, and 34 image alt attributes. No missing internal target remains.
+- Live deployment, visual browser review, field performance, account metrics, recurring audits, and outreach are not completed by this archive.
+
+Merge these website files into an existing Git checkout; keep its Git history. See the outer START-HERE.md for safe copy and recovery instructions.
+
+---
+
 # SEO/AEO improvements — September 27, 2026
 
 ## What changed
