@@ -21,6 +21,7 @@ Renatus collects testimonials with a Netlify Form at `/testimonials`.
     {
       "name": "Client Name",
       "company": "Company Name",
+      "website": "https://example.com/",
       "project": "Website Design",
       "rating": 5,
       "testimonial": "Their approved testimonial text.",
@@ -30,6 +31,8 @@ Renatus collects testimonials with a Netlify Form at `/testimonials`.
 }
 ```
 
-Approved entries automatically appear on `/testimonials`. The first three also appear in the homepage client-feedback section. If there are no approved testimonials, the homepage section remains hidden.
+Run `node scripts/build-site.mjs` after updating the JSON file. Only entries with `"approved": true` are included. The build writes the reviews directly into `dist/testimonials.html` and the first three into `dist/index.html`, including linked company titles. No browser fetch or JavaScript is needed to read them. If there are no approved testimonials, the homepage section remains hidden.
+
+The root HTML files include a snapshot of the current reviews for source previews. The build regenerates the marked testimonial blocks from `data/testimonials.json`, which remains the source of truth. Deploy `dist/`, not the source folder. Netlify already uses this build command and publish directory in `netlify.toml`.
 
 Do not add a testimonial to the JSON file unless the client granted publication permission. Email addresses collected by the form are for verification/follow-up only and are never rendered publicly.

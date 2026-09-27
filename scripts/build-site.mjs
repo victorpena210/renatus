@@ -9,6 +9,7 @@ import {
 
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { renderTestimonials } from "./render-testimonials.mjs";
 
 
 const ROOT = path.resolve(
@@ -245,6 +246,10 @@ async function copyPublicSite() {
 
 async function injectSharedComponents() {
 
+  const testimonialData = JSON.parse(
+    await readFile(path.join(ROOT, "data", "testimonials.json"), "utf8")
+  );
+
   const navbar = (
     await readFile(
       path.join(
@@ -376,6 +381,8 @@ async function injectSharedComponents() {
         ].join("\n")
     );
 
+
+    html = renderTestimonials(html, testimonialData);
 
     await writeFile(
       filePath,

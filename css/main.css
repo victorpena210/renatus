@@ -450,3 +450,31 @@ body:not(.routepulse-page) select:focus {
 .centered-action {
   text-align: center;
 }
+
+/* Project evidence on service pages */
+.project-evidence-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+.project-evidence-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  min-width: 0;
+}
+.project-evidence-card h3 {
+  margin: 0;
+}
+.project-evidence-card p {
+  flex: 1;
+}
+.project-evidence-link {
+  color: var(--renatus-gold, #e6bc7a);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.project-evidence-link:hover,
+.project-evidence-link:focus-visible {
+  color: var(--renatus-white, #ffffff);
+}
