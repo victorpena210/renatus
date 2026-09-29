@@ -312,9 +312,10 @@
   .header-inner {
     min-height: 74px;
     padding: 0.6rem 1rem;
+    gap: 1rem;
   }
 
   .logo {
-    width: min(230px, calc(100vw - 90px));
+    width: min(230px, calc(100vw - 100px));
   }
 }
