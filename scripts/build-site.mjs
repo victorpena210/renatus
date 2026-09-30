@@ -10,6 +10,7 @@ import {
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { renderTestimonials } from "./render-testimonials.mjs";
+import { renderBusinessTools } from "./render-business-tools.mjs";
 
 
 const ROOT = path.resolve(
@@ -56,6 +57,7 @@ const PUBLIC_EXTENSION_ALLOWLIST = new Set([
 
 const PUBLIC_EXTENSIONLESS_FILES = new Set([
   "_redirects",
+  "_headers",
   "CNAME"
 ]);
 
@@ -526,6 +528,9 @@ async function validateBuiltSite() {
 
 
 async function build() {
+
+  // Render static, indexable tool and industry pages from their shared data.
+  await renderBusinessTools(ROOT);
 
   /*
    * Delete the previous build so old files

@@ -1,6 +1,24 @@
 # Renatus Technology
 
-Static website for Renatus Technology.
+Static website for Renatus Technology, with a public-homepage-check Netlify Function.
+
+## Business lead-generation toolkit — September 29, 2026
+
+**Start with [LEAD-GENERATION-IMPLEMENTATION.md](LEAD-GENERATION-IMPLEMENTATION.md).**
+The update includes 13 new interactive tools alongside the existing cost checker,
+a tools hub, nine industry/workflow pages, review-request forms, and a bounded
+public-homepage scanner. The guide covers deployment, form notifications, limits,
+source editing, and live acceptance checks.
+
+```sh
+npm run check   # 78 Node tests, 50-page build, and static validation
+npm run dev     # local preview; form delivery deliberately disabled
+```
+
+Node 22+ is required. The runtime has no npm package dependencies. Deploy the
+**complete source project** through Netlify's Git build so both `dist/` and
+`netlify/functions/` are deployed. Uploading only `dist/` does not include the
+scanner function. Browser-fixture tests are optional and documented in the guide.
 
 - Website: https://renatus.technology
 - GitHub profile: https://github.com/victorpena210
@@ -33,7 +51,7 @@ Renatus collects testimonials with a Netlify Form at `/testimonials`.
 
 Run `node scripts/build-site.mjs` after updating the JSON file. Only entries with `"approved": true` are included. The build writes the reviews directly into `dist/testimonials.html` and the first three into `dist/index.html`, including linked company titles. No browser fetch or JavaScript is needed to read them. If there are no approved testimonials, the homepage section remains hidden.
 
-The root HTML files include a snapshot of the current reviews for source previews. The build regenerates the marked testimonial blocks from `data/testimonials.json`, which remains the source of truth. Deploy `dist/`, not the source folder. Netlify already uses this build command and publish directory in `netlify.toml`.
+The root HTML files include a snapshot of the current reviews for source previews. The build regenerates the marked testimonial blocks from `data/testimonials.json`, which remains the source of truth. Netlify builds the complete source repository, publishes `dist/`, and deploys `netlify/functions/` separately using `netlify.toml`. Use the full-source Git deployment rather than a static-only drag-and-drop deployment.
 
 Do not add a testimonial to the JSON file unless the client granted publication permission. Email addresses collected by the form are for verification/follow-up only and are never rendered publicly.
 
@@ -53,7 +71,7 @@ New page: `/website-cost-check`. A three-step questionnaire shows free results b
 ### Review requests and deployment
 
 1. Run `node scripts/build-site.mjs`; Netlify already publishes `dist` using `netlify.toml`.
-2. Deploy through the existing Git/Netlify workflow (or deploy the contents of `dist` manually). The ZIP includes the existing `.git` history and remote; do not run `git init`.
+2. Deploy through the existing Git/Netlify workflow (including the new function directory). Copy the updated source files into your existing Git checkout to retain its history and remote. This delivery does not include `.git`.
 3. In Netlify Forms, confirm form detection is enabled and `website-cost-review` appears after deployment. The source HTML declares all form fields so Netlify can detect them.
 4. Configure a submission notification for `website-cost-review` to `victor@renatus.technology`, if one is not already covered by a site-wide notification. Submissions are stored in Netlify Forms.
 5. Send one clearly labeled test request on the deployed site and verify it arrives. Local tests mock the submission endpoint; they do not prove live delivery or notification settings.

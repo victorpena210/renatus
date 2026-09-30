@@ -1,0 +1,84 @@
+{
+  "ok": true,
+  "requestedUrl": "https://example.com/",
+  "url": "https://example.com/",
+  "checkedAt": "2026-09-29T23:00:00.000Z",
+  "cached": false,
+  "checks": [
+    {
+      "key": "https",
+      "label": "HTTPS page address",
+      "status": "observed",
+      "detail": "The retrieved page used HTTPS with normal TLS certificate validation. This does not establish overall security."
+    },
+    {
+      "key": "title",
+      "label": "Page title",
+      "status": "observed",
+      "detail": "Observed title: Fixture & Company"
+    },
+    {
+      "key": "description",
+      "label": "Meta description",
+      "status": "observed",
+      "detail": "Observed description: A controlled browser fixture, not a live inspection."
+    },
+    {
+      "key": "viewport",
+      "label": "Viewport declaration",
+      "status": "observed",
+      "detail": "Observed: width=device-width,initial-scale=1. This does not prove mobile usability."
+    },
+    {
+      "key": "heading",
+      "label": "Main heading markup",
+      "status": "observed",
+      "detail": "1 H1 element observed. Heading clarity and hierarchy need human review."
+    },
+    {
+      "key": "language",
+      "label": "Document language",
+      "status": "observed",
+      "detail": "Declared language: en. Accuracy is not evaluated."
+    },
+    {
+      "key": "canonical",
+      "label": "Canonical declaration",
+      "status": "observed",
+      "detail": "Declared: https://example.com/. Destination, indexing and appropriateness are not verified."
+    },
+    {
+      "key": "indexing",
+      "label": "Explicit indexing directive",
+      "status": "observed",
+      "detail": "No explicit noindex marker was observed in supported meta tags or the response header. This does not prove crawlability or indexing."
+    },
+    {
+      "key": "structured",
+      "label": "JSON-LD markup",
+      "status": "observed",
+      "detail": "Declared types: Organization. Not a schema validation or rich-result guarantee."
+    },
+    {
+      "key": "alt",
+      "label": "Image alt attributes",
+      "status": "observed",
+      "detail": "1 IMG elements; 0 without an alt attribute. Empty alt may be appropriate for decorative images; text quality is not assessed."
+    },
+    {
+      "key": "landmark",
+      "label": "Main-content landmark",
+      "status": "observed",
+      "detail": "A main element or role=main was observed. Keyboard navigation and landmark structure are not verified."
+    },
+    {
+      "key": "mixed",
+      "label": "Plain-HTTP resource declarations",
+      "status": "observed",
+      "detail": "No plain-HTTP resource URL was observed in the supported source attributes. CSS, dynamic requests, and srcset are not exhaustively checked."
+    }
+  ],
+  "title": "Fixture & Company",
+  "description": "A controlled browser fixture, not a live inspection.",
+  "limits": "HTML source only. No JavaScript execution, visual inspection, speed measurement, security testing, full accessibility audit, live rankings, or form-delivery test."
+}

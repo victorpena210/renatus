@@ -1,2 +1,10 @@
 .DS_Store
 dist/
+node_modules/
+.env
+.env.*
+!.env.example
+test-output/
+playwright-report/
+test-results/
+__pycache__/

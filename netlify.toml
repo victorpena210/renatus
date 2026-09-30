@@ -1,3 +1,10 @@
 [build]
-  command = "node scripts/build-site.mjs"
+  command = "npm run check"
   publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
