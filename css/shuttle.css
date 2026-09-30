@@ -1,0 +1,127 @@
+/* Is the Shuttle Running product identity within the Renatus site. */
+body.shuttle-page main {
+  --shuttle-ink: #17201c;
+  --shuttle-muted: #516056;
+  --shuttle-paper: #f6f7f0;
+  --shuttle-line: #cbd3c7;
+  color: var(--shuttle-ink);
+  background: var(--shuttle-paper);
+  font-family: Arial, Helvetica, sans-serif;
+}
+body.shuttle-page main *, .shuttle-preview * { box-sizing: border-box; }
+body.shuttle-page main h1, body.shuttle-page main h2, body.shuttle-page main h3 {
+  color: var(--shuttle-ink);
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: none;
+  text-shadow: none;
+  font-weight: 700;
+  letter-spacing: -.045em;
+}
+body.shuttle-page main h2 { font-size: clamp(2rem, 3.6vw, 3.3rem); line-height: 1.08; margin: 0 0 1.25rem; }
+body.shuttle-page main h3 { font-size: 1.3rem; line-height: 1.2; margin: 0 0 .8rem; letter-spacing: -.025em; }
+body.shuttle-page main p { line-height: 1.7; color: var(--shuttle-muted); }
+body.shuttle-page main .container { max-width: 1180px; }
+.shuttle-product-hero { padding: 5.2rem 0 1.4rem; }
+.shuttle-hero-grid { display: grid; grid-template-columns: 1.08fr 1fr; gap: 4rem; align-items: center; }
+body.shuttle-page main .shuttle-eyebrow { color: #426031; text-transform: uppercase; font-size: .72rem; font-weight: 700; letter-spacing: .1em; margin: 0 0 1.5rem; }
+body.shuttle-page main h1 { font-size: clamp(3.5rem, 6.5vw, 5.75rem); line-height: .97; margin: 0 0 1.6rem; }
+body.shuttle-page main h1 span { color: #4c6c38; }
+body.shuttle-page main .shuttle-hero-lead { font-size: 1.4rem; line-height: 1.4; color: var(--shuttle-ink); font-weight: 500; margin-bottom: 1rem; }
+.shuttle-hero-copy > p { max-width: 510px; }
+.shuttle-actions { display: flex; flex-wrap: wrap; gap: 1.4rem; align-items: center; margin-top: 1.8rem; }
+body.shuttle-page main .shuttle-button { display: inline-flex; justify-content: space-between; align-items: center; gap: 1.2rem; background: #17201c; color: #fff; border: 1px solid #17201c; border-radius: 6px; padding: .95rem 1.2rem; font: 700 .95rem Arial, sans-serif; text-decoration: none; cursor: pointer; min-height: 48px; }
+body.shuttle-page main .shuttle-button:hover { background: #2c412e; }
+body.shuttle-page main .shuttle-text-link { display: inline-block; font-weight: 700; color: #233b23; text-decoration: underline; text-underline-offset: .3em; line-height: 1.7; }
+body.shuttle-page main .shuttle-former-name { font-size: .8rem; margin-top: 1.25rem; }
+.shuttle-hero-footer { display: flex; justify-content: space-between; gap: 1rem; margin-top: 4rem; padding-top: 1.25rem; border-top: 1px solid var(--shuttle-line); font-size: .68rem; letter-spacing: .08em; }
+.shuttle-preview { width: 100%; min-width: 0; max-width: 560px; margin: auto; text-align: left; font-family: Arial, Helvetica, sans-serif; }
+.shuttle-preview-caption { display: flex; justify-content: space-between; gap: 1rem; font-size: .65rem; font-weight: 700; letter-spacing: .055em; margin-bottom: .85rem; color: #344538; }
+.shuttle-preview-caption > span:last-child { font-weight: 400; letter-spacing: 0; }
+.shuttle-status-card { background: #c8f36b; color: #17201c; border: 1px solid #a9c965; border-radius: 14px; padding: 1.65rem; box-shadow: 0 18px 45px #17201c0e; }
+.shuttle-card-top { display: flex; align-items: center; gap: .7rem; padding-bottom: 1.3rem; border-bottom: 1px solid #17201c30; font-size: 1rem; font-weight: 700; line-height: 1.1; }
+.shuttle-card-top img { flex-shrink: 0; }
+.shuttle-card-arrow { margin-left: auto; font-size: 1.8rem; font-weight: 400; }
+.shuttle-status-answer { min-height: 250px; padding-top: 1.35rem; }
+.shuttle-preview .shuttle-status-label, body.shuttle-page main .shuttle-status-label { display: flex; align-items: center; gap: .5rem; font-size: .76rem; font-weight: 700; margin: 0 0 1.1rem; color: #17201c; }
+.shuttle-status-label > span:first-child { width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.shuttle-preview [data-shuttle-heading], body.shuttle-page main [data-shuttle-heading] { color: #17201c; font-family: Arial, Helvetica, sans-serif; font-size: clamp(2.5rem, 4vw, 3.8rem); font-weight: 700; line-height: 1; letter-spacing: -.045em; text-transform: none; text-shadow: none; margin: 0 0 1rem; }
+.shuttle-preview [data-shuttle-detail], body.shuttle-page main [data-shuttle-detail] { font-size: .88rem; line-height: 1.6; color: #2e4226; max-width: 380px; margin: 0; }
+.shuttle-route-line { display: flex; align-items: center; gap: .5rem; padding: 1.5rem 0; }
+.shuttle-route-line > span { width: 10px; height: 10px; border: 2px solid #17201c; border-radius: 50%; flex-shrink: 0; }
+.shuttle-route-line i { height: 1px; border-top: 1px solid #17201c60; flex: 1; }
+.shuttle-route-line i:last-of-type { border-top-style: dashed; }
+.shuttle-card-bottom { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid #17201c30; padding-top: 1rem; font-size: .7rem; }
+.shuttle-preview-controls { display: flex; gap: .5rem; margin-top: 1rem; }
+.shuttle-preview-controls[hidden] { display: none; }
+.shuttle-preview-controls button { background: transparent; color: #25372a; border: 1px solid #9ca993; border-radius: 5px; padding: .65rem .5rem; flex: 1; font: 700 .75rem Arial, sans-serif; cursor: pointer; min-height: 44px; }
+.shuttle-preview-controls button[aria-pressed="true"] { background: #17201c; color: #fff; border-color: #17201c; }
+.shuttle-status-card[data-state="paused"] { background: #f0df9b; border-color: #cdbc7c; }
+.shuttle-status-card[data-state="stopped"] { background: #dce2d6; border-color: #b6c1b0; }
+.shuttle-preview .shuttle-preview-note, body.shuttle-page main .shuttle-preview-note { color: #516056; font-size: .68rem; line-height: 1.6; margin: .8rem 0 0; }
+.shuttle-product-preview { background: #eef1e7 !important; padding: 1.7rem; border-radius: 12px; min-width: 0; }
+.featured-project-media.shuttle-product-preview { aspect-ratio: auto; display: flex; align-items: center; }
+.shuttle-rider-strip { padding: 1.7rem 0; background: #e6eadc; border-block: 1px solid var(--shuttle-line); }
+.shuttle-rider-strip .container { display: grid; grid-template-columns: 1fr 2fr; align-items: center; gap: 2rem; }
+.shuttle-rider-strip strong { font-size: 1.1rem; }
+.shuttle-rider-strip p { font-size: .88rem; margin: 0; }
+.shuttle-section { padding: 5rem 0; }
+.shuttle-section-heading { max-width: 780px; margin-bottom: 2.4rem; }
+.shuttle-section-soft { background: #edf0e5; border-block: 1px solid var(--shuttle-line); }
+.shuttle-audience-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1rem; }
+.shuttle-audience-grid article { padding: 1.8rem; border: 1px solid var(--shuttle-line); border-radius: 10px; }
+.shuttle-audience-grid article:last-child { background: #ddebbe; }
+.shuttle-audience-grid .shuttle-eyebrow { display: block; margin-bottom: 2.5rem !important; }
+.shuttle-audience-grid p, .shuttle-feature-grid p { font-size: .9rem; margin: 0; }
+.shuttle-workflow-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; }
+.shuttle-workflow { list-style: none; margin: 0; padding: 0; }
+.shuttle-workflow li { display: grid; grid-template-columns: 2rem 1fr; gap: 1.5rem; padding: 1.5rem 0; border-top: 1px solid var(--shuttle-line); }
+.shuttle-workflow li > span { font-size: .75rem; color: #49643d; padding-top: .25rem; }
+.shuttle-workflow p { margin: 0; font-size: .9rem; }
+.shuttle-feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2rem; }
+.shuttle-feature-grid article { border-top: 1px solid var(--shuttle-line); padding-top: 1.5rem; }
+.shuttle-product-note { margin: 2.5rem 0 1.5rem; padding: 1.4rem; border-left: 3px solid #6c883f; background: #e6eadc; }
+.shuttle-product-note p { margin: .3rem 0 0; font-size: .88rem; }
+.shuttle-faq-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+.shuttle-faq details { border-top: 1px solid var(--shuttle-line); padding: 1.2rem 0; }
+.shuttle-faq summary { cursor: pointer; font-weight: 700; font-size: 1rem; line-height: 1.5; }
+.shuttle-faq p { margin-bottom: 0; font-size: .9rem; }
+.shuttle-pilot-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 4rem; align-items: start; }
+body.shuttle-page main .shuttle-pilot-note { border-top: 1px solid var(--shuttle-line); padding-top: 1rem; font-size: .84rem; margin: 1.6rem 0; }
+.shuttle-pilot-form { background: #fff; border: 1px solid var(--shuttle-line); border-radius: 12px; padding: 2rem; }
+.shuttle-form-row { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.shuttle-pilot-form .form-group { margin-bottom: 1rem; min-width: 0; }
+body.shuttle-page main .shuttle-pilot-form label { display: block; color: #17201c; font-size: .85rem; line-height: 1.5; font-weight: 700; margin-bottom: .4rem; }
+body.shuttle-page main .shuttle-pilot-form input, body.shuttle-page main .shuttle-pilot-form select, body.shuttle-page main .shuttle-pilot-form textarea { display: block; width: 100%; max-width: 100%; border: 1px solid #a7b39f; border-radius: 5px; padding: .75rem; background: #fafbf7; color: #17201c; font: 1rem Arial, sans-serif; box-shadow: none; }
+body.shuttle-page main .shuttle-pilot-form textarea { resize: vertical; }
+body.shuttle-page main .shuttle-form-note { font-size: .74rem; line-height: 1.7; margin-top: 1rem; }
+body.shuttle-page main .shuttle-form-note a { color: #304c28; }
+body.shuttle-page main .shuttle-button-full { width: 100%; justify-content: center; }
+body.shuttle-page main :focus-visible { outline: 3px solid #477028; outline-offset: 4px; }
+@media (max-width: 1000px) {
+  .shuttle-hero-grid { gap: 2rem; }
+  .shuttle-workflow-grid, .shuttle-pilot-grid, .shuttle-faq-grid { gap: 2.5rem; }
+  .shuttle-audience-grid article { padding: 1.2rem; }
+}
+@media (max-width: 760px) {
+  .shuttle-product-hero { padding-top: 3.25rem; }
+  .shuttle-hero-grid, .shuttle-rider-strip .container, .shuttle-workflow-grid, .shuttle-faq-grid, .shuttle-pilot-grid { grid-template-columns: 1fr; }
+  .shuttle-hero-grid { gap: 2.8rem; }
+  body.shuttle-page main h1 { font-size: clamp(3.45rem, 12vw, 5.4rem); }
+  .shuttle-hero-footer { margin-top: 2.5rem; font-size: .58rem; }
+  .shuttle-rider-strip .container { gap: .4rem; }
+  .shuttle-section { padding: 3.2rem 0; }
+  .shuttle-audience-grid, .shuttle-feature-grid { grid-template-columns: 1fr; }
+  .shuttle-audience-grid .shuttle-eyebrow { margin-bottom: 1.4rem !important; }
+  .shuttle-product-preview { padding: 1.1rem; }
+  .shuttle-status-card { padding: 1.25rem; }
+  .shuttle-preview [data-shuttle-heading], body.shuttle-page main [data-shuttle-heading] { font-size: 3.05rem; }
+  .shuttle-status-answer { min-height: 240px; }
+  .shuttle-pilot-form { padding: 1.25rem; }
+  .shuttle-form-row { grid-template-columns: 1fr; gap: 0; }
+}
+/* Prevent portfolio image rules from stretching the small product marks. */
+.shuttle-preview .shuttle-card-top img { width: 44px; height: 44px; object-fit: contain; }
+.shuttle-preview .shuttle-route-line img { width: 40px; height: 40px; object-fit: contain; }
+
+.shuttle-page > .skip-link { position: absolute; left: 1rem; top: -100px; z-index: 1000; padding: .8rem 1rem; background: #fff; color: #17201c; }
+.shuttle-page > .skip-link:focus { top: 1rem; }

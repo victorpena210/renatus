@@ -468,13 +468,12 @@ function highlightCurrentPage() {
 
 
   /*
-   * RoutePulse is a product, so continue
+   * Is the Shuttle Running is a product, so continue
    * highlighting Products when somebody is
-   * viewing the RoutePulse page.
+   * viewing the Is the Shuttle Running page.
    */
   if (
-    currentPath ===
-    "/routepulse"
+    ["/is-the-shuttle-running", "/is-the-shuttle-running-operations-platform", "/shuttle-pilot-thank-you"].includes(currentPath)
   ) {
 
     currentPath =

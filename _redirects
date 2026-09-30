@@ -1,2 +1,16 @@
-/routeflow /routepulse 301
-/shuttleflow /routepulse 301
+# Permanent product rebrand redirects. Forced to supersede the fallback HTML.
+/routeflow /is-the-shuttle-running 301!
+/routeflow/ /is-the-shuttle-running 301!
+/routeflow.html /is-the-shuttle-running 301!
+/shuttleflow /is-the-shuttle-running 301!
+/shuttleflow/ /is-the-shuttle-running 301!
+/shuttleflow.html /is-the-shuttle-running 301!
+/routepulse /is-the-shuttle-running 301!
+/routepulse/ /is-the-shuttle-running 301!
+/routepulse.html /is-the-shuttle-running 301!
+/routepulse-shuttle-operations-platform /is-the-shuttle-running-operations-platform 301!
+/routepulse-shuttle-operations-platform/ /is-the-shuttle-running-operations-platform 301!
+/routepulse-shuttle-operations-platform.html /is-the-shuttle-running-operations-platform 301!
+/routePulse-thank-you /shuttle-pilot-thank-you 301!
+/routePulse-thank-you/ /shuttle-pilot-thank-you 301!
+/routePulse-thank-you.html /shuttle-pilot-thank-you 301!
