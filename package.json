@@ -12,6 +12,6 @@
     "dev": "node scripts/dev-server.mjs",
     "test:browser": "python tests/browser_smoke.py",
     "check": "npm test && npm run build && node scripts/validate-lead-pages.mjs",
-    "test:design": "python tests/design_smoke.py"
+    "test:design": "node tests/studio-smoke.cjs"
   }
 }

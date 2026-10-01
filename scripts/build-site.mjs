@@ -385,6 +385,9 @@ async function injectSharedComponents() {
 
 
     html = renderTestimonials(html, testimonialData);
+    // Universal skip target, including older pages with a different main id.
+    const mainMatch = html.match(/<main\b[^>]*id=["']([^"']+)["']/i);
+    if (mainMatch) html = html.replaceAll('href="#main-content"', `href="#${mainMatch[1]}"`);
 
     await writeFile(
       filePath,

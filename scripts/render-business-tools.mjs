@@ -18,7 +18,7 @@ function head({id,title,description,noindex=false,type='WebPage'}){
 <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph}).replace(/</g,'\\u003c')}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEEZLWF1YV"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SEEZLWF1YV',{page_location:location.origin+location.pathname,page_referrer:(function(){try{return new URL(document.referrer).origin;}catch{return '';}})()});</script>
 <link rel="stylesheet" href="/css/site.css"><link rel="stylesheet" href="/css/business-tools.css">
-</head>`;
+<link rel="stylesheet" href="/css/studio.css"></head>`;
 }
 const opening=(id,tool=false)=>`<body class="tools-page" data-source-id="${e(id)}"${tool?' data-tool-id="'+e(id)+'"':''}><a class="skip-link" href="#main-content">Skip to content</a><div id="site-header"></div><main id="main-content">`;
 const ending=()=>`</main><footer id="site-footer" class="site-footer"></footer><script src="/js/components.js" defer></script><script src="/js/analytics.js" defer></script><script type="module" src="/js/business-tools.mjs"></script></body></html>\n`;

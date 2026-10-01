@@ -22,7 +22,7 @@ test('all 25 generated pages load the Renatus foundation before the toolkit styl
   }
 });
 
-test('every generated marketing hero reuses the shared skyline hero class', () => {
+test('every generated marketing hero uses the shared hero layout class', () => {
   for (const [id, html] of pages) {
     if (id === 'business-review-thank-you') continue;
     assert.match(html, /<section class="hero tool-hero(?: tool-hero-compact)?">/, id);

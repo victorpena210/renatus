@@ -1,5 +1,7 @@
 # Renatus Technology
 
+**Current redesign:** see [REDESIGN-NOTES.md](REDESIGN-NOTES.md) for the software-studio design, preview, testing and safe deployment instructions.
+
 Static website for Renatus Technology, with a public-homepage-check Netlify Function.
 
 ## Business lead-generation toolkit — September 29, 2026

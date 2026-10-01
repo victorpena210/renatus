@@ -1,22 +1,11 @@
+/* Shared layouts; studio.css is the final theme entry on each page. */
 @import url("./main.css");
-@import url("./navbar.css");
 @import url("./hero.css");
-@import url("./home.css");
 @import url("./about.css");
 @import url("./products.css");
 @import url("./articles.css");
 @import url("./routepulse.css");
 @import url("./case-study.css");
 @import url("./testimonials.css");
-@import url("./footer.css");
-
-/*
- * Homepage-only retro computer hero.
- *
- * Kept separate from hero.css because hero.css is shared
- * by other pages across the Renatus website.
- */
-@import url("./retro-hero.css");
-
 @import url("./responsive.css");
 @import url("./shuttle.css");
