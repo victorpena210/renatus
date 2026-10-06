@@ -1,0 +1,14 @@
+README.md
+components/footer.html
+components/navbar.html
+css/insights.css
+index.html
+insights.html
+js/business-industries-data.mjs
+legacy-website-modernization.html
+sitemap.xml
+website-technology-transparency.html
+wordpress-vs-static-websites.html
+why-wordpress-migrations-fail.html
+docs/WORDPRESS-ARTICLE-UPDATE.md
+docs/WORDPRESS-ARTICLE-FILES.txt

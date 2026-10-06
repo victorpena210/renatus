@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why WordPress Migrations Fail | Renatus</title>
+  <meta name="description" content="A failed WordPress migration changed how I build software. Lessons on server limits, PHP compatibility, serialized data, and making systems easier to move.">
+  <meta name="author" content="Victor Peña">
+  <link rel="canonical" href="https://renatus.technology/why-wordpress-migrations-fail">
+  <link rel="icon" href="/images/logos/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/images/logos/apple-touch-icon.png">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Renatus">
+  <meta property="og:title" content="Why WordPress Migrations Fail">
+  <meta property="og:description" content="A failed WordPress migration changed how I build software. Lessons on server limits, PHP compatibility, serialized data, and making systems easier to move.">
+  <meta property="og:url" content="https://renatus.technology/why-wordpress-migrations-fail">
+  <meta property="og:image" content="https://renatus.technology/images/renatus-technology-og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Renatus Technology — software built around your business">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Why WordPress Migrations Fail">
+  <meta name="twitter:description" content="A failed WordPress migration changed how I build software. Lessons on server limits, PHP compatibility, serialized data, and making systems easier to move.">
+  <meta name="twitter:image" content="https://renatus.technology/images/renatus-technology-og.jpg">
+  <meta name="twitter:image:alt" content="Renatus Technology — software built around your business">
+  <meta property="article:published_time" content="2026-10-06"><meta property="article:modified_time" content="2026-10-06"><meta property="article:author" content="https://renatus.technology/about"><meta property="article:section" content="Software architecture">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://renatus.technology/why-wordpress-migrations-fail#article", "headline": "Why WordPress Migrations Fail — and What They Taught Me About Building Better Software", "description": "A failed WordPress migration changed how I build software. Lessons on server limits, PHP compatibility, serialized data, and making systems easier to move.", "url": "https://renatus.technology/why-wordpress-migrations-fail", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://renatus.technology/why-wordpress-migrations-fail"}, "datePublished": "2026-10-06", "dateModified": "2026-10-06", "inLanguage": "en-US", "articleSection": "Software architecture", "author": {"@type": "Person", "name": "Victor Peña", "url": "https://renatus.technology/about"}, "publisher": {"@type": "Organization", "@id": "https://renatus.technology/#organization", "name": "Renatus", "url": "https://renatus.technology/", "logo": {"@type": "ImageObject", "url": "https://renatus.technology/images/logos/renatus-horizontal-transparent.png"}}, "image": "https://renatus.technology/images/renatus-technology-og.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://renatus.technology/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://renatus.technology/insights"}, {"@type": "ListItem", "position": 3, "name": "Why WordPress migrations fail", "item": "https://renatus.technology/why-wordpress-migrations-fail"}]}]}</script>
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/studio.css">
+  <link rel="stylesheet" href="/css/insights.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEEZLWF1YV"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SEEZLWF1YV');</script>
+</head>
+<body class="insights-page">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<div id="site-header"></div>
+<main id="main-content">
+<article aria-labelledby="article-title">
+  <header class="insight-header container">
+    <nav class="insight-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/insights">Insights</a><span aria-hidden="true">/</span><span aria-current="page">WordPress migrations</span></nav>
+    <p class="eyebrow">FIELD NOTES / SOFTWARE ARCHITECTURE</p>
+    <h1 id="article-title">Why WordPress migrations fail<span>— and what they taught me about building better software</span></h1>
+    <p class="insight-deck">I spent days trying to move a website. The experience changed how I think about the software behind it.</p>
+    <div class="insight-byline"><a href="/about" rel="author">Victor Peña</a><time datetime="2026-10-06">October 6, 2026</time><span>9 min read</span></div>
+  </header>
+  <div class="container insight-layout">
+    <aside class="insight-sidebar">
+      <nav class="insight-toc" aria-label="On this page">
+        <p class="eyebrow">IN THIS ARTICLE</p>
+        <ol>
+          <li><a href="#more-than-pages">More than its pages</a></li>
+          <li><a href="#migration-plugins">Why plugins fail</a></li>
+          <li><a href="#free-vs-paid">Free vs. paid tools</a></li>
+          <li><a href="#php-versions">PHP compatibility</a></li>
+          <li><a href="#database">The database problem</a></li>
+          <li><a href="#file-permissions">File permissions</a></li>
+          <li><a href="#private-servers">Private servers</a></li>
+          <li><a href="#portability">Building for portability</a></li>
+          <li><a href="#complexity">Convenience &amp; complexity</a></li>
+          <li><a href="#the-lesson">The lesson</a></li>
+        </ol>
+        <a class="insight-back" href="/insights">All insights <span aria-hidden="true">↗</span></a>
+      </nav>
+    </aside>
+    <div class="insight-body">
+      <div class="insight-summary"><p class="eyebrow">THE SHORT ANSWER</p><p>WordPress migrations can fail when the transfer exceeds server limits or the destination cannot reproduce the site’s dependencies. Copying the files is only part of the job. Runtime compatibility, database values, permissions and infrastructure matter, too.</p></div>
+      <p>Years ago, while working at an advertising agency, I worked with a lot of websites built in WordPress and Joomla. One experience in particular stuck with me.</p>
+      <p>We needed to move an existing WordPress site from one server to another. On paper, that sounded simple enough. Export the site, move the database and files, point the domain to the new server, and move on.</p>
+      <p>Instead, I spent hours — eventually days — trying different migration tools. Free versions. Paid versions. Different backup methods. Different import methods.</p>
+      <p>The result was usually the same: the migration failed.</p>
+      <p>At the time, I mostly saw it as one more reason I didn’t enjoy working with WordPress. Looking back at it now as a software developer, I understand the problem much better.</p>
+      <p>I can’t identify the exact cause of those failures without the original logs and server configuration. But the experience illustrates a broader problem: a mature WordPress installation can become tightly coupled to the environment it has been running inside for years.</p>
+      <p>Moving it can mean moving much more than a website.</p>
+
+      <section aria-labelledby="more-than-pages">
+        <h2 id="more-than-pages">A WordPress site is more than its pages</h2>
+        <p>When somebody sees a WordPress site, they usually think of the visible website: pages, blog posts, images, menus and contact forms. But underneath that is an entire application environment.</p>
+        <p>A WordPress installation can depend on:</p>
+        <ul class="insight-dependencies">
+          <li><strong>Application code:</strong> the WordPress core version, plugins, themes and custom PHP.</li>
+          <li><strong>Runtime and data:</strong> the PHP version, PHP extensions, MySQL or MariaDB, database configuration and uploaded files.</li>
+          <li><strong>Server and infrastructure:</strong> filesystem permissions, Apache or nginx, rewrite rules such as Apache’s <code>.htaccess</code>, scheduled tasks, caching layers, security plugins, SSL configuration, DNS and server-specific settings.</li>
+        </ul>
+        <p>That means moving a WordPress site isn’t always equivalent to copying a folder from one machine to another. You’re trying to reproduce an environment.</p>
+        <p>If that environment was built years ago, modified repeatedly and never properly documented, the migration becomes much harder.</p>
+      </section>
+
+      <section aria-labelledby="migration-plugins">
+        <h2 id="migration-plugins">Why migration plugins sometimes fail</h2>
+        <p>WordPress has plenty of migration and backup plugins. Many of them work well, including for large sites when the tool and hosting environment are configured appropriately.</p>
+        <p>The problem can come when a site has accumulated years of history. A migration plugin may need to package plugins, themes, years of images and PDFs, the database and configuration. Old backups left inside the site can add even more bulk unless they are excluded.</p>
+        <p>That operation can be surprisingly expensive:</p>
+        <ul>
+          <li>The server may run out of memory.</li>
+          <li>The operation may exceed PHP’s maximum execution time or a web-server timeout.</li>
+          <li>The archive may exceed an upload or request-size limit.</li>
+          <li>The server may run out of temporary disk space while creating or extracting the backup.</li>
+          <li>The destination may not allow the plugin to write or extract the files.</li>
+        </ul>
+        <p>PHP exposes separate controls for resources and uploads; its <a href="https://www.php.net/manual/en/ini.core.php">configuration documentation</a> explains limits such as <code>memory_limit</code>, <code>post_max_size</code> and <code>upload_max_filesize</code>.</p>
+        <p>Sometimes the migration plugin isn’t really the problem at all. The server is.</p>
+      </section>
+
+      <section aria-labelledby="free-vs-paid">
+        <h2 id="free-vs-paid">The free version vs. paid version trap</h2>
+        <p>I remember trying both free and paid migration tools. It’s easy to assume:</p>
+        <blockquote><p>“The free version isn’t working. Maybe the paid version will fix it.”</p></blockquote>
+        <p>Sometimes it does. Some paid versions remove limits imposed by the plugin itself or provide different transfer methods and support.</p>
+        <div class="insight-example"><p class="insight-example-label">ILLUSTRATIVE EXAMPLE / NOT A SPECIFIC PLUGIN’S CURRENT LIMITS</p><dl class="insight-pair"><div><dt>Free version</dt><dd>Migration packages limited to 512 MB</dd></div><div><dt>Paid version</dt><dd>Larger migration packages allowed</dd></div></dl></div>
+        <p>That doesn’t necessarily fix the environment underneath it. A paid migration plugin still can’t automatically solve every memory limit, timeout, exhausted disk, incorrect filesystem ownership, missing PHP extension, database import failure or incompatible PHP version.</p>
+        <p><strong>Removing a plugin’s limitation doesn’t remove the server’s limitations.</strong></p>
+        <p>That distinction wasn’t nearly as obvious to me when I was originally dealing with these migrations.</p>
+      </section>
+
+      <section aria-labelledby="php-versions">
+        <h2 id="php-versions">Old PHP versions can create another problem</h2>
+        <p>WordPress has existed for more than two decades. Some production websites have histories stretching back many years.</p>
+        <p>Consider this hypothetical move:</p>
+        <div class="insight-table-wrap" role="region" aria-label="Example server comparison" tabindex="0"><table><caption>Same website, different environment</caption><thead><tr><th scope="col">Dependency</th><th scope="col">Old server</th><th scope="col">New server</th></tr></thead><tbody><tr><th scope="row">PHP</th><td>PHP 7.2</td><td>PHP 8.x</td></tr><tr><th scope="row">Database</th><td>Older MariaDB</td><td>Newer MariaDB</td></tr><tr><th scope="row">Web server</th><td>Apache</td><td>nginx</td></tr><tr><th scope="row">Application</th><td colspan="2">WordPress, a custom theme and several plugins</td></tr></tbody></table></div>
+        <p>The files may transfer perfectly. That doesn’t mean the application will run.</p>
+        <p>An abandoned plugin may rely on behavior that newer PHP versions no longer support. A custom theme may contain deprecated calls or code that has become incompatible. A plugin might expect an extension installed on the old machine but missing from the new one.</p>
+        <p>PHP’s <a href="https://www.php.net/manual/en/migration80.incompatible.php">PHP 8.0 migration guide</a> documents breaking changes. Deprecation warnings and fatal errors are different problems, but both deserve investigation before a move.</p>
+        <p>The transfer technically succeeded. The application didn’t.</p>
+      </section>
+
+      <section aria-labelledby="database">
+        <h2 id="database">The database can make things even stranger</h2>
+        <p>WordPress stores a significant amount of configuration in its database. That includes URLs and, depending on the plugins involved, serialized PHP data.</p>
+        <p>Serialized strings contain both a value and its length in <strong>bytes</strong>. For plain ASCII text, like these example domains, that matches the number of characters.</p>
+        <div class="insight-example"><p class="insight-example-label">SERIALIZED STRING / CORRECT LENGTHS</p><pre><code>s:11:"oldsite.com";
+s:23:"new-company-website.com";</code></pre></div>
+        <p>A careless search-and-replace that changes the domain but leaves the old length can damage the serialized value. A normal SQL replacement may not understand that structure.</p>
+        <p>Serialization-aware tools do. The <a href="https://developer.wordpress.org/cli/commands/search-replace/">WP-CLI search-replace command</a>, for example, handles PHP serialized data and offers a dry-run mode to preview changes.</p>
+        <p>A server move that keeps the same public URLs may not need a domain replacement at all. The changes should follow what actually moved.</p>
+        <p>This is one of those details that makes a task that appears simple much more complicated underneath.</p>
+      </section>
+
+      <section aria-labelledby="file-permissions">
+        <h2 id="file-permissions">File permissions can break an otherwise successful move</h2>
+        <p>This becomes especially relevant when websites are hosted on privately managed Linux servers.</p>
+        <p>Imagine the original server stored WordPress under <code>/home/client/public_html/</code>, with files owned by one Linux user. The new server expects it under <code>/var/www/example/</code>, with the PHP process or web server running under a different account.</p>
+        <p>You can copy every file correctly and still end up with an application that can’t upload media, write cache files, generate thumbnails or create temporary files. Plugin updates can also fail if the chosen update method lacks the access it needs.</p>
+        <p>The application exists. The process running it simply doesn’t have permission to use parts of it.</p>
+        <p>The <a href="https://developer.wordpress.org/advanced-administration/server/file-permissions/">WordPress file-permissions guide</a> explains why ownership and the hosting setup matter. The goal is appropriate access to the directories that need it, rather than making everything writable.</p>
+      </section>
+
+      <section aria-labelledby="private-servers">
+        <h2 id="private-servers">Private servers add another layer</h2>
+        <p>The agency I worked for used privately managed servers for at least some of its hosting infrastructure. That can provide a lot of flexibility. It can also create institutional knowledge that exists only in someone’s head.</p>
+        <p>A site might depend on DNS, a reverse proxy or cache, a web server, PHP-FPM, WordPress and a database. Some environments use both nginx and Apache. That’s an example of the layers a migration may involve, not a reconstruction of the agency’s actual setup.</p>
+        <p>Add SSL certificates, firewall rules, cron jobs and security software, and suddenly “move the website” means recreating an undocumented infrastructure stack.</p>
+        <p>If the developer responsible for that server left years ago and nobody documented the decisions they made, the next person inherits an archaeological project.</p>
+        <p>That’s what I didn’t understand at the time. I thought I was failing to migrate a website. I may have been trying to reproduce an environment I hadn’t built and that had never been fully documented.</p>
+      </section>
+
+      <section aria-labelledby="portability">
+        <h2 id="portability">Why this changed how I think about software</h2>
+        <p>Experiences like that influenced how I think about building software today. I care a lot more about portability.</p>
+        <p>I want to know:</p>
+        <ul>
+          <li>What runtime does the application require?</li>
+          <li>What database does it use?</li>
+          <li>What environment variables are required?</li>
+          <li>How is the application built?</li>
+          <li>How is it deployed?</li>
+          <li>Where does uploaded data live?</li>
+          <li>What infrastructure does it depend on?</li>
+          <li>Can another developer reproduce the environment?</li>
+        </ul>
+        <p>A modern application might have substantially more custom code than an old WordPress site while still being easier to deploy.</p>
+        <p>For example, a Java application could document Java 21, a compatible Spring Boot version, a supported MySQL version, required environment variables and a Docker configuration.</p>
+        <p>Its documented build command might be:</p>
+        <pre><code>./mvnw clean package</code></pre>
+        <p>Provide the required configuration. Apply the database migrations. Attach persistent storage where needed. Start the application and verify that it works.</p>
+        <p>That doesn’t mean modern software never has deployment problems. It absolutely does. A build command or a Docker image alone doesn’t move the database, uploaded files or external services.</p>
+        <p>The difference is that good architecture tries to make those dependencies explicit. The same discipline can make a WordPress installation easier to move, too.</p>
+      </section>
+
+      <section aria-labelledby="complexity">
+        <h2 id="complexity">Convenience today can become complexity tomorrow</h2>
+        <p>WordPress became successful for a good reason. It allows people to create websites quickly, install plugins easily and manage content without writing software from scratch. Those are real advantages.</p>
+        <p>But convenience has a cost when every new requirement becomes another plugin, another configuration layer and another dependency.</p>
+        <p>One plugin becomes ten. Ten becomes thirty. A custom theme gets modified. A caching plugin is installed. A security plugin changes rewrite rules. Someone manually modifies <code>.htaccess</code>. Another developer adds custom PHP directly to the theme.</p>
+        <p>Years later, someone is asked to move the application. Nobody remembers why half of those decisions were made.</p>
+        <p>This isn’t exclusively a WordPress problem. Any software system can end up this way. The number of plugins alone doesn’t determine reliability; their quality, compatibility, responsibilities and maintenance matter.</p>
+        <p>WordPress makes adding capabilities easy. It can be just as easy to overlook the application architecture accumulating behind them.</p>
+      </section>
+
+      <section aria-labelledby="the-lesson">
+        <h2 id="the-lesson">The lesson wasn’t “never use WordPress”</h2>
+        <p>There are plenty of situations where WordPress is a perfectly reasonable choice. A content-driven site with a carefully maintained plugin stack can work extremely well.</p>
+        <p>The lesson I took from that experience was broader:</p>
+        <blockquote class="insight-pullquote"><p>Software should be designed with the assumption that someday someone else will need to understand it, move it, repair it or replace it.</p></blockquote>
+        <p>That means documenting dependencies. Keeping infrastructure understandable. Avoiding unnecessary complexity. Choosing technology based on the problem instead of simply adding another plugin.</p>
+        <p>And making sure the application isn’t dependent on one particular server continuing to exist forever.</p>
+        <p>Years ago, I spent days trying to migrate a WordPress website and couldn’t understand why something that sounded so simple kept failing.</p>
+        <p>Today, I see migrations as a test of how well we understand the systems we build. They can expose years of hidden technical decisions.</p>
+        <p>And that’s something I think about every time I build software now.</p>
+      </section>
+
+      <section class="insight-cta" aria-labelledby="building-beyond">
+        <p class="eyebrow">RENATUS / A PRACTICAL NEXT STEP</p>
+        <h2 id="building-beyond">Building software that can outlive its original environment</h2>
+        <p>At Renatus, we build websites and custom software with maintainability, portability and clear architecture in mind. That means thinking beyond whether something works today.</p>
+        <p>We also think about what happens when an application needs to grow, move to a different hosting provider, integrate with another system or be maintained by another developer.</p>
+        <p>If your website or internal system has become difficult to maintain, migrate or understand, Renatus can help evaluate the architecture and determine a cleaner path forward.</p>
+        <a class="btn btn-primary" href="/#contact">Let’s talk about your system <span aria-hidden="true">↗</span></a>
+        <p><a href="/legacy-website-modernization">Explore our approach to website modernization</a></p>
+      </section>
+      <section class="insight-sources" aria-labelledby="further-reading">
+        <h2 id="further-reading">Technical references</h2>
+        <p>The examples above illustrate possible failure modes. These official references explain the underlying behavior:</p>
+        <ul>
+          <li><a href="https://developer.wordpress.org/advanced-administration/upgrade/migrating/">WordPress: Migrating WordPress</a></li>
+          <li><a href="https://developer.wordpress.org/cli/commands/search-replace/">WP-CLI: Serialization-aware search and replace</a></li>
+          <li><a href="https://developer.wordpress.org/advanced-administration/server/file-permissions/">WordPress: File permissions</a></li>
+          <li><a href="https://www.php.net/manual/en/ini.core.php">PHP: Resource and upload configuration</a></li>
+          <li><a href="https://www.php.net/manual/en/migration80.incompatible.php">PHP: Backward-incompatible changes in PHP 8.0</a></li>
+        </ul>
+      </section>
+      <nav class="insight-related" aria-label="Related reading"><p class="eyebrow">KEEP READING</p><a href="/wordpress-vs-static-websites">WordPress vs. static HTML websites <span aria-hidden="true">↗</span></a><a href="/website-technology-transparency">What is your business website actually built with? <span aria-hidden="true">↗</span></a><a href="/insights">All Renatus insights <span aria-hidden="true">↗</span></a></nav>
+    </div>
+  </div>
+</article>
+</main>
+<footer id="site-footer" class="site-footer"></footer>
+<script src="/js/components.js" defer></script>
+<script src="/js/site.js" defer></script>
+</body>
+</html>

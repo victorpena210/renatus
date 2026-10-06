@@ -1,5 +1,7 @@
 # Renatus Technology
 
+**Latest content update (October 6, 2026):** see [WordPress migration article and Insights](docs/WORDPRESS-ARTICLE-UPDATE.md) for the article, changed files, validation and deployment instructions.
+
 **Current redesign:** see [REDESIGN-NOTES.md](REDESIGN-NOTES.md) for the software-studio design, preview, testing and safe deployment instructions.
 
 Static website for Renatus Technology, with a public-homepage-check Netlify Function.
