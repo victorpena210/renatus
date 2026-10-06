@@ -35,7 +35,7 @@ async function main() {
  async function fits(label){assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),label+' has horizontal overflow');}
  let pages=0;
  for(const name of (await fs.readdir(dist)).filter(n=>n.endsWith('.html'))){
-  await go(name);for(const width of [1440,768,360]){await page.setViewportSize({width,height:900});await fits(name+' '+width);}
+  await go(name);for(const width of [1440,768,390,360]){await page.setViewportSize({width,height:900});await fits(name+' '+width);}
   assert.equal(await page.locator('nav[aria-label="Main navigation"]').count(),1,name+' main navigation');pages++;
  }
  await go();
@@ -68,6 +68,6 @@ async function main() {
  postStatus=200;await page.locator('#business-review-form button[type=submit]').click();await page.waitForURL('**/business-review-thank-you*');assert.match(await page.locator('#confirmation-title').innerText(),/received|thank|request/i);
  await go('is-the-shuttle-running');await page.locator('[data-shuttle-state="paused"]').click();assert.equal(await page.locator('[data-shuttle-state="paused"]').getAttribute('aria-pressed'),'true');
  assert.deepEqual(errors,[],'Uncaught JavaScript errors');assert.deepEqual(missing,[],'Missing local assets');
- await browser.close();console.log(`Passed: ${pages} pages at 3 widths, navigation, approved reviews, contact validation, 13 tool flows, result layout, review failure/retry, shuttle preview. No live submissions.`);
+ await browser.close();console.log(`Passed: ${pages} pages at 4 widths, navigation, approved reviews, contact validation, 13 tool flows, result layout, review failure/retry, shuttle preview. No live submissions.`);
 }
 main().catch(e=>{console.error(e);process.exit(1)});
