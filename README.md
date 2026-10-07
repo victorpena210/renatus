@@ -1,5 +1,7 @@
 # Renatus Technology
 
+**Latest pricing update (October 6, 2026):** see [Pricing update](docs/PRICING-UPDATE.md) for the website/software tiers, care plans, validation and application instructions.
+
 **Latest content update (October 6, 2026):** see [Custom websites article and sitemap update](docs/CUSTOM-WEBSITES-ARTICLE-UPDATE.md) for the new article, changed files, validation and deployment instructions. The earlier [WordPress migration article](docs/WORDPRESS-ARTICLE-UPDATE.md) remains available.
 
 **Current redesign:** see [REDESIGN-NOTES.md](REDESIGN-NOTES.md) for the software-studio design, preview, testing and safe deployment instructions.
