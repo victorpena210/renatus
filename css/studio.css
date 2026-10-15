@@ -140,3 +140,28 @@ body .site-footer{background:#20271f;border:0;color:#e7ecdc;padding:44px 0 24px}
 .studio-price-card .amount{display:flex;align-items:baseline;flex-wrap:wrap;gap:6px}
 @media(max-width:1000px){.care-grid{grid-template-columns:1fr}.care-grid .engagement-price{font-size:2rem}.care-grid .engagement-range{font-size:1.8rem}.pricing-proof{align-items:flex-start;flex-direction:column;gap:18px}}
 @media(max-width:760px){.engagement-grid{grid-template-columns:1fr}.engagement-card{padding:26px}.engagement-card h3{font-size:24px}.engagement-price{font-size:2rem}.engagement-range{font-size:1.75rem}.care-grid .engagement-range{font-size:1.6rem}}
+
+/* Pricing clarity: scope examples, purchase comparison and optional services. */
+.interior-intro .pricing-secondary-nav{font-size:14px!important;margin-top:24px}
+.scope-example{border-top:1px solid var(--line);padding-top:18px;margin-bottom:24px}
+.scope-example strong{color:var(--ink)}
+.pricing-examples{margin-top:30px}
+.care-group-title{margin:36px 0 20px;font-size:24px}
+.support-terms{margin-top:32px;padding:26px;border:1px solid var(--line);background:var(--paper)}
+.support-terms p{font-size:14px;max-width:90ch}
+.pricing-comparison{margin-top:32px;max-width:100%;overflow-x:auto}
+.pricing-comparison table{width:100%;border-collapse:collapse;font-size:14px;text-align:left;table-layout:fixed}
+.pricing-comparison caption{text-align:left;font-size:22px;font-weight:600;color:var(--ink);padding-bottom:18px}
+.pricing-comparison th,.pricing-comparison td{padding:18px;vertical-align:top;border:1px solid var(--line);overflow-wrap:anywhere}
+.pricing-comparison thead{background:var(--blue);color:white}
+.pricing-comparison tbody th{background:#eeede5;width:24%}
+.service-disclosure{border:1px solid var(--line);margin-top:18px;background:#fffef9;scroll-margin-top:110px}
+.service-disclosure>summary{padding:24px;cursor:pointer;font-size:18px;font-weight:600;color:var(--blue)}
+.service-disclosure>summary::marker{color:var(--blue)}
+.service-disclosure-body{padding:0 24px 28px}
+.service-disclosure-body>.section-kicker{margin-top:10px}
+.service-disclosure-body .section-title{font-size:28px}
+.service-disclosure-body .pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.service-disclosure:target{border-color:var(--blue)}
+.service-disclosure summary:focus-visible,.pricing-comparison:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+@media(max-width:760px){.pricing-comparison th,.pricing-comparison td{padding:12px 8px;font-size:12px}.service-disclosure-body .pricing-grid{grid-template-columns:1fr}.service-disclosure>summary{font-size:16px;padding:20px}.service-disclosure-body{padding:0 18px 20px}.support-terms{padding:20px}}

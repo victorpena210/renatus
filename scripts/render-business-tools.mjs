@@ -7,7 +7,7 @@ const e=escapeHtml;
 const DATE='2026-09-29',BASE='https://renatus.technology';
 const link=(id,text)=>`<a href="/${e(id)}">${e(text)}</a>`;
 function head({id,title,description,noindex=false,type='WebPage'}){
- const modified=(TOOLS.some(t=>t.id===id)||INDUSTRIES.some(item=>item.id===id)||RELATED_RESOURCES[id])?'2026-10-06':DATE;
+ const modified=id==='website-project-planner'?'2026-10-15':(TOOLS.some(t=>t.id===id)||INDUSTRIES.some(item=>item.id===id)||RELATED_RESOURCES[id])?'2026-10-06':DATE;
  const url=`${BASE}/${id}`;
  const graph=[{'@type':type,'@id':url+'#webpage',url,name:title,description,dateModified:modified,inLanguage:'en-US',isPartOf:{'@id':BASE+'/#website'},author:{'@type':'Person',name:'Victor Peña',url:BASE+'/about'},breadcrumb:{'@id':url+'#breadcrumb'}},{'@type':'BreadcrumbList','@id':url+'#breadcrumb',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:BASE+'/'},{'@type':'ListItem',position:2,name:id==='free-business-tools'?'Free business tools':'Resources',item:BASE+'/free-business-tools'},...(id==='free-business-tools'?[]:[{'@type':'ListItem',position:3,name:title,item:url}])]}];
  if(id==='free-business-tools')graph.push({'@type':'ItemList',name:'Renatus free business tools',itemListElement:ALL_TOOLS.map((t,i)=>({'@type':'ListItem',position:i+1,url:BASE+'/'+t.id,name:t.short}))});

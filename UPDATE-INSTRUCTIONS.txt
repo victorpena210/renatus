@@ -1,40 +1,36 @@
-RENATUS CASE-STUDY STYLE + ZOOM UPDATE
-October 1, 2026
+RENATUS PRICING AND PACKAGE CLARITY UPDATE
+October 15, 2026
 
-This archive contains only the changed files. Merge it into your existing Renatus project.
-
-CHANGES
-- TexMediator, Zachry Insurance, and Pena Plaza now use the homepage's illustrated workstation design.
-- Each computer screen shows a workflow tailored to its project.
-- TexMediator homepage and case-study descriptions explicitly feature virtual mediation over Zoom.
-- The homepage workflow includes a fourth Zoom mediation step and shows both parties joining one shared session.
-- TexMediator metadata and project details match the updated description.
-- The matching compiled dist files are included.
+This archive contains the complete project under renatus/, including rebuilt dist/.
+Read docs/PRICING-CLARITY-UPDATE.md for the offers, scope, terms and checks.
 
 APPLY ON YOUR MAC
-1. Unzip renatus-case-study-update.zip in Downloads.
-2. In Terminal, run:
 
-rsync -av ~/Downloads/renatus-case-study-update/ ~/Desktop/IdeaProjects/RENATUS/renatus/
+1. Unzip the downloaded archive in Downloads.
+2. Locate the extracted renatus folder. It contains package.json and pricing.html.
+3. If that folder is ~/Downloads/renatus, run:
+
+rsync -av --exclude='.git/' --exclude='node_modules/' --exclude='.env' --exclude='.env.local' --exclude='dist/' ~/Downloads/renatus/ ~/Desktop/IdeaProjects/RENATUS/renatus/
 cd ~/Desktop/IdeaProjects/RENATUS/renatus
-npm run build
-git status
+npm run check
+git diff --stat
 
-The rsync command merges the update. It does not delete existing files, and this archive contains no .git directory. Keep your current project folder and Git history.
+Change the source or destination path if your folders are elsewhere. Check the
+paths before running rsync. The command merges files without deleting files and
+does not copy Git history or overwrite local environment files. It rebuilds dist
+using your existing project and requires Node 22 or newer.
 
-If your project is in another location, change the destination in the commands.
+Review the changes and preview /pricing locally, including the expandable services
+and website comparison on mobile. Then commit and push using your usual Git
+workflow to deploy through Netlify. Keep netlify/functions with the source project;
+uploading only dist does not deploy the scanner function.
 
-Review the changes, then commit and push using your normal Git workflow. This update has not been deployed.
+This update has not been pushed or deployed. Existing client contracts, invoices
+and recurring subscriptions have not been changed.
 
 VERIFIED
-- Production build: 53 HTML pages.
-- Homepage and all three case studies rendered at 1440, 1024, 768, 390, and 320 pixels.
-- No horizontal page overflow, clipped illustration panels, missing local assets, or JavaScript errors.
-- Structured data parses successfully; git diff --check passes.
-
-SOURCE FILES
-css/studio.css
-index.html
-texmediator-case-study.html
-zachry-insurance-case-study.html
-pena-plaza-case-study.html
+- 84 existing Node tests passed.
+- Production build completed for 58 HTML pages.
+- Existing page/form/link/sitemap validation passed.
+- Built HTML structure, IDs, JSON-LD, fragment links and pricing consistency checked.
+- Browser visual checks were unavailable in this session.

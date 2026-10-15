@@ -1,6 +1,6 @@
 # Renatus Technology
 
-**Latest pricing update (October 6, 2026):** see [Pricing update](docs/PRICING-UPDATE.md) for the website/software tiers, care plans, validation and application instructions.
+**Latest pricing update (October 15, 2026):** see [Pricing and package clarity](docs/PRICING-CLARITY-UPDATE.md) for the $149 Essentials and $299 Care Plus plans, new subscription renewal terms, support allocations and validation. The [October 6 pricing update](docs/PRICING-UPDATE.md) is historical context.
 
 **Latest content update (October 6, 2026):** see [Custom websites article and sitemap update](docs/CUSTOM-WEBSITES-ARTICLE-UPDATE.md) for the new article, changed files, validation and deployment instructions. The earlier [WordPress migration article](docs/WORDPRESS-ARTICLE-UPDATE.md) remains available.
 
@@ -17,7 +17,7 @@ public-homepage scanner. The guide covers deployment, form notifications, limits
 source editing, and live acceptance checks.
 
 ```sh
-npm run check   # 78 Node tests, 50-page build, and static validation
+npm run check   # 84 Node tests, 58-page build, and static validation
 npm run dev     # local preview; form delivery deliberately disabled
 ```
 
@@ -71,7 +71,7 @@ New page: `/website-cost-check`. A three-step questionnaire shows free results b
 - Monthly payments are annualized; separate fees are included once. Unknown fees produce an incomplete total rather than an assumed zero.
 - Original setup payments are reported separately. Contract duration is context, not an exact remaining balance. No fabricated savings or overpricing thresholds are used.
 - Scope, ownership, support, and SEO-deliverable questions drive the recommendations.
-- The $299/month, 12-month, $3,588 Renatus offer is a disclosed comparison, not a maintenance-only quote or a market average. Larger sites, ongoing SEO, advertising, content, and integrations need separate scope review.
+- The $299/month, 12-month, $3,588 Renatus offer is a disclosed comparison, not a maintenance-only quote or a market average. New subscriptions include Essentials care and 30 minutes of monthly content edits, then automatically continue at $149/month Essentials from month 13 unless changed or canceled. Existing agreements retain their terms. Larger sites, ongoing SEO, advertising, content, and integrations need separate scope review.
 - Update the offer in `website-cost-check.html` along with `/pricing` if pricing changes. Update the visible method-review date, page metadata, and sitemap when the method or offer changes.
 
 ### Review requests and deployment
