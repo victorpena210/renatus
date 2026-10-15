@@ -1,0 +1,40 @@
+RENATUS CASE-STUDY STYLE + ZOOM UPDATE
+October 1, 2026
+
+This archive contains only the changed files. Merge it into your existing Renatus project.
+
+CHANGES
+- TexMediator, Zachry Insurance, and Pena Plaza now use the homepage's illustrated workstation design.
+- Each computer screen shows a workflow tailored to its project.
+- TexMediator homepage and case-study descriptions explicitly feature virtual mediation over Zoom.
+- The homepage workflow includes a fourth Zoom mediation step and shows both parties joining one shared session.
+- TexMediator metadata and project details match the updated description.
+- The matching compiled dist files are included.
+
+APPLY ON YOUR MAC
+1. Unzip renatus-case-study-update.zip in Downloads.
+2. In Terminal, run:
+
+rsync -av ~/Downloads/renatus-case-study-update/ ~/Desktop/IdeaProjects/RENATUS/renatus/
+cd ~/Desktop/IdeaProjects/RENATUS/renatus
+npm run build
+git status
+
+The rsync command merges the update. It does not delete existing files, and this archive contains no .git directory. Keep your current project folder and Git history.
+
+If your project is in another location, change the destination in the commands.
+
+Review the changes, then commit and push using your normal Git workflow. This update has not been deployed.
+
+VERIFIED
+- Production build: 53 HTML pages.
+- Homepage and all three case studies rendered at 1440, 1024, 768, 390, and 320 pixels.
+- No horizontal page overflow, clipped illustration panels, missing local assets, or JavaScript errors.
+- Structured data parses successfully; git diff --check passes.
+
+SOURCE FILES
+css/studio.css
+index.html
+texmediator-case-study.html
+zachry-insurance-case-study.html
+pena-plaza-case-study.html
