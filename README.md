@@ -2,7 +2,7 @@
 
 **Latest pricing update (October 15, 2026):** see [Pricing and package clarity](docs/PRICING-CLARITY-UPDATE.md) for the $149 Essentials and $299 Care Plus plans, new subscription renewal terms, support allocations and validation. The [October 6 pricing update](docs/PRICING-UPDATE.md) is historical context.
 
-**Latest content update (October 6, 2026):** see [Custom websites article and sitemap update](docs/CUSTOM-WEBSITES-ARTICLE-UPDATE.md) for the new article, changed files, validation and deployment instructions. The earlier [WordPress migration article](docs/WORDPRESS-ARTICLE-UPDATE.md) remains available.
+**Latest content update (October 15, 2026):** see [Zachry Insurance case study update](docs/ZACHRY-CASE-STUDY-UPDATE.md) for the expanded article, search and analytics evidence, homepage/Insights integration, and validation. Earlier updates include the [Custom websites article](docs/CUSTOM-WEBSITES-ARTICLE-UPDATE.md) and [WordPress migration article](docs/WORDPRESS-ARTICLE-UPDATE.md).
 
 **Current redesign:** see [REDESIGN-NOTES.md](REDESIGN-NOTES.md) for the software-studio design, preview, testing and safe deployment instructions.
 

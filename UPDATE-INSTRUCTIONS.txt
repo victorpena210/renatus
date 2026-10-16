@@ -1,13 +1,14 @@
-RENATUS PRICING AND PACKAGE CLARITY UPDATE
+RENATUS ZACHRY INSURANCE CASE STUDY UPDATE
 October 15, 2026
 
 This archive contains the complete project under renatus/, including rebuilt dist/.
-Read docs/PRICING-CLARITY-UPDATE.md for the offers, scope, terms and checks.
+Read docs/ZACHRY-CASE-STUDY-UPDATE.md for the article, evidence and checks.
 
 APPLY ON YOUR MAC
 
 1. Unzip the downloaded archive in Downloads.
-2. Locate the extracted renatus folder. It contains package.json and pricing.html.
+2. Locate the extracted renatus folder. It contains package.json and
+   zachry-insurance-case-study.html.
 3. If that folder is ~/Downloads/renatus, run:
 
 rsync -av --exclude='.git/' --exclude='node_modules/' --exclude='.env' --exclude='.env.local' --exclude='dist/' ~/Downloads/renatus/ ~/Desktop/IdeaProjects/RENATUS/renatus/
@@ -20,17 +21,17 @@ paths before running rsync. The command merges files without deleting files and
 does not copy Git history or overwrite local environment files. It rebuilds dist
 using your existing project and requires Node 22 or newer.
 
-Review the changes and preview /pricing locally, including the expandable services
-and website comparison on mobile. Then commit and push using your usual Git
+Review the changes with npm run dev. Preview /zachry-insurance-case-study,
+/insights, and the homepage on desktop and mobile. Then commit and push using your usual Git
 workflow to deploy through Netlify. Keep netlify/functions with the source project;
 uploading only dist does not deploy the scanner function.
 
-This update has not been pushed or deployed. Existing client contracts, invoices
-and recurring subscriptions have not been changed.
+This update has not been pushed or deployed. Previous pricing changes are included.
 
 VERIFIED
 - 84 existing Node tests passed.
 - Production build completed for 58 HTML pages.
 - Existing page/form/link/sitemap validation passed.
-- Built HTML structure, IDs, JSON-LD, fragment links and pricing consistency checked.
+- Changed built pages: HTML structure, IDs, JSON-LD, local links, assets,
+  fragment targets, accessible-label references, and article figures checked.
 - Browser visual checks were unavailable in this session.
