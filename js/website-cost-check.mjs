@@ -198,7 +198,7 @@ review.addEventListener('submit', async event => {
     if (!response.ok) throw new Error('Submission failed');
     // Only mark a lead after the form endpoint accepts the POST. The existing
     // confirmation-page script consumes this marker once, within 10 minutes.
-    try { sessionStorage.setItem('renatus:pending-lead:website-cost-review', String(Date.now())); } catch { /* Storage may be unavailable. */ }
+    try { sessionStorage.setItem('renatus:accepted-lead:v2:website-cost-review', String(Date.now())); } catch { /* Storage may be unavailable. */ }
     window.location.assign(review.getAttribute('action'));
   } catch {
     byId('review-error').textContent = 'Your request could not be confirmed. Your answers are still here. Please try again, or email victor@renatus.technology.';

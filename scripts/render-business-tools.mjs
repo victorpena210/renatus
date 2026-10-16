@@ -18,7 +18,7 @@ function head({id,title,description,noindex=false,type='WebPage'}){
 <meta property="og:type" content="website"><meta property="og:site_name" content="Renatus"><meta property="og:title" content="${e(title)}"><meta property="og:description" content="${e(description)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${BASE}/images/renatus-technology-og.jpg"><meta property="og:image:alt" content="Renatus Technology">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${e(title)}"><meta name="twitter:description" content="${e(description)}"><meta name="twitter:image" content="${BASE}/images/renatus-technology-og.jpg">
 <script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph}).replace(/</g,'\\u003c')}</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEEZLWF1YV"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-SEEZLWF1YV',{page_location:location.origin+location.pathname,page_referrer:(function(){try{return new URL(document.referrer).origin;}catch{return '';}})()});</script>
+<script src="/js/analytics-config.js"></script>
 <link rel="stylesheet" href="/css/site.css"><link rel="stylesheet" href="/css/business-tools.css">
 <link rel="stylesheet" href="/css/studio.css"></head>`;
 }
