@@ -42,9 +42,9 @@ test('high price by itself never triggers an overpricing conclusion', () => {
   assert.equal(r.issues.length, 0);
 });
 
-test('advanced scope is excluded from a simple subscription comparison', () => {
+test('advanced scope is excluded from the website package comparison', () => {
   for (const update of [
-    {siteType:'store'}, {siteType:'booking'}, {siteType:'app'}, {pages:'16+'}, {pages:'unknown'},
+    {siteType:'store'}, {siteType:'payments'}, {siteType:'app'}, {pages:'16+'}, {pages:'unknown'},
     ...['seo','content','ads','integrations','unknown'].map(s => ({services:[...clear.services, s]}))
   ]) assert.equal(evaluateCost({...clear, ...update}).simpleScope, false);
 });
@@ -66,4 +66,9 @@ test('unknown services return clarification instead of an invented price judgmen
   const r = evaluateCost({...clear, services:['unknown'], editAccess:'yes'});
   assert.equal(r.outcome, 'clarify');
   assert.match(r.suggestions.map(s => s.title).join(' '), /itemized/);
+});
+
+test('standard booking and intake can fit the package while payment integrations need review', () => {
+  assert.equal(evaluateCost({...clear, siteType:'booking', services:[...clear.services, 'booking']}).simpleScope, true);
+  assert.equal(evaluateCost({...clear, siteType:'booking', services:[...clear.services, 'booking', 'integrations']}).simpleScope, false);
 });

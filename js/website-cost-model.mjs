@@ -4,7 +4,7 @@ export const serviceLabels = {
   build: 'Website build or redesign payments', hosting: 'Hosting and SSL',
   maintenance: 'Technical maintenance', edits: 'Content updates', support: 'Direct support',
   seo: 'Ongoing SEO / AEO', content: 'New content creation', ads: 'Advertising / ad management',
-  integrations: 'Booking, payments, or integrations', unknown: 'Not sure what is included'
+  booking: 'Standard booking and intake', integrations: 'Payments or other integrations', unknown: 'Not sure what is included'
 };
 
 export function annualize(amount, period) {
@@ -76,7 +76,7 @@ export function evaluateCost(answers) {
     } else strengths.push('You report receiving evidence of ongoing SEO / AEO work.');
   }
 
-  const simpleScope = answers.siteType === 'business' && answers.pages === '1-5' && services.length > 0 &&
+  const simpleScope = ['business', 'booking'].includes(answers.siteType) && answers.pages === '1-5' && services.length > 0 &&
     !services.some(s => ['seo', 'content', 'ads', 'integrations', 'unknown'].includes(s));
   const outcome = issues.length ? 'review' : unknowns.length ? 'clarify' : 'defined';
   const titles = {review: 'A few parts of your agreement deserve a closer look.', clarify: 'Clarify the details before comparing prices.', defined: 'Your services and access look clearly defined.'};

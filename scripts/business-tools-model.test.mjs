@@ -33,3 +33,11 @@ test('URL validator refuses private URL forms and nonstandard ports',()=>{for(co
 test('comparison prevents normalized duplicate domains',()=>{assert.throws(()=>evaluate('competitor-website-comparison',{website:'example.com',competitor:'www.example.com',competitor2:''}));});
 test('failed page retrieval stays unavailable, not a zero score',()=>{const r=attachSnapshots(evaluate('website-health-check',{website:'example.com'}).result,[{ok:false,requestedUrl:'https://example.com/',error:'Blocked'}]);assert.equal(r.title,'The website check is unavailable');assert.equal(r.metrics.length,0);assert.equal(r.score,undefined);});
 test('text export includes inputs, method, and limitations without contact details',()=>{const t=getTool('custom-software-roi-calculator'),{answers,result}=evaluate(t.id,roi),text=reportText(t,answers,result);assert.match(text,/One-time project cost/);assert.match(text,/Method version/);assert.match(text,/LIMITATIONS/);assert.doesNotMatch(text,/review-email|form-name/);});
+
+test('website planner includes standard booking but keeps payment and portal scope separate',()=>{
+ const t=getTool('website-project-planner'),a={...goodAnswers(t),pages:'1-5',content:'ready',migration:'no',projectQuote:3500,recurring:150};
+ const booking=evaluate(t.id,{...a,purpose:'booking'}).result;
+ assert.equal(booking.calculations.fit,true);
+ assert.equal(booking.calculations.total,5300);
+ for(const purpose of ['payments','portal','store'])assert.equal(evaluate(t.id,{...a,purpose}).result.calculations.fit,false);
+});
