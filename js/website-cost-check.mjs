@@ -129,8 +129,8 @@ function renderResult(answers) {
     article.append(title, copy); return article;
   }));
   byId('scope-note').textContent = result.simpleScope
-    ? 'Your 1–5 page business website may fit this subscription scope. Renatus would still need to review your requirements and migration before confirming a fit.'
-    : 'Your listed scope includes additional work, advanced features, more pages, or details that need clarification. The base subscription below is not a like-for-like comparison; a custom scope review is needed.';
+    ? 'Your 1–5 page business website may fit this website package. Renatus would still need to review your requirements and migration before confirming a fit.'
+    : 'Your listed scope includes additional work, advanced features, more pages, or details that need clarification. The base website package below is not a like-for-like comparison; a custom scope review is needed.';
   byId('review-summary').value = summaryText(answers, result);
   byId('result-date').textContent = new Date().toLocaleDateString('en-US', {month:'long', day:'numeric', year:'numeric'});
   byId('results-section').hidden = false;
