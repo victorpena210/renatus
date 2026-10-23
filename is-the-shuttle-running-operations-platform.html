@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Building a Shuttle Status and Driving History App | Renatus</title>
+  <title>Is the Shuttle Running? | Product and Engineering | Renatus</title>
 
-  <meta name="description" content="Victor Peña explains the Java / Spring Boot application, NFC/QR session controls, organization permissions, driving-time reports, and the decision to simplify its scope.">
+  <meta name="description" content="See how Is the Shuttle Running connects public shuttle status, NFC/QR driver controls, organization permissions, and driving-history reports in one Java / Spring Boot application.">
 
   <meta name="robots" content="index, follow">
 
@@ -25,8 +25,8 @@
   <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Renatus">
-  <meta property="og:title" content="Building a Shuttle Status and Driving History App | Renatus">
-  <meta property="og:description" content="Victor Peña explains the Java / Spring Boot application, NFC/QR session controls, organization permissions, driving-time reports, and the decision to simplify its scope.">
+  <meta property="og:title" content="Is the Shuttle Running? | Product and Engineering | Renatus">
+  <meta property="og:description" content="See how Is the Shuttle Running connects public shuttle status, NFC/QR driver controls, organization permissions, and driving-history reports in one Java / Spring Boot application.">
   <meta
     property="og:url"
     content="https://renatus.technology/is-the-shuttle-running-operations-platform"
@@ -44,8 +44,8 @@
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Building a Shuttle Status and Driving History App | Renatus">
-  <meta name="twitter:description" content="Victor Peña explains the Java / Spring Boot application, NFC/QR session controls, organization permissions, driving-time reports, and the decision to simplify its scope.">
+  <meta name="twitter:title" content="Is the Shuttle Running? | Product and Engineering | Renatus">
+  <meta name="twitter:description" content="See how Is the Shuttle Running connects public shuttle status, NFC/QR driver controls, organization permissions, and driving-history reports in one Java / Spring Boot application.">
   <meta
     name="twitter:image"
     content="https://renatus.technology/images/renatus-technology-og.jpg"
@@ -64,14 +64,14 @@
       "@type": "WebPage",
       "@id": "https://renatus.technology/is-the-shuttle-running-operations-platform#webpage",
       "url": "https://renatus.technology/is-the-shuttle-running-operations-platform",
-      "name": "Building a Shuttle Status and Driving History App | Renatus",
-      "description": "Victor Peña explains the Java / Spring Boot application, NFC/QR session controls, organization permissions, driving-time reports, and the decision to simplify its scope.",
+      "name": "Is the Shuttle Running? | Product and Engineering | Renatus",
+      "description": "See how Is the Shuttle Running connects public shuttle status, NFC/QR driver controls, organization permissions, and driving-history reports in one Java / Spring Boot application.",
       "dateModified": "2026-10-23"
     },
     {
       "@type": "Article",
-      "headline": "Building a shuttle status and driving history app",
-      "description": "Victor Peña explains the Java / Spring Boot application, NFC/QR session controls, organization permissions, driving-time reports, and the decision to simplify its scope.",
+      "headline": "Shuttle status and driving history for daily operations",
+      "description": "See how Is the Shuttle Running connects public shuttle status, NFC/QR driver controls, organization permissions, and driving-history reports in one Java / Spring Boot application.",
       "mainEntityOfPage": {
         "@id": "https://renatus.technology/is-the-shuttle-running-operations-platform#webpage"
       },
@@ -106,26 +106,21 @@
   <main id="main-content">
     <section class="hero"><div class="container hero-inner"><div class="hero-text">
       <p class="about-label">Technical build story · Java / Spring Boot</p>
-      <h1>Building a shuttle status and driving history app.</h1>
+      <h1>Shuttle status and driving history for daily operations.</h1>
       <p>Is the Shuttle Running? answers a small, practical question for riders while keeping an accurate record of the driving behind it. I built the application through Renatus, drawing on my experience in employee transportation and wardrobe operations.</p>
       <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/victorpena210/is-the-shuttle-running" target="_blank" rel="noopener noreferrer">View source</a><a class="btn btn-outline" href="https://victorpena210.github.io/#shuttle">Victor’s developer portfolio</a></div>
       <div class="article-meta"><p>By <a href="/about" rel="author">Victor Peña</a> · <time datetime="2026-10-23">Updated October 23, 2026</time></p></div>
     </div></div></section>
     <section class="section section-muted"><div class="container">
-      <p class="section-kicker">The current product</p><h2 class="section-title">A clear status and a record of actual service.</h2>
+      <p class="section-kicker">The product</p><h2 class="section-title">A clear status and a record of actual service.</h2>
       <div class="grid services-grid">
-        <article class="card"><h3>Riders check status</h3><p>A public page shows whether the shuttle is running and the active driver’s first name. It has no schedules, pickup instructions, or ride-confirmation button.</p></article>
+        <article class="card"><h3>Riders check status</h3><p>A public page shows whether the shuttle is running and the active driver’s first name. Riders can check it from any browser using their organization’s shared link.</p></article>
         <article class="card"><h3>Drivers record the run</h3><p>Signed-in drivers use an NFC or QR checkpoint to start, pause, resume, end, or hand off service. Each actual driving segment becomes part of the history.</p></article>
         <article class="card"><h3>Managers review history</h3><p>Date and driver filters show who drove, when they started and stopped, and how much time they drove. Paused time is excluded, and managers can close forgotten runs.</p></article>
       </div>
-      <p class="card-note">Independent Renatus project. No employer sponsorship or endorsement is implied. This story does not claim adoption, uptime, or time-saving results.</p>
+      <p class="card-note">An independent product built and maintained by Renatus Technology.</p>
     </div></section>
-    <section class="section"><div class="container">
-      <p class="section-kicker">Product judgment</p><h2 class="section-title">Why I removed shift assignment.</h2>
-      <p class="section-subtitle">The earlier version imported employee schedules and planned driving coverage. But an assignment did not establish that a shuttle was actually operating. I narrowed the product to recorded service, public status, and history.</p>
-      <p>That change affected more than the navigation. New runs no longer need an assignment. Existing assignment-linked records still appear in the history, applied database migrations stay intact, and retired planning submissions are rejected before their old handlers run. The repository labels retained planning code and the older illustrated walkthrough as historical material.</p>
-    </div></section>
-    <section class="section section-muted" id="architecture"><div class="container">
+    <section class="section" id="architecture"><div class="container">
       <p class="section-kicker">Implementation</p><h2 class="section-title">The decisions behind the screens.</h2>
       <p class="section-subtitle">One server-rendered Java 17 / Spring Boot application, with Spring MVC, Spring Security, Thymeleaf, Spring Data JPA, MySQL, and Flyway.</p>
       <div class="grid services-grid">
@@ -133,20 +128,20 @@
         <article class="card"><h3>Organization-aware access</h3><p>Authentication alone is insufficient. Services check membership and resource ownership, and drivers must use their own account. Possessing a tag link does not replace those checks.</p></article>
         <article class="card"><h3>Time within the selected range</h3><p>Reports use the operations timezone and clip overlapping runs to the requested dates. Active runs contribute elapsed time. Pauses create no driving segment and add no driving time.</p></article>
         <article class="card"><h3>A minimal public model</h3><p>The rider controller supplies an organization name, a binary running state, and the active driver’s first name. Operational notes and internal records stay outside that view.</p></article>
-        <article class="card"><h3>Explicit session endings</h3><p>Phone inactivity is not proof that the shuttle stopped. Drivers or managers end sessions explicitly. The tradeoff is that forgotten runs can leave stale status until corrected.</p></article>
+        <article class="card"><h3>Explicit session endings</h3><p>Drivers explicitly pause or end a run, and managers can close a session with its actual end time. These controls keep session changes tied to recorded actions.</p></article>
         <article class="card"><h3>Tests against the actual database</h3><p>JUnit and Spring integration tests use MySQL through Testcontainers. GitHub Actions runs the Java and JavaScript checks and builds the production Docker image.</p></article>
       </div>
       <div class="hero-actions"><a class="btn btn-primary" href="https://github.com/victorpena210/is-the-shuttle-running/blob/main/docs/project-story.md">Follow the code review guide</a><a class="btn btn-outline" href="https://github.com/victorpena210/is-the-shuttle-running/blob/main/docs/architecture.md">Read the architecture</a></div>
     </div></section>
     <section class="section"><div class="container">
-      <p class="section-kicker">Current interface</p><h2 class="section-title">A history view that starts with what happened.</h2>
-      <figure style="margin:2rem 0"><a href="https://victorpena210.github.io/images/shuttle/history.jpg"><img src="https://victorpena210.github.io/images/shuttle/history.jpg" alt="Driving history with fictional driver totals and recorded start and end times" loading="lazy" width="1348" height="1251" style="display:block;width:100%;height:auto;border-radius:16px"></a><figcaption class="card-note">Rendered from the current application template with fictional records. This is an interface example, not production data or an adoption claim.</figcaption></figure>
+      <p class="section-kicker">Inside the application</p><h2 class="section-title">A history view that starts with what happened.</h2>
+      <figure style="margin:2rem 0"><a href="https://victorpena210.github.io/images/shuttle/history.jpg"><img src="https://victorpena210.github.io/images/shuttle/history.jpg" alt="Driving history with fictional driver totals and recorded start and end times" loading="lazy" width="1348" height="1251" style="display:block;width:100%;height:auto;border-radius:16px"></a><figcaption class="card-note">Application screen shown with fictional sample records.</figcaption></figure>
       <p><a href="https://github.com/victorpena210/is-the-shuttle-running/blob/main/docs/screenshots/README.md">See the rider and driver screens and how the sample data was produced.</a></p>
     </div></section>
     <section class="section section-muted"><div class="container">
-      <p class="section-kicker">My role and the boundaries</p><h2 class="section-title">From requirements to ongoing changes.</h2>
+      <p class="section-kicker">My role</p><h2 class="section-title">Product development and delivery.</h2>
       <p>I worked on the requirements, Java services, relational schema, role-specific screens, NFC/QR workflow, tests, deployment configuration, and maintenance. Development includes AI assistance; the source and tests provide concrete material for technical review.</p>
-      <p>The application models one active service per organization, rather than a multi-vehicle fleet. Public status reflects recorded driver actions and temporary manager overrides; it is not an arrival prediction. Those boundaries keep the current workflow small and make the remaining tradeoffs explicit.</p>
+      <p>Each organization has its own driver access, active service, and driving records. Recorded driver actions and manager controls connect the public status page to the team’s daily workflow.</p>
       <div class="hero-actions"><a class="btn btn-primary" href="https://victorpena210.github.io/#contact">Contact Victor</a><a class="btn btn-outline" href="/is-the-shuttle-running">Explore the product</a></div>
     </div></section>
   </main>
