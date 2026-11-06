@@ -1,0 +1,10 @@
+/* Zachry's existing wordmark within the shared Renatus article layout. */
+.zachry-brand-page .zachry-computer-content { background: #f8f5ed; color: #173746; }
+.zachry-brand-page .zachry-computer-content img { width: 86%; max-width: 280px; height: auto; }
+.zachry-brand-page .zachry-computer-content strong { color: #173746; font-size: clamp(10px, 1.1vw, 15px); }
+.zachry-brand-page .zachry-computer-content small { color: #173746; }
+.zachry-wordmark-stage { background: #f8f5ed; border-color: #d8d4ca; }
+.zachry-wordmark-stage .brand-stage-label { color: #173746; }
+.zachry-wordmark-stage img { max-width: 440px; }
+.brand-feature-art.zachry-feature-art { background: #f8f5ed; border: 1px solid var(--line); }
+.brand-feature-art.zachry-feature-art img { width: min(100%, 360px); height: auto; }
