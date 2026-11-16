@@ -9,7 +9,7 @@ body .case-study-hero .texmediator-title-lockup h1 span { width: auto; }
 }
 
 /* The transparent logo sits on the same paper background as the page. */
-body .case-study-fact-texmediator { display: flex; flex-direction: column; justify-content: center; gap: 12px; background: transparent; border-color: var(--line); }
+body .case-study-fact-texmediator { display: flex; flex-direction: column; justify-content: center; gap: 12px; }
 body .case-study-fact-texmediator > span { margin: 0; color: var(--blue); }
 .texmediator-live-link { display: block; width: 100%; max-width: 300px; padding: 6px 0; }
 .texmediator-live-link img { display: block; width: 100%; height: auto; }
