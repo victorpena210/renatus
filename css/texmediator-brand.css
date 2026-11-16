@@ -1,4 +1,14 @@
-/* TexMediator's artwork stays distinct within the Renatus editorial layout. */
+/* TexMediator's case-study heading uses the Renatus palette. */
+.texmediator-title-lockup { display: grid; grid-template-columns: clamp(72px, 8vw, 116px) minmax(0, 1fr); align-items: center; gap: clamp(12px, 2vw, 24px); margin: 0 0 1.4rem; }
+.texmediator-title-mark { display: block; width: 100%; height: auto; }
+body .case-study-hero .texmediator-title-lockup h1 { margin: 0; min-width: 0; font-size: clamp(2.4rem, 5vw, 4.6rem); line-height: 1.04; }
+body .case-study-hero .texmediator-title-lockup h1 span { width: auto; }
+@media (max-width: 480px) {
+  .texmediator-title-lockup { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; }
+  body .case-study-hero .texmediator-title-lockup h1 { font-size: clamp(2.4rem, 10vw, 3rem); }
+}
+
+/* The brand story preserves the original client artwork. */
 .brand-story-header { padding-top: 28px; padding-bottom: 58px; }
 .brand-story-header .insight-breadcrumb { margin-bottom: 42px; }
 .brand-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: center; }
