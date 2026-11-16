@@ -41,10 +41,10 @@ body .case-study-fact-texmediator > span { margin: 0; color: var(--blue); }
 .insight-body .brand-image-note { color: var(--muted); font-size: 12px; line-height: 1.7; }
 .brand-site-capture { margin: 28px 0; }
 .brand-site-capture img { display: block; width: 100%; height: auto; border: 1px solid var(--line); }
-.brand-case-preview { margin: 24px 0 0; padding: 26px; background: #080d14; }
+.brand-case-preview { margin: 24px 0 0; padding: 26px 0; background: transparent; }
 .brand-case-preview img { display: block; width: min(100%, 532px); height: auto; margin: 0 auto; }
-.brand-case-preview figcaption { margin-top: 18px; color: #d5c49d; font: 11px/1.8 var(--mono); }
-.brand-case-preview figcaption a { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+.brand-case-preview figcaption { margin-top: 18px; color: var(--muted); font: 11px/1.8 var(--mono); }
+.brand-case-preview figcaption a { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
 .brand-feature-art { margin: 20px 0 24px; background: #080d14; padding: 32px 24px; }
 .brand-feature-art img { display: block; width: min(100%, 532px); height: auto; }
 @media (max-width: 760px) {
