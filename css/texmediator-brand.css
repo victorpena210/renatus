@@ -8,12 +8,13 @@ body .case-study-hero .texmediator-title-lockup h1 span { width: auto; }
   body .case-study-hero .texmediator-title-lockup h1 { font-size: clamp(2.4rem, 10vw, 3rem); }
 }
 
-/* The brand story preserves the original client artwork. */
-body .case-study-fact-texmediator { display: flex; flex-direction: column; justify-content: center; gap: 12px; background: #080d14; border-color: #222c38; }
-body .case-study-fact-texmediator > span { margin: 0; color: #e8bc45; }
+/* The transparent logo sits on the same paper background as the page. */
+body .case-study-fact-texmediator { display: flex; flex-direction: column; justify-content: center; gap: 12px; background: transparent; border-color: var(--line); }
+body .case-study-fact-texmediator > span { margin: 0; color: var(--blue); }
 .texmediator-live-link { display: block; width: 100%; max-width: 300px; padding: 6px 0; }
 .texmediator-live-link img { display: block; width: 100%; height: auto; }
-.texmediator-live-link:focus-visible { outline: 2px solid #e8bc45; outline-offset: 6px; }
+.texmediator-live-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 6px; }
+/* The brand story preserves the original client artwork. */
 .brand-story-header { padding-top: 28px; padding-bottom: 58px; }
 .brand-story-header .insight-breadcrumb { margin-bottom: 42px; }
 .brand-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 38px; align-items: center; }
