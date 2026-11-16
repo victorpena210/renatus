@@ -3,7 +3,7 @@ export const RELATED_RESOURCES = {
   'web-design-mediators': {
     title: 'Plan the complete mediation journey',
     links: [
-      ['two-party-mediation-payment-workflow', 'Two-party mediation payment workflow', 'Follow the intake, scheduling, and separate-party billing steps in the TexMediator implementation.'],
+      ['multi-party-mediation-payment-workflow', 'Multi-party mediation payment and Zoom workflow', 'Follow the intake, scheduling, automatic Stripe payment requests, and Zoom access in the TexMediator implementation.'],
       ['client-portal-development', 'Client portal development', 'Scope authenticated access when clients need documents, approvals, or private status information.'],
       ['web-design-law-firms', 'Websites and intake for law firms', 'Explore the related intake questions when the website serves a legal practice.']
     ]
@@ -57,7 +57,7 @@ export const RELATED_RESOURCES = {
     links: [
       ['web-design-mediators', 'Website workflows for mediators', 'Separate public booking from any proposed private client-access workflow.'],
       ['web-design-law-firms', 'Websites and intake for law firms', 'Distinguish a first inquiry from authenticated client access.'],
-      ['two-party-mediation-payment-workflow', 'Two-party mediation payment workflow', 'See a focused integration that connects existing systems without requiring a new portal.']
+      ['multi-party-mediation-payment-workflow', 'Multi-party mediation payment and Zoom workflow', 'See a focused integration that connects existing systems without requiring a new portal.']
     ]
   },
   'website-lead-check': {

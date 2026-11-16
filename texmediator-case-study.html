@@ -7,7 +7,7 @@
   <title>TexMediator Case Study | Zoom Virtual Mediation Workflow</title>
   <meta
     name="description"
-    content="See how Renatus connected TexMediator’s scheduling, case intake, separate-party payments, and virtual mediation over Zoom."
+    content="See how Renatus connected TexMediator’s scheduling, case intake, automatic Stripe payment requests for multiple clients, and virtual mediation over Zoom."
   >
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://renatus.technology/texmediator-case-study">
@@ -22,7 +22,7 @@
   <meta property="og:title" content="TexMediator Case Study | Renatus">
   <meta
     property="og:description"
-    content="A connected virtual mediation workflow: scheduling, case intake, separate-party payments, and one shared Zoom session."
+    content="A connected virtual mediation workflow: scheduling, case intake, automatic Stripe payment requests for multiple clients, and one shared Zoom session."
   >
   <meta property="og:url" content="https://renatus.technology/texmediator-case-study">
   <meta property="og:image" content="https://renatus.technology/images/texMediator.webp">
@@ -34,7 +34,7 @@
   <meta name="twitter:title" content="TexMediator Case Study | Renatus">
   <meta
     name="twitter:description"
-    content="Scheduling, case intake, separate-party payments, and Zoom virtual mediation for a Texas mediation practice."
+    content="Scheduling, case intake, automatic Stripe payment requests for multiple clients, and Zoom virtual mediation for a Texas mediation practice."
   >
   <meta name="twitter:image" content="https://renatus.technology/images/texMediator.webp">
   <meta name="twitter:image:alt" content="TexMediator website case study by Renatus">
@@ -46,9 +46,9 @@
       "@type": "Article",
       "@id": "https://renatus.technology/texmediator-case-study#article",
       "headline": "TexMediator: Zoom Virtual Mediation Workflow Case Study",
-      "description": "How Renatus connected TexMediator’s website, scheduling, case intake, separate-party payments, and virtual mediation over Zoom.",
+      "description": "How Renatus connected TexMediator’s website, scheduling, case intake, automatic Stripe payment requests for multiple clients, and virtual mediation over Zoom.",
       "datePublished": "2026-09-04",
-      "dateModified": "2026-11-05",
+      "dateModified": "2026-11-16",
       "image": "https://renatus.technology/images/texMediator.webp",
       "mainEntityOfPage": {
         "@id": "https://renatus.technology/texmediator-case-study#webpage"
@@ -140,7 +140,7 @@
     </h1>
 
     <p class="case-study-hero-lead">
-      Two parties. Separate payments. One Zoom mediation. A connected workflow that brings scheduling, case intake, payments, and virtual meeting coordination together.
+      Multiple clients. Separate payments. One Zoom mediation. A connected workflow that automatically sends Stripe payment requests to billing clients and Zoom access to participants.
     </p>
 
     <div class="case-study-actions">
@@ -160,13 +160,13 @@
   </div>
 
   <figure class="workstation-figure reference-workstation case-study-workstation">
-      <div class="workstation-stage" role="img" aria-label="Beige desktop computer showing the TexMediator workflow: scheduling, intake, separate payments for Party A and Party B, and one shared Zoom mediation.">
+      <div class="workstation-stage" role="img" aria-label="Beige desktop computer showing the TexMediator workflow: scheduling, intake, automatic Stripe payment requests for multiple clients, and Zoom access for participants.">
         <span class="drawing-label">FIG. 02 / VIRTUAL MEDIATION</span><span class="drawing-label right">R–02</span>
         <div class="computer-hardware">
           <img class="computer-reference" src="/images/workstation-reference.webp" width="854" height="768" alt="" fetchpriority="high">
           <div class="computer-window">
             <div class="computer-window-bar"><span>TEXMEDIATOR</span><span class="computer-window-controls" aria-hidden="true"><i>−</i><i>□</i><i>×</i></span></div>
-            <div class="computer-window-content"><strong class="computer-heading">Two parties. One session.</strong><span class="computer-workflow">SCHEDULE → INTAKE → PAYMENTS</span><div class="computer-parties"><span>Party A<small>SEPARATE PAYMENT</small></span><span>Party B<small>SEPARATE PAYMENT</small></span></div><div class="computer-session">One shared Zoom session</div></div>
+            <div class="computer-window-content"><strong class="computer-heading">Multiple clients. One session.</strong><span class="computer-workflow">SCHEDULE → INTAKE → PAYMENTS</span><div class="computer-parties computer-parties-multiple"><span>Client 1<small>STRIPE REQUEST</small></span><span>Client 2<small>STRIPE REQUEST</small></span><span>More clients<small>STRIPE REQUEST</small></span></div><div class="computer-session">Automatic Zoom access</div></div>
           </div>
         </div>
       </div>
@@ -208,7 +208,7 @@
       <div class="container case-study-split">
         <div class="case-study-heading">
           <p class="section-kicker">The Challenge</p>
-          <h2 class="section-title">Two parties. One coordinated process.</h2>
+          <h2 class="section-title">Multiple parties. One coordinated process.</h2>
         </div>
 
         <div class="case-study-copy">
@@ -220,9 +220,7 @@
           </p>
 
           <p>
-            The operational side was just as important. A mediation may involve two
-            parties, multiple attorneys, case documents, a shared meeting date, separate
-            payment responsibilities, and a virtual Zoom session. A generic contact form
+            The operational side was just as important. A mediation may involve multiple clients, attorneys, case documents, a shared meeting date, separate payment responsibilities, and a virtual Zoom session. A generic contact form
             would leave too much of that process to manual email follow-up.
           </p>
 
@@ -294,7 +292,7 @@
 
         <p class="section-subtitle">
           Renatus handled the public-facing brand and website together with the
-          connected systems behind scheduling, intake, separate-party payments, and virtual mediation over Zoom.
+          connected systems behind scheduling, intake, automatic Stripe payment requests for multiple clients, and virtual mediation over Zoom.
         </p>
 
         <div class="case-study-deliverables">
@@ -329,26 +327,22 @@
             <h3>Calendar &amp; Zoom Virtual Mediation</h3>
 
             <p>
-              Connected the booking workflow with calendar availability and
-              automated Zoom meeting creation so confirmed mediations can move
-              into Hugh's working calendar and virtual meeting process.
+              Connected booking with calendar availability, automated Zoom meeting creation, and automatic delivery of Zoom access to participants for the shared mediation session.
             </p>
           </article>
 
           <article class="case-study-deliverable">
             <span class="case-study-number">04</span>
 
-            <h3>Separate-Party Payment Workflow</h3>
+            <h3>Automatic Stripe Payment Requests</h3>
 
             <p>
-              Built a Stripe-connected workflow that uses the scheduling information
-              to support a separate invoice for the second party instead of forcing
-              one law firm to cover the entire mediation fee.
+              Built a Stripe-connected workflow that uses scheduling and intake information to automatically create and send separate payment requests to multiple billing clients for the same mediation.
             </p>
 
             <p class="card-note">
-              <a class="text-link" href="/two-party-mediation-payment-workflow">
-                Read how the two-party mediation payment workflow was built →
+              <a class="text-link" href="/multi-party-mediation-payment-workflow">
+                Read how the multi-party payment and Zoom workflow was built →
               </a>
             </p>
           </article>
@@ -409,9 +403,7 @@
             <h3>Pay Separately &amp; Meet on Zoom</h3>
 
             <p>
-              Each party follows its own payment steps. Confirmations and calendar
-              details provide the information to join one shared virtual mediation
-              session over Zoom.
+              Billing clients automatically receive their own Stripe payment requests. Participants automatically receive Zoom access to join the shared virtual mediation session.
             </p>
           </article>
         </div>
@@ -441,8 +433,8 @@
             <li>Professional visual identity and custom website</li>
             <li>Clear service, pricing, and policy information</li>
             <li>Structured client and case intake</li>
-            <li>Connected scheduling, calendar, and Zoom virtual mediation</li>
-            <li>Support for separate-party mediation payments</li>
+            <li>Connected scheduling, calendar, and automatic Zoom access</li>
+            <li>Automatic Stripe payment requests for multiple clients</li>
             <li>Search, analytics, accessibility, and privacy foundations</li>
           </ul>
         </div>

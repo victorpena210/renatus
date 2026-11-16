@@ -138,3 +138,5 @@
   .reference-workstation .drawing-label.right { left: auto; right: 10px; }
   .reference-workstation figcaption { font-size: 8px; }
 }
+
+.computer-parties-multiple { grid-template-columns: repeat(3, minmax(0, 1fr)); }

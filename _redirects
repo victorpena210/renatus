@@ -14,3 +14,8 @@
 /routePulse-thank-you /shuttle-pilot-thank-you 301!
 /routePulse-thank-you/ /shuttle-pilot-thank-you 301!
 /routePulse-thank-you.html /shuttle-pilot-thank-you 301!
+
+# Preserve links to the original TexMediator workflow article.
+/two-party-mediation-payment-workflow /multi-party-mediation-payment-workflow 301!
+/two-party-mediation-payment-workflow/ /multi-party-mediation-payment-workflow 301!
+/two-party-mediation-payment-workflow.html /multi-party-mediation-payment-workflow 301!

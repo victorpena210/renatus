@@ -5,18 +5,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>How I Built a Two-Party Mediation Payment Workflow | Renatus</title>
+  <title>How I Built a Multi-Party Mediation Workflow | Renatus</title>
 
   <meta
     name="description"
-    content="See how Renatus connected mediation scheduling, intake data, server-side automation, and Stripe to create a separate-party payment workflow."
+    content="See how Renatus connected TexMediator scheduling and intake with automatic Stripe payment requests for multiple clients and Zoom access for participants."
   >
 
   <meta name="robots" content="index, follow">
 
   <link
     rel="canonical"
-    href="https://renatus.technology/two-party-mediation-payment-workflow"
+    href="https://renatus.technology/multi-party-mediation-payment-workflow"
   >
 
   <!-- Favicons -->
@@ -30,15 +30,15 @@
   <meta property="og:site_name" content="Renatus">
   <meta
     property="og:title"
-    content="How I Built a Two-Party Mediation Payment Workflow | Renatus"
+    content="How I Built a Multi-Party Mediation Workflow | Renatus"
   >
   <meta
     property="og:description"
-    content="A technical breakdown of the scheduling, intake, webhook, and Stripe workflow Renatus built for separate-party mediation payments."
+    content="How TexMediator connects one mediation booking with automatic Stripe payment requests for multiple clients and Zoom access for participants."
   >
   <meta
     property="og:url"
-    content="https://renatus.technology/two-party-mediation-payment-workflow"
+    content="https://renatus.technology/multi-party-mediation-payment-workflow"
   >
   <meta
     property="og:image"
@@ -55,11 +55,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta
     name="twitter:title"
-    content="How I Built a Two-Party Mediation Payment Workflow | Renatus"
+    content="How I Built a Multi-Party Mediation Workflow | Renatus"
   >
   <meta
     name="twitter:description"
-    content="How Renatus connected scheduling, intake data, server-side automation, and Stripe for separate-party mediation payments."
+    content="Scheduling, intake, automatic Stripe payment requests for multiple clients, and Zoom access in one TexMediator workflow."
   >
   <meta
     name="twitter:image"
@@ -72,140 +72,152 @@
 
   <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://renatus.technology/two-party-mediation-payment-workflow#webpage",
-        "url": "https://renatus.technology/two-party-mediation-payment-workflow",
-        "name": "How I Built a Two-Party Mediation Payment Workflow | Renatus",
-        "description": "A technical breakdown of how Renatus connected mediation scheduling, intake data, server-side automation, and Stripe to support separate-party payments.",
-        "isPartOf": {
-          "@id": "https://renatus.technology/#website"
-        },
-        "about": [
-          {
-            "@type": "Thing",
-            "name": "Payment workflow automation"
-          },
-          {
-            "@type": "Thing",
-            "name": "Mediation scheduling"
-          },
-          {
-            "@type": "Thing",
-            "name": "Stripe invoicing"
-          }
-        ],
-        "inLanguage": "en-US"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://renatus.technology/multi-party-mediation-payment-workflow#webpage",
+      "url": "https://renatus.technology/multi-party-mediation-payment-workflow",
+      "name": "How I Built a Multi-Party Mediation Workflow | Renatus",
+      "description": "How Renatus connected scheduling and intake with automatic Stripe payment requests for multiple clients and Zoom access for participants.",
+      "isPartOf": {
+        "@id": "https://renatus.technology/#website"
       },
-      {
-        "@type": "Article",
-        "@id": "https://renatus.technology/two-party-mediation-payment-workflow#article",
-        "url": "https://renatus.technology/two-party-mediation-payment-workflow",
-        "mainEntityOfPage": {
-          "@id": "https://renatus.technology/two-party-mediation-payment-workflow#webpage"
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Payment workflow automation"
         },
-        "headline": "How I Built a Two-Party Mediation Payment Workflow",
-        "description": "See how Renatus connected mediation scheduling, intake data, server-side automation, and Stripe to create a separate-party payment workflow.",
-        "image": "https://renatus.technology/images/renatus-technology-og.jpg",
-        "datePublished": "2026-09-14",
-        "dateModified": "2026-10-06",
-        "author": {
-          "@type": "Person",
-          "@id": "https://renatus.technology/about#victor-pena",
-          "name": "Victor Peña",
-          "url": "https://renatus.technology/about"
+        {
+          "@type": "Thing",
+          "name": "Mediation scheduling"
         },
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://renatus.technology/#organization",
-          "name": "Renatus",
-          "url": "https://renatus.technology/"
+        {
+          "@type": "Thing",
+          "name": "Stripe invoicing"
         },
-        "keywords": [
-          "mediation payment workflow",
-          "two-party payment workflow",
-          "Stripe invoice automation",
-          "Acuity Scheduling automation",
-          "legal workflow automation",
-          "payment integration"
-        ],
-        "inLanguage": "en-US"
+        {
+          "@type": "Thing",
+          "name": "Zoom meeting access"
+        }
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "Article",
+      "@id": "https://renatus.technology/multi-party-mediation-payment-workflow#article",
+      "url": "https://renatus.technology/multi-party-mediation-payment-workflow",
+      "mainEntityOfPage": {
+        "@id": "https://renatus.technology/multi-party-mediation-payment-workflow#webpage"
       },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://renatus.technology/two-party-mediation-payment-workflow#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://renatus.technology/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "TexMediator Case Study",
-            "item": "https://renatus.technology/texmediator-case-study"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Two-Party Mediation Payment Workflow",
-            "item": "https://renatus.technology/two-party-mediation-payment-workflow"
-          }
-        ]
+      "headline": "How I Built a Multi-Party Mediation Workflow",
+      "description": "See how Renatus connected TexMediator scheduling and intake with automatic Stripe payment requests for multiple clients and Zoom access for participants.",
+      "image": "https://renatus.technology/images/renatus-technology-og.jpg",
+      "datePublished": "2026-09-14",
+      "dateModified": "2026-11-16",
+      "author": {
+        "@type": "Person",
+        "@id": "https://renatus.technology/about#victor-pena",
+        "name": "Victor Peña",
+        "url": "https://renatus.technology/about"
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://renatus.technology/two-party-mediation-payment-workflow#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Can two parties pay separately for the same mediation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. A mediation workflow can keep one scheduled matter while collecting the contact information needed to send separate payment requests to the parties responsible for their own shares."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does the second-party mediation invoice get created?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "In the TexMediator workflow, the booking collects the second party's billing email. When the qualifying appointment is scheduled, server-side automation reads the booking data and creates the appropriate Stripe invoice for that party."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Does the mediator have to create the second invoice manually?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. For the automated appointment flow, the required contact information is collected during scheduling and the server-side integration can create and send the second-party invoice without the mediator rebuilding the billing details by hand."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What technology is used in the mediation payment workflow?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The workflow combines a custom website, Acuity Scheduling intake data, a signed scheduling webhook, a server-side function, and Stripe invoicing."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can the same architecture work outside mediation?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. The same pattern can be adapted when one booking, project, or service involves multiple participants who need separate billing or follow-up actions, provided the business rules and payment responsibilities are clearly defined."
-            }
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://renatus.technology/#organization",
+        "name": "Renatus",
+        "url": "https://renatus.technology/"
+      },
+      "keywords": [
+        "mediation payment workflow",
+        "multi-party mediation workflow",
+        "Stripe invoice automation",
+        "Acuity Scheduling automation",
+        "legal workflow automation",
+        "payment integration"
+      ],
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://renatus.technology/multi-party-mediation-payment-workflow#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://renatus.technology/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "TexMediator Case Study",
+          "item": "https://renatus.technology/texmediator-case-study"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Multi-Party Mediation Workflow",
+          "item": "https://renatus.technology/multi-party-mediation-payment-workflow"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://renatus.technology/multi-party-mediation-payment-workflow#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can more than two clients receive separate payment requests?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. TexMediator supports multiple clients within one scheduled mediation, with separate Stripe payment requests sent automatically to the billing clients."
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "@type": "Question",
+          "name": "How are the Stripe payment requests created?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The booking captures client billing information. A scheduling webhook triggers server-side logic, which reads the appointment data and uses Stripe to create and send the appropriate invoices."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the mediator create each invoice manually?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Once the required booking and billing information is present, the integration creates and sends the client payment requests automatically."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What technology is used?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The implementation combines a custom website, Acuity Scheduling intake data, a signed scheduling webhook, server-side automation, Stripe invoicing, and Zoom meeting access."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do participants receive Zoom access automatically?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Participants receive Zoom joining information automatically for the shared mediation session, using the contact details supplied during scheduling and intake."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can this workflow be adapted for another business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The same event-driven pattern can support other businesses where a booking or form submission needs to trigger participant-specific billing, notifications, records, or internal actions."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 
   <link rel="stylesheet" href="/css/site.css">
@@ -228,15 +240,11 @@
           </p>
 
           <h1>
-            How I Built a Two-Party Mediation Payment Workflow
+            How I Built a Multi-Party Mediation Workflow
           </h1>
 
           <p>
-            A mediation can involve one appointment but two separate payment
-            responsibilities. For TexMediator, I connected scheduling, structured
-            intake data, server-side automation, and Stripe so the second party's
-            payment request could be generated without the mediator recreating it
-            by hand.
+            One mediation can involve multiple clients and separate payment responsibilities. For TexMediator, I connected scheduling, structured intake, and automation so billing clients receive their own Stripe payment requests automatically and participants receive Zoom access for the shared session.
           </p>
 
           <div class="hero-actions">
@@ -271,8 +279,8 @@
 
               <span aria-hidden="true">•</span>
 
-              <time datetime="2026-10-06">
-              Last reviewed October 6, 2026
+              <time datetime="2026-11-16">
+              Last reviewed November 16, 2026
             </time>
             </p>
           </div>
@@ -281,25 +289,27 @@
             <span>✓ Acuity Scheduling</span>
             <span>✓ Server-side webhook</span>
             <span>✓ Stripe invoicing</span>
+            <span>✓ Automatic Zoom access</span>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="Two-party payment workflow summary">
+        <aside class="hero-card" aria-label="Multi-party mediation workflow summary">
           <div class="hero-card-header">
             <h2>
               The Workflow
             </h2>
 
             <p>
-              One mediation request. Separate billing steps.
+              Multiple clients. Separate payment requests. One Zoom session.
             </p>
           </div>
 
           <ul class="hero-card-list">
             <li>Attorney schedules the mediation</li>
-            <li>Intake captures Party B billing information</li>
+            <li>Intake captures client billing and participant contact details</li>
             <li>A signed webhook triggers server-side logic</li>
-            <li>Stripe creates the second-party invoice</li>
+            <li>Stripe creates and sends each client’s payment request</li>
+            <li>Participants receive Zoom access automatically</li>
           </ul>
 
           <a href="/custom-software-san-antonio" class="btn btn-primary btn-full">
@@ -314,16 +324,11 @@
       <div class="container">
         <div class="verdict-box">
           <h2>
-            What is a two-party mediation payment workflow?
+            What is a multi-party mediation workflow?
           </h2>
 
           <p>
-            A two-party mediation payment workflow keeps the mediation organized
-            as one scheduled matter while allowing each responsible party to handle
-            its own payment. In the TexMediator implementation, the booking form
-            collects the second party's billing email, a scheduling webhook sends
-            the appointment data to server-side automation, and the integration
-            creates and sends the appropriate Stripe invoice for Party B.
+            A multi-party mediation workflow keeps one scheduled matter connected to multiple clients, billing contacts, and participants. TexMediator uses the booking and intake information to send separate Stripe payment requests automatically to billing clients and deliver Zoom access to participants for the same mediation session.
           </p>
         </div>
       </div>
@@ -342,7 +347,7 @@
 
         <p class="section-subtitle">
           A conventional checkout flow assumes one customer is paying for one
-          transaction. Mediation can be different: two law firms or parties may
+          transaction. Mediation can be different: multiple law firms or parties may
           be responsible for separate shares of the same scheduled service.
         </p>
 
@@ -362,13 +367,11 @@
 
           <article class="card">
             <h3>
-              The second party needed its own billing step
+              Each billing client needed a separate payment request
             </h3>
 
             <p>
-              The workflow needed a reliable way to identify the second party's
-              billing contact and issue the correct payment request without asking
-              the first party to cover the entire mediation fee.
+              The workflow needed to identify the billing contacts for multiple clients and send the appropriate payment request to each, while keeping every payment connected to the same mediation.
             </p>
           </article>
 
@@ -395,13 +398,11 @@
         </p>
 
         <h2 class="section-title">
-          How the mediation payment automation works
+          How the payment and Zoom workflow works
         </h2>
 
         <p class="section-subtitle">
-          The workflow uses the information already collected during scheduling
-          to decide when a second-party invoice should be created and where it
-          should be sent.
+          The workflow reuses scheduling and intake information to send each billing client the appropriate Stripe payment request and provide participants with Zoom access.
         </p>
 
         <div class="grid services-grid">
@@ -423,9 +424,7 @@
             </h3>
 
             <p>
-              The scheduling form collects the case information needed for the
-              appointment, including the second party's email address used by the
-              payment automation.
+              The scheduling form collects case details, client billing contacts, and participant contact information for payment requests and Zoom access.
             </p>
           </article>
 
@@ -443,37 +442,31 @@
 
           <article class="card">
             <h3>
-              4. Read the Party B information
+              4. Identify the clients and participants
             </h3>
 
             <p>
-              The function reads the appointment and intake data, finds the Party B
-              billing email, and applies the workflow rules for the selected
-              mediation type.
+              The integration reads the appointment and intake data to identify billing clients and participants, then applies the workflow rules for the selected mediation type.
             </p>
           </article>
 
           <article class="card">
             <h3>
-              5. Create the Stripe invoice
+              5. Send automatic Stripe payment requests
             </h3>
 
             <p>
-              The server-side integration uses Stripe to create the second-party
-              invoice for the appropriate mediation share instead of requiring the
-              mediator to build that invoice manually.
+              The server-side integration uses Stripe to create and send separate invoices to the billing clients for their respective mediation fees. Each client receives a payment request automatically.
             </p>
           </article>
 
           <article class="card">
             <h3>
-              6. Send the separate payment request
+              6. Deliver Zoom access to participants
             </h3>
 
             <p>
-              Stripe sends the invoice to the second party's billing email. The
-              appointment remains the operational center of the mediation while
-              the payment responsibility is handled separately.
+              Participants automatically receive the Zoom joining information for the shared mediation. The appointment, separate client payment requests, and meeting access remain part of one coordinated process.
             </p>
           </article>
         </div>
@@ -488,14 +481,12 @@
         </p>
 
         <h2 class="section-title">
-          The workflow in one line
+          One booking, coordinated payments and meeting access
         </h2>
 
         <div class="verdict-box">
           <p>
-            <strong>Mediation booking</strong> → Acuity Scheduling → structured
-            intake data → signed webhook → server-side function → Stripe →
-            separate Party B invoice.
+            <strong>Mediation booking and intake</strong> provide the client and participant details used by the automation. Stripe sends separate payment requests to billing clients, and participants receive Zoom access for the shared session.
           </p>
         </div>
 
@@ -540,9 +531,12 @@
               <tr>
                 <th scope="row">Stripe</th>
                 <td>
-                  Creates and sends the separate invoice used for the second party's
-                  payment responsibility.
+                  Creates and sends separate invoices and payment requests to the billing clients.
                 </td>
+              </tr>
+              <tr>
+                <th scope="row">Zoom</th>
+                <td>Provides the shared virtual mediation session. The connected workflow automatically delivers joining information to participants.</td>
               </tr>
             </tbody>
           </table>
@@ -586,9 +580,7 @@
             </h3>
 
             <p>
-              The second party's billing information is collected as part of the
-              appointment flow, so the automation can work from structured booking
-              data instead of relying on a later manual handoff.
+              Client billing and participant contact information is collected during booking, so payment requests and Zoom access can use the details associated with the same appointment.
             </p>
           </article>
 
@@ -727,40 +719,34 @@
         </p>
 
         <h2 class="section-title">
-          Two-party mediation payment workflow FAQ
+          Multi-party mediation workflow FAQ
         </h2>
 
         <div class="grid services-grid">
           <article class="card">
             <h3>
-              Can two parties pay separately for the same mediation?
+              Can more than two clients receive separate payment requests?
             </h3>
             <p>
-              Yes. One mediation can remain a single scheduled matter while the
-              workflow sends separate payment requests to the parties responsible
-              for their own shares.
+              Yes. TexMediator supports multiple clients within one scheduled mediation, with separate Stripe payment requests sent automatically to the billing clients.
             </p>
           </article>
 
           <article class="card">
             <h3>
-              How does the second-party invoice get created?
+              How are the Stripe payment requests created?
             </h3>
             <p>
-              The booking captures Party B's billing email. A scheduling webhook
-              triggers server-side logic, which reads the appointment data and uses
-              Stripe to create and send the appropriate invoice.
+              The booking captures client billing information. A scheduling webhook triggers server-side logic, which reads the appointment data and uses Stripe to create and send the appropriate invoices.
             </p>
           </article>
 
           <article class="card">
             <h3>
-              Does the mediator create the second invoice manually?
+              Does the mediator create each invoice manually?
             </h3>
             <p>
-              Not for the automated flow. Once the required booking information is
-              present, the integration can create and send the second-party invoice
-              without rebuilding it by hand.
+              No. Once the required booking and billing information is present, the integration creates and sends the client payment requests automatically.
             </p>
           </article>
 
@@ -769,20 +755,16 @@
               What technology is used?
             </h3>
             <p>
-              The implementation combines a custom website, Acuity Scheduling
-              intake data, a signed scheduling webhook, a server-side function,
-              and Stripe invoicing.
+              The implementation combines a custom website, Acuity Scheduling intake data, a signed scheduling webhook, server-side automation, Stripe invoicing, and Zoom meeting access.
             </p>
           </article>
 
           <article class="card">
             <h3>
-              Why use a server-side function?
+              Do participants receive Zoom access automatically?
             </h3>
             <p>
-              The server-side function can validate the incoming event, apply the
-              business rules, and communicate with Stripe without placing private
-              payment credentials in public browser code.
+              Yes. Participants receive Zoom joining information automatically for the shared mediation session, using the contact details supplied during scheduling and intake.
             </p>
           </article>
 
